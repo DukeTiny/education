@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+</head>
+<body>
+
+<div class="container" id="app">
+
+    用户：<input type=text name="uname" v-model="uname"/>
+    操作：<input type=text name="action" v-model="action"/>
+    <table class="table table-striped">
+        <tr>
+            <th class="success">日志ID</th>
+            <th class="success">用户ID</th>
+            <th class="success">用户名</th>
+            <th class="success">行为</th>
+            <th class="success">操作时间</th>
+        </tr>
+        <tr v-for="log in logs">
+            <td class="active">{{log.logid}}</td>
+            <td class="success">{{log.uname }}</td>
+            <td class="warning">{{log.action }}</td>
+            <td class="danger">{{log.actiontime}}</td>
+            <td class="danger">{{log.uid}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="5" >
+                <button type="button" @click="first()" class="btn btn-success col-md-1">First</button>
+                <button type="button" @click="previous()" class="btn btn-success col-md-1">previous</button>
+                <button type="button" @click="next()" class="btn btn-success col-md-1">next</button>
+                <button type="button" @click="end()" class="btn btn-success col-md-1">END</button>
+                <div class="form-group">
+                    当前页： <input type="text" name="nowPage" v-model="page.nowPage"/>
+                    行数： <input type="text" name="limit" v-model="page.limit"/>
+                    <input type="submit" @click="show()" class="btn btn-success" value="Serch"/>
+                </div>
+            </td>
+        <tr>
+    </table>
+
+</div>
+<script>
+    Vue.http.options.emulateJSON=true;
+    var app = new Vue({
+        el:'#app',
+        data: {
+            uname:'',
+            action:'',
+            logs:'',
+            page:'',
+            log:'',
+            nowPage:1,
+            limit:10
+        },
+        mounted: function () {
+            this.show();
+        },
+        methods: {
+            show:function(){
+                this.$http.post('findAll2',{nowPage:this.nowPage,limit:this.limit,uname:this.uname,action:this.action}).then(function(res){
+                    this.logs = res.body.logs;
+                    this.page = res.body.page;
+                    this.uname = res.body.log.uname;
+                    this.action = res.body.log.action;
+                },function(){
+                    console.log('请求失败处理');
+                });
+            },
+            first:function(){
+                this.nowPage = 1;
+                this.show();
+            },
+            next:function(){
+                this.nowPage = this.nowPage==this.page.pageCount?this.page.pageCount:this.nowPage+1;
+                this.show();
+            },
+            previous:function(){
+                this.nowPage = this.nowPage==1?1:this.nowPage-1;
+                this.show();
+            },
+            end:function(){
+                this.nowPage = this.page.pageCount;
+                this.show();
+            }
+
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

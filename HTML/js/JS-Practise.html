@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Js Practise</title>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function test() {
+        var uName = prompt("请输入您的用户");
+        if ( uName==="aaa" ) {
+            var uPass = prompt("请输入您的密码");
+            if( uPass === "111" ){
+                alert("登陆成功");
+                return "SSSSSS";
+            }
+            else {
+                alert("密码错误");
+                test();
+            }
+        }
+        else {
+            alert( "用户名错误" );
+            test();
+        }
+        return "aaaaaa";
+    }
+    // test();
+    var str = test();
+    document.write(str);
+
+</script>
+<!-- onload="checkLetter( mail,'@','.');" -->

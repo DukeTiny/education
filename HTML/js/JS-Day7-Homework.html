@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework of 3.26</title>
+    <script>
+       // 1.从键盘输入账号和密码，判断账号和密码是否正确，如果不正确则需要重新输入；
+       //    错误次数不能大于3次，如果超出3次则提示并退出；
+
+       // const username = "administrator"
+       // const password = "nideshengri"
+       // for ( var i=0; i<3; i++ ) {
+       //     var inputtedUsername = prompt("请输入您的用户名：");
+       //     var inputtedPassword = prompt("请输入您的密码；");
+       //     if ( inputtedUsername === username && inputtedPassword === password ){
+       //         alert( "输入正确，登陆成功。" );
+       //         break;
+       //     }
+       //     else {
+       //         if ( i<2 ){
+       //             alert("输入错误，请重新输入。")
+       //         }
+       //         else {
+       //             alert("3次输入错误，请明日再试。");
+       //         }
+       //     }
+       // }
+
+
+       // 2.分别判断账号和密码是否正确，错误次数各自不能超过3次；
+
+
+       // const username = "administrator";
+       // const password = "123456";
+       // let count = 1;
+       // for ( let i=0; i<3 && count<3 ; i++ ){
+       //     let inputtedUsername = prompt("请输入您的用户名：");
+       //     if ( inputtedUsername === username && count<3 ) {
+       //         for ( let j = 0; j < 3; j++) {
+       //             let inputtedPassword = prompt("请输入您的密码：");
+       //             if (inputtedPassword === password && count<3 ) {
+       //                 alert("输入正确，登陆成功。");
+       //                 break;
+       //             }
+       //             else if ( count<3) {
+       //                 alert("密码错误，请重新输入。");
+       //                 count++;
+       //             }
+       //         }
+       //         break;
+       //     }
+       //     else if ( count<3 && count!==0) {
+       //         alert("用户名输入错误，请重新输入用户名。")
+       //         count++;
+       //     }
+       // }
+       // if( count===3 ) {
+       //     alert("错误输入3次，请明日再试。")
+       // }
+
+
+            
+            
+        
+        // 3.输出乘法口诀表；
+        
+        for ( let i=1; i<=9; i++) {
+            for( let j=1; j<=i; j++){
+                if ( i===j ){
+                    document.write( j + "*" +i +"=" + (i*j)+"<br>");
+                }
+                else if ( i!==j && i<=4 && j===2 ) {
+                    document.write( j + "*" +i +"="+(i*j) + "&nbsp;&nbsp;&nbsp;&nbsp;");
+                }
+                else {
+                    document.write( j + "*" +i +"="+(i*j)+"&nbsp;&nbsp;");
+                }
+            }
+        }
+
+        // 4.从键盘输入一个整数，判断该整数是否是一个质数；
+        // let count = 0;
+        // let number = parseInt(prompt("请输入一个正整数："));
+        // if (number===1) {
+        //     alert("1是质数");
+        // }
+        // else{
+        //     for ( let i=2; i<=number; i++) {
+        //         if ( number%i===0 && number!==i) {
+        //             alert( number + "不是一个质数。" );
+        //             count++;
+        //         }
+        //     }
+        //     if ( count===0 ){
+        //         alert( number + "是一个质数。")
+        //     }
+        // }
+
+        // 5.找到1-100之间的所有的质数；
+        //     document.write( "1" + "<br>" + "2" + "<br>" + "3" + "<br>")
+        //     let total = 3;
+        //     for ( let i=5; i<=100; i=i+2) {
+        //         let count = 0;
+        //         for ( let j=2; j*j<=i; j++){
+        //             if ( i%j===0 ){
+        //                 count++;
+        //             }
+        //         }
+        //         if ( count===0 ){
+        //             total++;
+        //             document.write( i + "<br>");
+        //         }
+        //     }
+        //     document.write("1-100总共有"+ total + "个质数。");
+
+
+        // 6.课本P80 练习8
+        // let count = 0;
+        // for ( let a=0; a<=50;a++) {
+        //     for ( let b=0; b<=20; b++){
+        //         if( a+b>=13 ){
+        //             for ( let c=37; c>=0;c--) {
+        //                 if( a+b+c===50 && 2*a+5*b+c===100){
+        //                     document.write("第一种：1分" + c + "枚&nbsp;&nbsp;2分" + a + "枚&nbsp;&nbsp;5分" + b +"枚。" + "<br>")
+        //                     count++;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // document.write("总共有" + count + "种组合。")
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

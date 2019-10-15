@@ -1,0 +1,14 @@
+CREATE TABLE `dept` (
+  `did` int(11) NOT NULL AUTO_INCREMENT,
+  `dname` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`did`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8
+
+CREATE TABLE `emp` (
+  `eid` int(11) NOT NULL AUTO_INCREMENT,
+  `ename` varchar(20) DEFAULT NULL,
+  `did` int(11) DEFAULT NULL,
+  PRIMARY KEY (`eid`),
+  KEY `FK` (`did`),
+  CONSTRAINT `FK` FOREIGN KEY (`did`) REFERENCES `dept` (`did`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8

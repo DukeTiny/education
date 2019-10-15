@@ -1,0 +1,44 @@
+一。使用工具执行以下操作：
+
+1.创建一个名为mydb的连接；
+
+2.在该连接中创建多个数据库；
+
+3.删除多余的数据库，保留名为student的数据库；
+
+4.切换到该数据库；
+
+5.在student数据库中创建名为stuInfo的数据表，表字段如下：
+
+（1）sid：学生编号，数据类型int；
+
+（2）sname:学生姓名，数据类型varchar，长度50；
+
+（3）sage:学生年龄，数据类型int,长度3；
+
+（4）ssex:学生性别，数据类型char，长度3；
+
+6.在stuInfo表中添加一列sedu,学生学历，数据类型varchar，长度20；
+
+7.删除添加的sedu列；
+
+8.修改stuInfo表中sname的数据类型varchar的长度为50.
+
+二。使用SQL语句将以上内容重新编写并执行完成，形成sql脚本。
+
+三。使用工具执行以下操作：
+
+1.新建employee数据库，在employee库中，添加salaris表：
+id 整型 ；
+emp_no 整型；
+salary float；
+from_date  入职时间，date；
+to_date  离职时间， date
+
+2.使用sql语句将以上内容重新编写并执行完成，形成sql脚本。
+
+
+
+
+
+

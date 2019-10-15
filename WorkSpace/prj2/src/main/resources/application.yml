@@ -1,0 +1,18 @@
+server:
+  port: 8080
+ 
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///user?characterEncoding=utf-8
+    username: root
+    password: wh809919
+    
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  
+
+mybatis:
+  config-location: classpath:configuration.xml

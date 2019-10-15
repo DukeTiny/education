@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<script src="../../js/userRegedit.js"></script>
+	</head>
+	<body>
+		用户注册：<br />
+		用户名：<input type="text" id="uname"  /><br />
+		密码：<input type="password" id="upass"/><br />
+		确认密码：<input type="password" id="conPass"  /><br />
+		性别：<input type="radio" name="sex" checked="checked" value="男"/>男 &nbsp; &nbsp;
+		<input type="radio" name="sex" value="女"/>女<br />
+		兴趣爱好：
+		<input type="checkbox" name="fav" value="敲代码" />敲代码
+		<input type="checkbox" name="fav" value="测试"/>测试
+		<input type="checkbox" name="fav" value="开发" />开发<br />
+		所在城市：
+		<select>
+			<option name="city" value="东郊">东郊</option>
+			<option name="city" value="西郊">西郊</option>
+			<option name="city" selected="true" value="南郊">南郊</option>
+			<option name="city" value="北郊">北郊</option>
+		</select><br />
+		联系电话:<input type="text" id="phone"  /><br />
+		email:<input type="text" id="email" ><br />
+		<input type="button" value="提交" onclick="checkValue();" /><br />
+		用户名：<div id="un"></div>
+		性别：<div id="us"></div>
+		爱好：<div id="uf"></div>
+		城市：<div id="uc"></div>
+		电话：<div id="up"></div>
+		email:<div id="ue"></div>
+	</body>
+</html>

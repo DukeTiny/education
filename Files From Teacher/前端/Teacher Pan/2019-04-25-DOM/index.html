@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			var info = "";
+			function addStu(){
+				//获得所有组件的值
+				var snoval = document.getElementsByName("sno")[0].value;
+				var snameval = document.getElementsByName("sname")[0].value;
+				var ssexs = document.getElementsByName("ssex");
+				var ssexval = ssexs[1].value;
+				if(ssexs[0].checked){
+					ssexval = ssexs[0].value;
+				}
+				
+				//拼接每个学员显示的表行
+				info+="<tr>";
+				info+="<td>"+snoval+"</td>";
+				info+="<td>"+snameval+"</td>";
+				info+="<td>"+ssexval+"</td>";
+				info+="</tr>";
+				
+				//获得显示信息的标签对
+				var infoShow = document.getElementById("tbody1");
+				
+				//将拼接好的学员信息添加到显示区域
+				infoShow.innerHTML = info;
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" method="post">
+			学号:<input type="text" name="sno" />
+			姓名:<input type="text" name="sname" />
+			性别:<input type="radio" name="ssex" value="男" checked="checked" />男
+			<input type="radio" name="ssex" value="女" />女
+			<button type="button" onclick="addStu()">添加学员</button>
+		</form>
+		<div>
+			<table width="800" border="1">
+				<caption>学员管理</caption>
+				<tr>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>性别</th>
+				</tr>
+				<tbody id="tbody1">
+					
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

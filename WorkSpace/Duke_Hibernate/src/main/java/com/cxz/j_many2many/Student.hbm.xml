@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-14 20:44:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.cxz.j_many2many">
+    <class name="Student">
+        <id name="id">
+            <generator class="native" />
+        </id>
+        <property name="name" />
+        <!-- <set name="teachers" table="TEACHER" inverse="false" lazy="true" access="field">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="com.cxz.j_many2many.Teacher" />
+        </set> -->
+    </class>
+</hibernate-mapping>

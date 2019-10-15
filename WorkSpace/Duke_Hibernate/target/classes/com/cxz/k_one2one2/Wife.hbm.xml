@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-14 20:44:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.cxz.k_one2one2">
+    <class name="Wife">
+        <id name="id" >
+            <generator class="foreign">
+            	<param name="property">husband</param>
+            </generator>
+        </id>
+        <property name="wname" />
+        <one-to-one name="husband" class="Husband" cascade="all" constrained="true" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <INPUT TYPE="text" NAME="" v-model="n1">
+
+<SELECT NAME="" v-model="flag">
+	<OPTION VALUE="+" SELECTED>+</option>
+	<OPTION VALUE="-">-</option>
+	<OPTION VALUE="*">*</option>
+	<OPTION VALUE="/">/</option>
+</SELECT>
+
+<INPUT TYPE="text" NAME="" v-model="n2">
+<INPUT TYPE="button" value="calc" @click="calc">
+	{{result}}
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			n1:0,
+			n2:0,
+			flag:'+',
+			result : 0
+	  },
+		methods:{
+			calc:function(){
+				this.result = eval(this.n1+this.flag+this.n2);
+			}
+		}
+	})
+</script>

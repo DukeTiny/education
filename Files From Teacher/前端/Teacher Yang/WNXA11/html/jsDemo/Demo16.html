@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var i = 0;
+			var a = setInterval(dzq,100);
+			function dzq() {
+				if(i>=36){
+					alert(1);
+				}
+				if(i < 36) {
+					i++;
+					var srcStr = "../../img/dengzq/Frame" + i + ".png";
+					document.getElementById("dzq").src = srcStr;
+				}else{
+					clearInterval(a);
+				}
+			}
+			
+
+		</script>
+	</head>
+
+	<body onload=a>
+		<img src="../../img/dengzq/Frame0.png" id="dzq" />
+		<input type="button" onclick="stopInter();"  />
+	</body>
+
+</html>

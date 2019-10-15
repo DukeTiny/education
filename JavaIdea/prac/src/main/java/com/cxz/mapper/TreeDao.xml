@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxz.mapper.TreeDao">
+  <resultMap id="BaseResultMap" type="com.cxz.model.Tree">
+    <id column="tree_id" jdbcType="INTEGER" property="id" />
+    <result column="tree_pId" jdbcType="INTEGER" property="pid" />
+    <result column="tree_name" jdbcType="VARCHAR" property="name" />
+    <result column="tree_file" jdbcType="VARCHAR" property="file" />
+    <result column="tree_icon" jdbcType="VARCHAR" property="icon" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    tree.id as tree_id, tree.pId as tree_pId, tree.`name` as `tree_name`, tree.`file` as `tree_file`, 
+    tree.icon as tree_icon
+  </sql>
+  <select id="selectByExample" parameterType="com.cxz.model.TreeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tree tree
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tree tree
+    where tree.id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tree
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cxz.model.TreeExample">
+    delete from tree tree
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.cxz.model.Tree" useGeneratedKeys="true">
+    insert into tree (pId, `name`, `file`, 
+      icon)
+    values (#{pid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{file,jdbcType=VARCHAR}, 
+      #{icon,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.cxz.model.Tree" useGeneratedKeys="true">
+    insert into tree
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pid != null">
+        pId,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="file != null">
+        `file`,
+      </if>
+      <if test="icon != null">
+        icon,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pid != null">
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cxz.model.TreeExample" resultType="java.lang.Long">
+    select count(*) from tree tree
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tree tree
+    <set>
+      <if test="record.id != null">
+        tree.id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.pid != null">
+        tree.pId = #{record.pid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        tree.`name` = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.file != null">
+        tree.`file` = #{record.file,jdbcType=VARCHAR},
+      </if>
+      <if test="record.icon != null">
+        tree.icon = #{record.icon,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tree tree
+    set tree.id = #{record.id,jdbcType=INTEGER},
+      tree.pId = #{record.pid,jdbcType=INTEGER},
+      tree.`name` = #{record.name,jdbcType=VARCHAR},
+      tree.`file` = #{record.file,jdbcType=VARCHAR},
+      tree.icon = #{record.icon,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxz.model.Tree">
+    update tree
+    <set>
+      <if test="pid != null">
+        pId = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        `file` = #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cxz.model.Tree">
+    update tree
+    set pId = #{pid,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      `file` = #{file,jdbcType=VARCHAR},
+      icon = #{icon,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

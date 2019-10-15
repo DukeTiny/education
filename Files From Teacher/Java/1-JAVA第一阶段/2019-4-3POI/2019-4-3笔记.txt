@@ -1,0 +1,151 @@
+分类
+1、字节流和字符流
+2、输入流和输出流
+3、基本流和缓冲流
+
+字节流
+   InputStream
+   	FileInputStream
+		int read();
+		int read(byte[] b);
+		int read(byte[] b,int off,int len);
+		close();
+	BufferedInputStream
+		BufferedInputStream(InputStream in);
+		int read();
+		int read(byte[] b);
+		int read(byte[] b,int off,int len);
+		close();
+   OutputStream
+   	FileOutputStream
+		write(int c);
+		write(byte[] b);
+		write(byte[] b,int off,int len);
+		flush();
+		close();
+	BufferedOutputStream
+		write(int c);
+		write(byte[] b);
+		write(byte[] b,int off,int len);
+		flush();
+		close();
+字符流
+   Reader
+   	FileReader
+		int read();
+		int read(char[] c);
+		int read(char[] c,int off,int len);
+		close();
+	BufferedReader
+		boolean ready();
+		String readLine();
+		int read();
+		int read(char[] c);
+		int read(char[] c,int off,int len);
+		close();
+   Writer
+   	FileWriter
+		write(String str);
+		write(int c);
+		write(char[] c);
+		flush();
+		close();
+	BufferedWriter
+		write(String str);
+		write(int c);
+		write(char[] c);
+		newLine();
+		flush();
+		close();
+	PrintWriter
+		write(String str);
+		write(int c);
+		write(char[] c);
+		print();
+		println();
+		flush();
+		close();
+
+FileUtil
+  File file = new File("d:/cards.txt");
+
+配置文件类
+Properties
+	load(InputStream in);
+	load(Reader reader);
+	String getProperty(String key);
+	setProperty(String key,String value);
+	save(OutputStream out,String commets);//过时
+	store(OutputStream out,String commets);
+	store(Writer out,String commets);
+
+使用
+1、生成一个Properties的配置文件"文件名.properties"。
+2、实例化Properties对象。
+3、载入一个输入流load(InputStream|Reader);
+4、通过getProperty(String key);获得对应的值。
+
+InputStream 类名.class.getResourceAsStream("文件名"); //直接获得包中文件名对应的输入流
+
+代码块
+每次实例化都会调用
+
+静态代码块
+只执行一次
+
+运行顺序
+静态块->代码块->构造方法
+
+Excel读写
+
+第三方提供jar文件
+jxl
+poi
+
+jar文件相当于压缩文件，是一个工程中所有class的压缩文件。
+
+1、将工程导出成jar文件。
+2、将jar文件拷贝需要使用的工程中。
+3、将jar文件添加工程的构建路径(build path)中。
+4、可以使用jar文件压缩的class文件。
+
+excel导入导出
+IO流
+POIFSFileSystem
+	POIFSFileSystem(InputStream in);
+HSSFWorkbook
+	write(OutputStream out);
+	createSheet(String name);
+	createCellStyle();
+	getSheet(String name);
+	getSheet(int index);
+HSSFSheet
+	createRow(int rownum);
+	getRow(int rownum);
+HSSFRow
+	createCell(short cellnum);
+	getCell(short cellnum);
+HSSFCell
+	setCellValue(boolean b);
+	setCellValue(String str);
+	setCellValue(double d);
+	setCellValue(Date d);
+	setCellStyle(HSSFCellStyle style);
+	getStringCellValue();
+	getBooleanCellValue();
+	getDateCellValue();
+	getNumricCellValue();
+HSSFCellStyle
+	setDataFormat(short s);
+HSSFDataFormat
+	getBuiltinFormat("");
+HSSFDateUtil
+	isCellDateFormated(HSSFCell cell);
+
+单元格类型常量整理
+
+
+//生成日期格式，并对应日期列设置
+HSSFCellStyle dateStyle = wb.createCellStyle();
+dateStyle.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy h:mm"));
+cell2.setCellStyle(dateStyle);

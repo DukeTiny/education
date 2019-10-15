@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Js Practise</title>
+    <script>
+        function checkNewLocation() {
+            var arrayA = mail.split("@");
+            var net = arrayA[1];
+            var arrayB = net.split(".",1);
+            var netName = arrayB[0];
+            var mailName;
+            switch (netName) {
+                case "qq"   : mailName = "您的邮箱是QQ邮箱。"
+                    break;
+                case "163"  : mailName = "您的邮箱是网易邮箱。"
+                    break;
+                case "sina" : mailName = "您的邮箱是新浪邮箱。"
+                    break;
+                case "126"  : mailName = "您的邮箱是126邮箱。"
+                    break;
+            }
+            document.getElementById('output').innerHTML = mailName;
+        }
+
+        function checkLetter(mail,a,b){
+            var countA = 0,countB=0;
+            for( var i=0; i<mail.length; i++){
+                if( mail[i] === a){
+                    countA++
+                }
+            }
+            for( var j=0; j<mail.length; j++){
+                if( mail[j] === b){
+                    countB++
+                }
+            }
+            if( countA !==1 || countB!==1 || mail.indexOf("@")>=mail.indexOf(".") ){
+                document.getElementById('output').innerHTML ="您输入的邮箱格式错误";
+            }
+            else {
+                checkNewLocation();
+            }
+        }
+
+
+        var mail = prompt("请输入您的邮箱：");
+        checkLetter( mail,"@",".");
+
+
+    </script>
+
+</head>
+
+<body onload="checkLetter( mail,'@','.');">
+<div id="output" style="text-align:center; font-size:30px; padding:100px;"></div>
+</body>
+
+</html>

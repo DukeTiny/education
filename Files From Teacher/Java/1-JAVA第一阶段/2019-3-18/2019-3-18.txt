@@ -1,0 +1,77 @@
+语句
+1、条件判断语句
+if else
+switch case
+2、循环
+for
+while
+do while
+for in
+for(int num:nums)
+3、其他语句
+break
+continue
+
+数组
+int[] nums = new int[length];
+int[] nums = new int[]{value1,value2,...};
+int[] nums = {value1,value2,...};
+
+nums.length获得数组的长度
+
+1、数组的声明
+2、数组的使用
+3、数组的下标
+4、遍历
+
+排序
+
+默认值
+所有类型的数组声明以后，如果有长度，每个位置都有默认值
+
+多维数组
+
+
+常用类
+String 字符串类
+替换字符串 replace();
+方法名	replace
+方法参数  String oldStr,String newStr
+返回值 String
+
+字符串长度
+方法名  length
+参数 
+返回值 int
+
+截取字符串
+方法名  substring
+参数	int start
+返回值 String
+
+截取字符串
+方法名  substring
+参数 	int start,int end(做包含右不包含)
+返回值 String
+
+找到目标字符串在原串中第一次出现的位置
+方法名  indexOf
+参数 	String targetStr
+返回值  int index
+
+toCharArray();将一个字符串转换成一个字符数组
+getBytes();将一个字符串转换成一个字节数组
+char charAt(int index);根据指定下标获得字符串中对应位置的字符
+
+toUpperCase();转大写
+toLowerCase();转小写
+
+int indexOf(String target)查找子串第一次出现的位置
+int lastIndexOf(String target);查找子串最后一次出现的位置
+
+boolean startsWith(String pri);是否以pri开始
+boolean endsWith(String back);是否以back结束
+
+Math 数学类
+
+Date 日期类

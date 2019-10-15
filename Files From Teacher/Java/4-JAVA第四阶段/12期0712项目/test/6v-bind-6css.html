@@ -1,0 +1,24 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.red{background-color: red;}
+			.yellow{background-color: yellow;}
+		</style>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <div v-bind:style="[clsobj,clsobjx]">hello</div>
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			clsobj:{color:'red',backgroundColor:'blue'},
+			clsobjx:{fontSize:'72px'}
+	  }
+	})
+</script>

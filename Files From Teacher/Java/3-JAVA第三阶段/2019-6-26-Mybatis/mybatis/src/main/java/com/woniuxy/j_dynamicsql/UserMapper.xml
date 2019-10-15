@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.j_dynamicsql.UserMapper">
+	
+	<sql id="baseColumn">
+		id,name
+	</sql>
+	
+	<sql id="whereCluase">
+		<where>
+			<!-- if的条件只要成立，就会拼接if中的sql子句 -->
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="ids != null">
+				<foreach open="and id in (" close=")" separator="," collection="ids" item="id">
+					#{id}
+				</foreach>
+			</if>
+		</where>
+	</sql>
+	
+	<select id="find" resultType="User" parameterType="UserExample">
+		select
+			<include refid="baseColumn" />
+		from user
+		<!-- 
+			where有2个作用：
+			1. 只要where中有任何内容出现，where标记都会生成一个where关键字
+			2. where还会把紧跟着where关键字的and和or删除！
+		 -->
+		<include refid="whereCluase"></include>
+	</select>
+	
+	
+	<select id="find2" resultType="User" parameterType="UserExample">
+		select 
+			<include refid="baseColumn" />
+		from user
+		<where>
+			<choose>
+				<when test="id != null">
+					and id = #{id}
+				</when>
+				<when test="name != null">
+					and name = #{name}
+				</when>
+				<when test="money != 0">
+					and money = #{money}
+				</when>
+				<otherwise>
+					and 1=1
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	
+	<select id="find3" resultType="User" parameterType="UserExample">
+		select 
+			<include refid="baseColumn" />
+		from user
+		<trim prefix="where" prefixOverrides="and|or">
+			<!-- if的条件只要成立，就会拼接if中的sql子句 -->
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="ids != null">
+				<foreach open="and id in (" close=")" separator="," collection="ids" item="id">
+					#{id}
+				</foreach>
+			</if>
+		</trim>
+	</select>
+	
+	<select id="update" parameterType="User">
+		update user  
+			<!-- 
+				set标记有2个作用：
+				1. 如果set元素中有内容，就会添加set关键字！
+				2. 还会自动删除最后一个逗号
+			 -->
+			<set>
+				<if test="name != null">
+					name=#{name},
+				</if>
+				<if test="birthday != null">
+					birthday=#{birthday},
+				</if>
+				<if test="money != null">
+					money=#{money}
+				</if>
+			</set>
+		where id=#{id}
+	</select>
+	
+	
+	
+	<select id="update2" parameterType="User">
+		update user  
+			<trim prefix="set" suffixOverrides=",">
+				<if test="name != null">
+					name=#{name},
+				</if>
+				<if test="birthday != null">
+					birthday=#{birthday},
+				</if>
+				<if test="money != null">
+					money=#{money},
+				</if>
+			</trim>
+		where id=#{id}
+	</select>
+	
+</mapper>

@@ -1,0 +1,51 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  {{ message }}<br>
+  <button @click="show()">Click me</button>
+  <button @click="hi()">Run</button>
+  <button @click="stop()">Stop</button>
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			message: '好嗨哟，感觉人生已经达到了高潮 ',
+			addr:'zz',
+			uname:'hello',
+			intervalId:null
+	  },
+		methods:{
+			show:function(){
+				//alert(this.message);
+				this.message += "world";
+			},
+			hi(){
+				var self = this;
+				if(this.intervalId!=null) return;
+				/*
+				setInterval(function(){
+					console.log(self.message);
+					self.message = self.message.substr(1)+self.message.substr(0,1);
+				},100);
+				*/
+			   this.intervalId = setInterval(()=>{
+				   this.message = this.message.substr(1)+this.message.substr(0,1);
+			   },100);
+
+			   
+				//this.message = "好嗨哟";
+			},
+			stop(){
+				clearInterval(this.intervalId);
+				this.intervalId = null;
+			}
+		}
+	})
+</script>

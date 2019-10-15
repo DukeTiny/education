@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛商店，欢迎选购</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        var xml = new XMLHttpRequest();
+        xml.setRequestHeader("Content-Type","mul");
+        var formData = new FormData();
+        formData.
+        xml.send();
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            background-color: rgba(240,240,240,1);
+            overflow: hidden;
+        }
+        .nav{
+            margin: 0;
+
+            background-color: rgba(0,0,0,0.8);
+            border-bottom: 1px solid gray;
+            height: 50px;
+        }
+        .nav div:first-child{
+            width: 22%;
+            height: 20px;
+            float: left;
+        }
+        .nav div:nth-child(2){
+             width: 20%;
+             line-height: 50px;
+             color: lightgray;
+             float: left;
+         }
+        .nav div:nth-child(3){
+            width: 28%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: lightgray;
+            float: left;
+        }
+        .nav div:nth-child(4){
+            width: 6%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: lightgray;
+            float: left;
+        }
+        .nav a{
+            line-height: 50px;
+            color: lightgray;
+            float: left;
+        }
+        a:link,a:visited{
+            color: orange;
+            text-decoration: none;
+        }
+        a:hover,a:active{
+            color: orange;
+        }
+        .table{
+            margin: auto;
+            width: 60%;
+            height: 1500px;
+            background-color: white;
+            box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+        }
+        .tableContent{
+            width: 100%;
+            overflow: hidden;
+            table-layout: fixed;
+        }
+        td{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 10px 0;
+            border-bottom: 1px gray solid;
+        }
+        input{
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div></div>
+        <div>欢迎登录</div>
+        <div>
+            <a>类型信息&nbsp;&nbsp;|&nbsp;&nbsp; </a>
+            <a>商品信息&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+            <a>进货信息</a>
+        </div>
+        <div></div>
+        <div><a href="">退出</a></div>
+    </div>
+    <form enctype=""></form>
+    <div class="table">
+        <table class="tableContent" border="0" align="center" cellspacing="0">
+            <thead>
+                <tr align="center" bgcolor="#f0f8ff">
+                    <td>商品ID</td>
+                    <td>名称</td>
+                    <td>品牌</td>
+                    <td>类型id</td>
+                    <td>售价</td>
+                    <td>单位</td>
+                    <td>商品图片</td>
+                    <td>是否下架</td>
+                    <td width="100">显示优先级</td>
+                    <td height="15"><a><font color="#6495ed">前一页</font></a></td>
+                    <td><a><font color="#6495ed">下一页</font></a></td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr align="center">
+                <td height="18" ></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button type="button" onclick="edit()">编辑</button></td>
+                <td><button type="button" onclick="del()">删除</button></td>
+            </tr>
+            <tr class="edit" align="center">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <td height="15"><input type="hidden" value="" name="productId"></td>
+                    <td><input type="text" name="productName"></td>
+                    <td><input type="text" name="productBrand"></td>
+                    <td><input type="text" name="typeID"></td>
+                    <td><input type="text" name="unitPrice"></td>
+                    <td><input type="text" name="unit"></td>
+                    <td><input type="file" ></td>
+                    <td><select name="onSale">
+                        <option>上架</option>
+                        <option>下架</option>
+                    </select></td>
+                    <td><input type="hidden" value="" name="priority"></td>
+                    <td><button>提交</button></td>
+                    <td><button type="button" onclick="cancelEdit()">取消</button></td>
+                </form>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            <tr>
+                <td height="18" ></td>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            <tr>
+                <td height="18" ></td>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            <tr>
+                <td height="18" ></td>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            <tr>
+                <td height="18" ></td>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            <tr>
+                <td height="18" ></td>
+            </tr>
+            <tr bgcolor="#f0f8ff">
+                <td colspan="11" height="18"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr align="center" bgcolor="#f0f8ff">
+                    <td>商品ID</td>
+                    <td>名称</td>
+                    <td>品牌</td>
+                    <td>类型id</td>
+                    <td>售价</td>
+                    <td>单位</td>
+                    <td>商品图片</td>
+                    <td>是否下架</td>
+                    <td width="100">显示优先级</td>
+                    <td height="18"><a><font color="#6495ed">首页</font></a></td>
+                    <td><a><font color="#6495ed">首页</font></a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

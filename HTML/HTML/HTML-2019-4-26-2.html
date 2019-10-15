@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+
+        </style>
+        <script>
+            window.onload=function () {
+                var bodyTagContent = "<table align='center' cellpadding='0' cellspacing='0' width='500' border='1'></table>"
+                document.getElementsByTagName("body")[0].innerHTML = bodyTagContent;
+                // var headContent = ["sno","sname","ssex","sbirthday","class"];
+                var bodyContent = [
+                    ["sno","sname","ssex","sbirthday","class"],
+                    [101,"李军","男","1976-02-20",95033],
+                    [103,"陆君","男","1974-06-03",95031],
+                    [105,"匡明","男","1975-10-02",95031],
+                    [107,"王丽","女","1976-01-23",95033],
+                    [108,"曾华","男","1977-09-01",95033],
+                    [109,"王芳","女","1975-02-10",95031],];
+                var tableContent = "";
+                for ( var i=0; i<bodyContent.length; i++ ){
+                    tableContent += "<tr height='30' align='center'>";
+                    for ( var j=0; j<bodyContent[i].length; j++ ){
+                        if( i===0 ) tableContent += "<th width='100'>"+bodyContent[i][j]+"</th>";
+                        else tableContent += "<td>"+bodyContent[i][j]+"</td>";
+                    }
+                    tableContent+= "</tr>" ;
+                }
+                document.getElementsByTagName("table")[0].innerHTML = tableContent;
+            }
+        </script>
+    <body>
+    </body>
+</html>

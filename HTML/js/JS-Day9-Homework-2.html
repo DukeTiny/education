@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework of 3.28</title>
+    <style>
+        body {
+            background-color: darkgray;
+            color: white;
+        }
+        .colorCover {
+            width: 300px;
+            height: 410px;
+            background-color: rgba(100,100,100,1);
+            margin: 85px auto 0;
+        }
+        .registerName{
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            font-size: 25px;
+            line-height: 60px;
+            border-bottom: 1px darkgray solid;
+        }
+        .information{
+            margin-left: 27px;
+            font-size: 18px;
+            line-height: 10px;
+        }
+ 
+        .input {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        #major{
+            border: none;
+            width: 172px;
+            height: 20px;
+            position: relative;
+            right: 5px;
+        }
+        #empty1 {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        #empty2 {
+            width: 100%;
+            height: 17px;
+            margin: 5px auto 10px;
+        }
+        #empty3 {
+            width: 100%;
+            height: 17px;
+            margin: 5px auto 10px;
+        }
+        #empty4 {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        #empty5 {
+            width: 100%;
+            height: 17px;
+            margin: 20px auto 10px;
+            text-align: center;
+        }
+        #notEmpty1 {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        #notEmpty2 {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        #notEmpty3 {
+            width: 100%;
+            height: 17px;
+            margin: 5px auto 5px;
+        }
+        #notEmpty4 {
+            width: 100%;
+            height: 17px;
+            margin: 15px auto 10px;
+        }
+        .button{
+            width: 115px;
+            height: 30px;
+            position: relative;
+            right: 12px;
+        }
+        
+    
+    </style>
+    <script>
+        function checkInformation() {
+            var username = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var sex = document.getElementsByName('sex').checked;
+            var age = document.getElementById('age').value;
+            var eduBG = document.getElementById('major').checked;
+            if( username.length < 8 || pass.length < 8 ){
+                alert( "用户名或者密码长度小于8位。")
+                window.location.reload();
+            }
+            else {
+                window.location.href="JS-Day9-Homework-3.html";
+            }
+        }
+        function reloadHTML() {
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div class="colorCover">
+        <div class="registerName">信息注册</div>
+        <div class="information">
+            <form id="registerInformation">
+                <div id="notEmpty1" style="margin-top: 25px;">
+                用户名：<input type="text"  id="username"  placeholder="请输入姓名" minlength="8" /></div>
+                <div id="empty1"></div>
+                
+                <div id="notEmpty2">
+                密&nbsp;&nbsp;&nbsp;码：<input type="password" id="password" placeholder="请输入密码" /></div>
+                <div id="empty2"></div>
+                
+                <div id="notEmpty3">
+                性&nbsp;&nbsp;&nbsp;别：&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="sex" value="男" checked/>男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="女"/>女</div>
+                
+                <div id="empty3"></div>
+                <div id="notEmpty4">年&nbsp;&nbsp;&nbsp;龄：<input type="text" id="age" placeholder="请输入年龄" /></div>
+                
+                <div id="empty4"></div>
+                <div>
+                     学&nbsp;&nbsp;&nbsp;历：
+                    <select id="major">
+                        <option name="edcBackground" value="小学"/>小学</option>
+                        <option name="edcBackground" value="初中"/>初中</option>
+                        <option name="edcBackground" value="大专"/>大专</option>
+                        <option name="edcBackground" value="本科"/>本科</option>
+                        <option name="edcBackground" value="研究生"/>研究生</option>
+                        <option name="edcBackground" value="硕士"/>硕士</option>
+                        <option name="edcBackground" value="博士"/>博士</option>
+                    </select>
+                <div id="empty5">
+                    <input type="button" value="提交" class="button" onclick="checkInformation()"/>
+                    &nbsp;&nbsp;<input type="button" value="重置" class="button" onclick="reloadHTML()"/>
+                </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

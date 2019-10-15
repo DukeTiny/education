@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="generate">
+  <target name="generate">
+    <mybatis.generate configfile="/Users/duke_tiny/Desktop/CodeFiles/cxz/WorkSpace/guangdaji/src/main/resources/a.xml" />
+  </target>
+</project>

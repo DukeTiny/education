@@ -1,0 +1,103 @@
+#1. 查询年龄比所有会员平均年龄小的会员
+SELECT * FROM vip WHERE age<(
+SELECT AVG(age) FROM vip)
+
+
+2. 查询价格不比6号电影价格大的电影
+SELECT * FROM film WHERE price<=(
+SELECT price FROM film WHERE fid=6)
+
+
+3. 查询和“刘欢欢”住在一条大街的会员
+SELECT * FROM vip WHERE address=(
+SELECT address FROM vip WHERE vname='刘欢欢');
+
+4. 查询和5号电影属于同一个类型的所有电影
+SELECT * FROM film WHERE tid=(
+SELECT tid FROM film WHERE fid=5)
+
+
+5. 查询喜欢了1号类型的会员信息
+SELECT * FROM vip WHERE vid IN(
+SELECT vid FROM likes WHERE tid=1)
+
+
+6. 查询没有喜欢7类型的会员的信息
+SELECT * FROM vip WHERE vid NOT IN(
+SELECT vid FROM likes WHERE tid=7)
+
+7. 查询喜欢类型数量超过3个的会员
+SELECT * FROM vip WHERE vid IN(
+SELECT vid FROM likes GROUP BY vid HAVING COUNT(*)>2)
+
+
+8. 查询喜欢了所有类型的会员。
+SELECT * FROM vip WHERE vid IN(
+SELECT vid FROM likes GROUP BY vid HAVING COUNT(*)=
+(SELECT COUNT(*) FROM TYPES));
+
+9. 查询没有任何喜欢的类型的会员。
+SELECT * FROM vip WHERE vid NOT IN(
+SELECT DISTINCT vid FROM likes)
+
+
+10.查询被喜欢次数超过2次的类型的名字
+SELECT tname FROM TYPES WHERE tid IN(
+SELECT tid FROM likes GROUP BY tid HAVING COUNT(*)>2 )
+
+11.查询所有会员喜欢的类型
+SELECT * FROM TYPES WHERE tid IN(
+SELECT tid FROM likes GROUP BY tid HAVING COUNT(*)=(
+SELECT COUNT(*) FROM vip) )
+
+
+12.查询姓张的所有男会员，一共喜欢了多少个类型。
+SELECT COUNT(DISTINCT tid) FROM likes WHERE vid IN(
+SELECT vid FROM vip WHERE vname LIKE '张%' AND sex='男')
+
+
+
+13.查询价格比类型号为1类型的平均价,2类型的平均价,3类型的平均价都大的电影。
+ALL:条件都符合的情况下返回真
+ANY:条件有一个符合就返回真
+SELECT * FROM film WHERE price >ALL(
+SELECT AVG(price) FROM film GROUP BY tid HAVING tid IN(1,2,3));
+
+SELECT * FROM film WHERE price >GREATEST(
+(SELECT AVG(price) FROM film WHERE tid=1),
+(SELECT AVG(price) FROM film WHERE tid=2),
+(SELECT AVG(price) FROM film WHERE tid=3))
+
+SELECT film.* FROM film,(SELECT AVG(price) a1 FROM film WHERE tid=1) a,(SELECT AVG(price) b1 FROM film WHERE tid=2) b,
+(SELECT AVG(price) c1 FROM film WHERE tid=3) c WHERE film.`price`>a.a1 AND film.`price`>b.b1 AND film.`price`>c.c1
+
+
+14.查询年龄大于所住地主平均年龄的会员。
+
+相关子查询
+
+SELECT * FROM vip v1 WHERE age>
+(SELECT AVG(age) FROM vip v2 WHERE v2.address=v1.address);
+
+15.查询名字中包含“国”字的会员，只要结果集中的前2行。
+SELECT * FROM vip WHERE vname LIKE '%国%' LIMIT 0,2;
+
+16.查询男女会员，各占总人数的百分比是多少。
+SELECT (SELECT COUNT(*) FROM vip WHERE sex='男')/(SELECT COUNT(*) FROM vip) '男会员比例',
+(SELECT COUNT(*) FROM vip WHERE sex='女')/(SELECT COUNT(*) FROM vip) '女会员比例'
+
+17.查询每个住址各住多少个会员
+SELECT address,COUNT(*) FROM vip GROUP BY address
+
+18.查询每个住址的平均年龄。
+SELECT address,AVG(age) FROM vip GROUP BY address
+
+
+19.查询每个类型各被多少个男会员喜欢
+SELECT tid,COUNT(*) FROM likes WHERE vid IN(
+SELECT vid FROM vip WHERE sex='男') GROUP BY tid
+
+
+20.查询每个会员喜欢的类型，以及该类型下包含多少部电影（难）
+SELECT vid,tid,(SELECT COUNT(*) FROM film WHERE film.tid=likes.`tid`) FROM likes
+

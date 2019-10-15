@@ -1,0 +1,95 @@
+CREATE DATABASE filmclub;
+
+USE filmclub;
+
+CREATE TABLE TYPES
+(
+  tid INT PRIMARY KEY AUTO_INCREMENT,
+  tname VARCHAR(20)
+) ENGINE = INNODB;
+
+CREATE TABLE film
+(
+  fid INT PRIMARY KEY AUTO_INCREMENT,
+  fname VARCHAR(20) NOT NULL,
+  actor VARCHAR(20) DEFAULT '成龙',
+  director ENUM('张艺谋', '冯小刚', '李安'),
+  price decimal(5,2),
+  tid INT 
+) ENGINE = INNODB;
+
+ALTER TABLE film
+ADD CONSTRAINT FK_film_tid FOREIGN KEY(tid)
+REFERENCES TYPES(tid);
+
+INSERT INTO TYPES(tname) VALUES('喜剧');
+INSERT INTO TYPES(tname) VALUES('科幻');
+INSERT INTO TYPES(tname) VALUES('动漫');
+INSERT INTO TYPES(tname) VALUES('战争');
+INSERT INTO TYPES(tname) VALUES('文艺');
+INSERT INTO TYPES(tname) VALUES('恐怖');
+INSERT INTO TYPES(tname) VALUES('综艺');
+INSERT INTO TYPES(tname) VALUES('动作');
+
+INSERT INTO film(fname,actor,director,price,tid)
+VALUES
+('变形金刚', '变形金刚', '张艺谋', 100, 1),
+('听风者', '梁朝伟', '冯小刚', 110, 8),
+('三国演绎', '甄子丹', '李安', 200, 7),
+('龙门飞甲', '李连杰', '张艺谋', 150, 4),
+('关云长', '李小龙', '张艺谋', 170, 2),
+('一步之遥', '梁家辉', '冯小刚', 220, 3),
+('后会无期', '张国立', '冯小刚', 130, 2),
+('心花路放', '张国荣', '张艺谋', 125, 2),
+('鹿鼎记', '刘青云', '张艺谋', 105, 2),
+('倚天屠龙记', '刘嘉玲', '冯小刚', 300, 1);
+insert into film values(null,'速度与激情8', '李伟', '张艺谋', 800, 2);
+insert into film values(null,'木偶奇遇记', '李嘉诚', '冯小刚', 100, 3);
+insert into film values(null,'贵妃醉酒', '李玉刚', '李安', 200, 8);
+
+DROP TABLE IF EXISTS vip;
+CREATE TABLE vip
+(
+ vid INT PRIMARY KEY AUTO_INCREMENT,
+ vname VARCHAR(20),
+ sex ENUM('男', '女'),
+ age INT,
+ address VARCHAR(20)
+) ENGINE = INNODB;
+
+INSERT INTO vip(vname, sex, age, address)
+VALUES('刘欢欢', '男', 60, '北大街'),
+('张学友', '男', 58, '东大街'),
+('张学良', '男', 66, '北大街'),
+('张曼玉', '女', 52, '西大街'),
+('张飞', '男', 40, '东大街'),
+('李嘉诚', '男', 70, '南大街'),
+('马云', '男', 40, '西大街'),
+('马波', '男', 22, '西大街');
+insert into vip values(null, '张柏芝', '女',40, '东大街');
+insert into vip values(null, '张韶涵', '女',40, '东大街');
+insert into vip values(null, '张三丰', '男',40, '南大街');
+insert into vip values(null, '张惠妹', '女',40, '北大街');
+
+
+CREATE TABLE likes
+(
+  vid INT,
+  tid INT
+) ENGINE = INNODB;
+
+INSERT INTO likes VALUES
+(1,1),
+(1,3),
+(1,5),
+(2,2),
+(2,3),
+(3,1),
+(4,1),
+(5,1),
+(3,3),
+(4,3),
+(5,2),
+(6,7),
+(6,1),
+(8,2);

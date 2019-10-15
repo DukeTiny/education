@@ -1,0 +1,33 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+<div id="app">
+  <button @click="show()">Show me</button>
+</div>
+
+<script>
+	Vue.http.options.emulateJSON=true;
+	
+	var app = new Vue({
+	  el: '#app',
+	  methods:{
+		  show(){
+			  this.$http.post('http://localhost:8000/findById',{uid:3}).then(function(res){
+				  alert(JSON.stringify(res.body));
+				  //alert(res.uid);
+			  })
+		  }
+	  }	
+	})
+</script>
+	@RequestMapping("findById")
+	public Userinfo findById(Integer uid,HttpServletResponse response) {
+		Userinfo info = new Userinfo(uid,uid+"刘德华",uid+"出密封");
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		return info;
+	}

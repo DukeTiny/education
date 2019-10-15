@@ -1,0 +1,120 @@
+HTML
+  网页结构
+  <html>
+  <head> 描述网页的信息
+    <title>
+    <meta>
+    <style>
+  <body> 网页的内容
+  文字格式
+  <h1>-<h6>
+  <font> color size face
+  <b>
+  <i>
+  <u>
+  <strong>
+  <p>
+  <br>
+  列表
+  <ul> type
+  <ol> type start
+  <li>
+  <dl>
+  <dt>
+  <dd>
+  表格
+  <table> border width height align cellpadding cellspacing
+  <caption>
+  <tr>  height align valign
+  <th>  width
+  <td>
+  <thead>
+  <tbody>
+  <tfoot>
+  表单
+  <form> action method
+  <input type=""> type取值:text;password;radio;checkbox;file;hidden;submit;reset;button;image;email  name value
+  <select> name
+  <option> value
+  <textarea> col row 
+  <button>
+  超链接
+  <a> href name target
+  框架
+  <frameset> cols rows
+  <frame> src name
+  <iframe> src name width height
+CSS
+  层叠样式表
+  三种添加方式
+     外部
+	声明一个css文件，在网页中通过link标签关联，可以影响多个页面。	
+     内部
+        在网页中写<style>标签，将css代码写入，在当前页面生效。
+     内嵌
+        在标签中写入属性，只影响当前标签。
+
+    内嵌>内部>外部 
+
+  选择器
+     ID选择器
+     类选择器
+     标签选择器
+
+   盒子模型
+     外边距
+     边框
+     内边距
+     内容
+
+JS javascript
+   脚本
+   变量 弱变量
+   var 变量名=值;
+   输出语句
+   document.write();
+   数据类型
+   运算符
+   条件判断语句
+   if(){
+   }else if(){
+   }else{
+   }
+   switch(){
+	case 1:
+  		break;
+   }
+   循环语句
+   for(){
+	
+   }
+   while(){
+   }
+   函数
+   弹出框
+   alert();消息对话框
+   confirm();选择对话框
+   prompt();输入对话框
+
+   页面的数据交互
+
+
+使用方式
+1、外部
+  <script src="js/my.js"></script>
+2、内部
+  <script>
+
+  </script>
+3、内嵌
+  标签内直接写。
+
+jQuery
+
+Ajax
+
+jsp
+
+javabean
+
+servlet

@@ -1,0 +1,12 @@
+package com.sia.bean;
+
+import java.net.URL;
+
+public class Stu {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Fei i like you");
+	
+	}
+}

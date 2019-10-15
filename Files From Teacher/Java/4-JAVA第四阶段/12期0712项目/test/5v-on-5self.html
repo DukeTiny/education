@@ -1,0 +1,30 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <div @click.self="show1()" style="width: 200px; height: 200px; background-color: bisque;">
+	<button @click="show2()">show2</button>	
+  </div>  
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			
+	  },
+		methods:{
+			show1:function(){
+				console.log("show1");
+				
+			},
+			show2:function(){
+				console.log("show2");
+			},
+		}
+	})
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<script>
+		//if else语句
+		function ifelse(){
+			//使用了window对象中的输入对话框,获得用户输入的分数.
+			var x = window.prompt("请输入分数：");
+			var message = "";
+			//判断分数对应的提示信息
+			if(x<60){
+				message = "不及格";
+			}else if(x<85){
+				message = "及格";
+			}else{
+				message = "优秀";
+			}
+			//使用了document对象的输出语句,输出信息.
+			document.write(message);
+		}
+		//switch case
+		function switchDemo(){
+			var x = window.prompt("放假做什么：1、睡觉；2、爬山；3、上课");	
+			
+			//parseInt() 将字符串转为整数
+			switch(parseInt(x)){
+				case 1:
+					document.write("好美啊");
+					break;
+				case 2:
+					document.write("好累啊");
+					break;
+				case 3:
+					document.write("好爽啊");
+					break;
+			}
+		}
+		//九九乘法表
+		function forDemo(){
+			for(var i=1;i<10;i++){
+				for(var j=1;j<=i;j++){
+					document.write(i+"*"+j+"="+(i*j)+"&nbsp;&nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+		}
+		//最大公约数while
+		function whileDemo(){
+			var x = parseInt(window.prompt("请输入第1个数"));
+			var y = parseInt(window.prompt("请输入第2个数"));
+			while(y!=0){
+				var yu = x % y;
+				x = y;
+				y = yu;
+			}
+			document.write(x);
+		}
+		function getValue(){
+			//var val = document.forms[0].sname.value;
+			//var val = document.form1.info.value;
+			//通过id值获取一个标签对象
+			//var obj = document.getElementById("sname");
+			//通过name值获得若干个对象,通过下标定位
+			//var obj = document.getElementsByName("sname");
+			//通过class值获得若干个对象,通过下标定位
+			//var obj = document.getElementsByClassName();
+			//通过标签名值获得若干个对象,通过下标定位
+			//var obj2 = document.getElementsByTagName();
+			//alert(obj[0].value);
+			var objs = document.getElementsByName("ssex");
+			var x = objs[1].value;
+			if(objs[0].checked){
+				x = objs[0].value;
+			}
+			alert(x);
+		}
+	</script>
+	</head>
+	<body>
+		<form name="form1" action="aaa">
+			<input type="text" name="sname" id="sname" />
+			<input type="radio" name="ssex" value="男" checked="checked" />男
+			<input type="radio" name="ssex" value="女" />女
+			<textarea cols="40" rows="10" name="info" id="info">asfddsa</textarea>
+		<input type="button" onclick="getValue()" value="点击" />
+		</form>
+	</body>
+</html>

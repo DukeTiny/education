@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 
+		打开struts2的开发模式，有了这一个配置
+			1. 以后修改了struts.xml就不用重启了！ 
+			2.如果请求归struts2管理，一旦报错，就会显示struts2的报错界面
+		
+	-->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 
+		java中的package，有什么作用？
+		1. 增大类的命名空间： 在不同包中定义出名字相同的类。
+		2.分类管理类：把功能类似的类，集中存放在一个包中。 
+	
+		struts2中package元素，有什么作用？
+		1. 增大action的命名空间
+		2.分类管理action，把功能相关的action放在同一个package中（鸡肋）
+		
+		package元素的属性：
+			name属性：必须有，且必须唯一, name属性的值，就是用来被其他package继承的！
+			
+			namespace属性：
+				可以省略，如果省略，则在url中，就可以这样访问/s2/abc
+				如果没有省略，自己写出来namespace，则namespace的值必须以“/”开头，且唯一
+				
+			extends属性：
+				用于让当前package继承其他pacakge的，能继承其他pacakge中的所有配置
+				我们自定义的package都必须直接或间接地继承struts-default这个包，这个包是struts2提前内置好的！
+				struts-default包的定义在struts-defautl.xml配置文件中。
+			
+			abstract属性：
+				默认值为false
+				如果取值为true，则表示当前包是一个抽象包，其中不能有action元素。抽象包的意义何在？？就是为了被继承！
+				
+	 -->		
+	<package name="default" abstract="false"  extends="struts-default">
+	
+		<!--
+			action元素：一个action目前对应一个类的一个方法。
+				name属性，必须有，且唯一！
+				class属性，指定某个的全名
+				method属性，指定类中的方法名
+		 -->
+		<action name="abc" class="com.woniuxy.web.action.UserAction" method="f1">
+			<!-- 
+				result元素：一个result元素代表一个逻辑视图，一个逻辑视图又会映射到一个物理视图
+			 -->
+			<result name="haha">/xx.jsp</result>
+		</action>
+	</package>
+	
+	<package name="default2" namespace="/user2" extends="default">
+	</package>
+	
+</struts>

@@ -1,0 +1,113 @@
+1. 晨考必问
+	里氏替换原则
+	
+	基类出现的地方，都可以替换成子类，而对程序不造成任何影响
+	子类不可以重写父类的非抽象方法，但可以重载
+	前置条件，也就是形参，子类比父类更宽松，
+	后置条件，也就是返回值，子类比父类更加严格
+2. 自己编写例子，给自己证明：
+	   简单类型作为方法参数，绝对不会影响实际参数
+
+	   父类类型作为方法参数，会影响实际参数
+
+	   封装类和java.lang.String身为类类型，却无法影响实际参数。
+
+3. 练习权限对于文件夹和文件的作用 
+
+   文件夹
+	r
+		只能看到文件夹中文件的名字而已，其他信息都看不到
+	w
+		能在文件夹中，创建、删除、修改文件！
+	x
+		能进入文件夹（而不是能执行文件夹）
+
+   文件
+
+	r
+		能看文件内容
+	w
+		能修改文件内容
+	x
+		能执行文件
+		
+4. 练习umask，体会umask的作用
+
+5. 使用rpm安装一次httpd，体会体会rpm安装的麻烦
+
+6. 使用yum命令安装openjdk tomcat mysql
+
+
+7. 以下程序输出什么内容:
+
+class Fu {
+	public int a = f1();
+
+
+	public int f1() {
+		System.out.println("A");
+		return 5;
+	}
+
+	public static int f2() {
+		System.out.println("B");
+		return 5;
+	}
+
+	public static int b = f2();
+
+	static {
+		System.out.println("C");
+	}
+
+}
+
+class Zi extends Fu {
+
+	int a=10,b=0;
+
+	{
+		System.out.println("1");
+	}
+
+	Zi() {
+		System.out.println("2");
+	}
+
+	static Fu fu = new Zi(100);
+
+	Zi(int a) {
+		System.out.println(a);
+	}
+	
+	static {
+		b = 20;
+		System.out.println("3");
+	}
+
+	{
+		System.out.println(b);
+	}
+	
+}
+
+
+class Test {
+
+	public static void main(String[] args) {
+		new Zi();
+	}
+}
+
+
+B
+C
+1
+3
+10
+0/20
+1
+10
+
+
+

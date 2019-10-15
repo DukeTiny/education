@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+
+			function checkUname(){
+				var zz = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
+				var input = document.getElementById("uname");
+				if(zz.test(input.value)){
+					input.nextSibling.innerHTML="ok";
+					input.nextSibling.setAttribute("color","yellow");
+					return true;
+				}
+				input.nextSibling.innerHTML="no";
+				input.nextSibling.setAttribute("color","red");
+				return false;
+			}
+			function checkUpwd(){
+				var zz = /^[0-9]{6,12}$/;
+				var inputVal = document.getElementById("upwd").value;
+				if(zz.test(inputVal)){
+					upwdShow.innerHTML=ok;
+					return true;
+				}
+				upwdShow.innerHTML=no;
+				return false;
+			}
+			function checkPhoneNum(){
+				// 1 3|5|7|8|9 
+				// 座机 /^(0[12][0-9]-[1-9][0-9]{7})|(0[1-9][0-9]{2}-[1-9][0-9]{6})$/
+				//029-88888888
+				var zz = /^1[35789][0-9]{9}$/;
+				var inputVal = document.getElementById("phoneNum").value;
+				if(zz.test(inputVal)){
+					phoneNumShow.innerHTML=ok;
+					return true;
+				}
+				phoneNumShow.innerHTML=no;
+				return false;
+			}
+			function checkID(){
+				var zz = /^[1-9]([0-9]{17}|[0-9]{16}[xX])$/;
+				var inputVal = document.getElementById("ID").value;
+				if(zz.test(inputVal)){
+					IDShow.innerHTML=ok;
+					return true;
+				}
+				IDShow.innerHTML=no;
+				return false;
+			}
+			function checkEmail(){
+				//\w [a-zA-Z0-9_] 
+				//abc@abc.c
+				var zz = /^(\w+\.)*\w+@(\w+\.)+\w+$/;
+				var inputVal = document.getElementById("email").value;
+				if(zz.test(inputVal)){
+					emailShow.innerHTML=ok;
+					return true;
+				}
+				emailShow.innerHTML=no;
+				return false;
+			}
+			function checkUpwd1(){
+				var inputVal = document.getElementById("upwd").value;
+				var inputVal1 = document.getElementById("upwd1").value;
+				if(inputVal===inputVal1){
+					upwd1Show.innerHTML=ok;
+					return true;
+				}
+				upwd1Show.innerHTML=no;
+				return false;
+			}
+			function checkValue(){
+				return checkUname()&&checkUpwd()&&checkUpwd1()&&checkPhoneNum()&&checkID()&&checkEmail();
+			}
+		</script>
+	</head>
+	<body>
+		<form action="1.jsp" method="get" name="form1" id="form1" onsubmit="return checkValue();">
+			用户名:<input type="text" name="uname" id="uname" oninput="checkUname()" /><font></font><br>
+			密码:<input type="password" name="upwd" id="upwd" oninput="checkUpwd()" /><span id="upwdShow"></span><br>
+			确认密码:<input type="password" name="upwd1" id="upwd1" oninput="checkUpwd1()" /><span id="upwd1Show"></span><br>
+			电话号码:<input type="text" name="phoneNum" id="phoneNum"  oninput="checkPhoneNum()"/><span id="phoneNumShow"></span><br>
+			邮箱:<input type="text" name="email" id="email"  oninput="checkEmail()"/><span id="emailShow"></span><br>
+			身份证:<input type="text" name="ID" id="ID"  oninput="checkID()"/><span id="IDShow"></span><br>
+			<input type="submit" value="注册"/>
+			<input type="reset" value="重置"/>
+		</form>
+	</body>
+</html>

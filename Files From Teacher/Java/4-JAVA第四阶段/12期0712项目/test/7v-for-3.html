@@ -1,0 +1,23 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p v-for="(item,i) in obj">{{i}}===============>{{item}}</p>
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			obj:{
+				name:'zs',
+				sex:'female',
+				age:8
+			}
+	  }
+	})
+</script>

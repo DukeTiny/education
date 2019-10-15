@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>树形菜单</title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				//隐藏所有子菜单
+				$("#ul1").find("ul").hide();
+				//给所有li加图片he.png
+				$("#ul1").children("li").css("list-style-image","url(img/he.png)");
+				//鼠标指针变为手
+				$("li").css("cursor","pointer");
+				//li加点击事件监听
+				$("#ul1").children("li").click(function(){
+					//获得当前li的图片url
+					var imgUrl = $(this).css("list-style-image");
+					//获得图片的名字
+					var imgName =imgUrl.substring(imgUrl.lastIndexOf("/")+1,imgUrl.length-2);
+					//将图片按照相反的样式设置
+					if(imgName=="he.png"){
+						$(this).css("list-style-image","url(img/zhan.png)");
+					}else{
+						$(this).css("list-style-image","url(img/he.png)");
+					}
+					//让子菜单展开和收起
+					$(this).children("ul").slideToggle();
+					
+				});
+			});
+		</script>
+		<style>
+			.abc{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>
+				市场部
+				<ul class="abc">
+					<li>张三</li>
+					<li>李四</li>
+				</ul>
+			</li>
+			<li>
+				销售部
+				<ul class="abc">
+					<li>王五</li>
+					<li>溜溜</li>
+				</ul>
+			</li>
+			<li>
+				售后部
+				<ul class="abc">
+					<li>田七</li>
+					<li>andy</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

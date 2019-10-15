@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串的应用</title>
+		<script>
+			/*
+			 * 从键盘输入一个email，判断该email是否符合以下格式要求：
+			 * 1.存在@和.符号；
+			 * 2.@在.前面；
+			 * 3.@只能有1个；
+			 * 4.最后3个字母为com
+			 * 5.截取@和.之间的字符串，判断属于哪类邮箱
+			 */
+			
+			var str = 123;//字符数组
+			var s = str.valueOf();
+		//	alert(typeof(s));
+//			alert(str.substr(3,5));
+			var s1 = new String("hello");//标准创建字符串的方式
+			var arr = new Array(1,2,3);
+			//1.通过字符串下标获取对应的字符
+//			alert(str.charAt(0));
+			//2.通过字符获取下标
+//			alert(str.indexOf("."));
+			//3.从后向前获取字符的下标
+//			alert(str.lastIndexOf("."));
+			//4.从当前的字符串中按位置截取出新的字符串
+			var index1 = str.indexOf(".");
+			var index2 = str.lastIndexOf(".");
+			var newStr = str.substring(index1,index2);
+//			alert(newStr);
+			//5.分割字符串
+			var strs = str.split(",");
+			//6.替换字符串
+			var nStr = str.replace("sina","qq");
+//			alert(str);
+			//7.变大小写
+//			alert(str.toUpperCase());
+//			alert(str.toLocaleUpperCase());
+//			alert(str.toLowerCase());
+			//8.字符串的转换
+//			var num = true;
+//			var nnum = ""+num;
+//			alert(typeof(nnum));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

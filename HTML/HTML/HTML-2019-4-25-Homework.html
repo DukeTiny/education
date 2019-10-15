@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var canCreate = true;
+        var canDo = false;
+        function createTen() {
+            if ( canCreate ) {
+                var code = document.getElementsByTagName("body")[0].innerHTML;
+                code += "<br/>";
+                code += "<input type='checkbox' name='testBox' />一";
+                code += "<input type='checkbox' name='testBox' />二";
+                code += "<input type='checkbox' name='testBox' />三";
+                code += "<input type='checkbox' name='testBox' />四";
+                code += "<input type='checkbox' name='testBox' />五";
+                code += "<input type='checkbox' name='testBox' />六";
+                code += "<input type='checkbox' name='testBox' />七";
+                code += "<input type='checkbox' name='testBox' />八";
+                code += "<input type='checkbox' name='testBox' />九";
+                code += "<input type='checkbox' name='testBox' />十";
+                document.getElementsByTagName("body")[0].innerHTML = code;
+            }
+            canCreate = false;
+        }
+        function selectOrCancelAll() {
+            var arrays = document.getElementsByName("testBox");
+            var count = 0;
+            for ( var j=0; j<arrays.length; j++ ){
+                if ( !arrays[j].chewcked ) {
+                    canDo = false;
+                    count++;
+                    break;
+                }
+            }
+            if ( count===0 ) document.getElementById("select").innerHTML = "全选";
+            else document.getElementById("select").innerHTML = "全不选";
+            for ( var i=0; i<arrays.length; i++ ){
+                if ( !arrays[i].checked ) arrays[i].checked = true;
+                else if ( arrays[i].checked && canDo ) {
+                    arrays[i].checked = false;
+                }
+            }
+
+            canDo = true;
+        }
+        
+        function selectOpposite() {
+            var arrays = document.getElementsByName("testBox");
+            for ( var i=0; i<arrays.length; i++ ) arrays[i].checked = !arrays[i].checked;
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="createTen()">创建10个复选框</button>
+    <button id="select" onclick="selectOrCancelAll()">全选</button>
+    <button onclick="selectOpposite()">反选</button>
+</body>
+</html>

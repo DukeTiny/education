@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <style>
+        .wrapper{
+            width: 410px;
+            height: 540px;
+            background: darkgray;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+        #result{
+            width: 388px;
+            height: 60px;
+            border: 1px lightgray solid;
+            background-color: #89a3a7;
+            box-shadow: 0 0 3px 0 rgba(0,0,0,0.8) inset;
+            margin: 0 auto;
+            border-radius: 5px;
+            color: #10236a;
+            text-align: right;
+            font-size: 31px;
+            line-height: 60px;
+        }
+        .word{
+            width: 380px;
+            height: 35px;
+            padding: 0 10px;
+            font-size: 21px;
+            line-height: 35px;
+        }
+        .word span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .word span:first-child{
+            color: red;
+        }
+        .word span:nth-child(2){
+            color: blue;
+        }
+        .word span:last-child{
+            color: green;
+        }
+        /*.buttonWrapper{*/
+        /*width: 392px;*/
+        /*margin: 5px auto;*/
+        /*}*/
+
+        .button{
+            margin: 1px auto;
+            display: table;
+        }
+        .button:first-child{
+            margin: 10px auto 1px;
+        }
+        .buttonInner{
+            width: 94px;
+            height: 80px;
+            border: 2px darkgray solid;
+            background-color: lightgray;
+            border-radius: 6px;
+            color: #661a83;
+            font-size: 25px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .buttonInner:hover{
+            width: 94px;
+            height: 80px;
+            border: 2px orange solid;
+            background-color: rgba(100,100,100,1);
+            border-radius: 6px;
+            color: lightgray;
+            box-shadow: 0 0 3px 1px rgba(80,0,0,0.4) inset;
+            font-size: 25px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .button:last-child{
+            border-bottom-right-radius: 8px;
+        }
+        .button:nth-last-child(4){
+            border-bottom-left-radius: 8px;
+        }
+    </style>
+    <script>
+        var canClickNumber = true;
+        var canClickDot = true;
+        var canClickHyphen = true;
+        function clickNumber ( number ) {
+            var result = document.getElementById('result').innerHTML;
+            var firstCode =result.charCodeAt(0);
+            if ( canClickNumber && firstCode!==48){
+                if ( result.length<20 ) document.getElementById('result').innerHTML += number;
+                else if ( result.length === 20 ) {
+                    document.getElementById('result').innerHTML = "字符不能超过20个";
+                    canClickNumber = false;
+                    canClickOperator = false;
+                }
+            }
+            else {
+                doClear();
+                document.getElementById('result').innerHTML += number;
+                canClickNumber = true;
+            }
+        }
+
+        function clickDot(dot) {
+            var result = document.getElementById('result').innerHTML;
+            if ( canClickDot && result.charCodeAt(result.length-1)<58 && result.charCodeAt(result.length-1)>47 ){
+                document.getElementById('result').innerHTML += dot;
+                canClickDot =false;
+            }
+        }
+        function clickOperator( operator ){
+            var result = document.getElementById('result').innerHTML;
+            if( result.length<20 && result.length>=1 && result.charCodeAt(result.length-1)>47 &&
+                result.charCodeAt(result.length-1)<58){
+                document.getElementById('result').innerHTML += operator;
+                canClickNumber = true;
+                canClickDot = true;
+                canClickHyphen = true;
+            }
+        }
+        function doClear(){
+            document.getElementById('result').innerHTML = "";
+        }
+        function reload() {
+            window.location.reload();
+        }
+        function delLast(){
+            var result = document.getElementById('result').innerHTML;
+            document.getElementById('result').innerHTML = result.substring(0,result.length-1);
+        }
+        function switchSymbol(){
+            var result = document.getElementById('result').innerHTML;
+            var code = result.charCodeAt(0);
+            var lastCode = result.charCodeAt(result.length-1);
+            if ( code ===45 && canClickHyphen && result.length>0) {
+                var tempCountB = 0;
+                for (var i = 1; i < result.length; i++) {
+                    var tempCodeB = result.charCodeAt(i);
+                    if ( (tempCodeB > 57 || tempCodeB < 48) && tempCodeB!==46 ) {
+                        tempCountB++;
+                    }
+                }
+                if ( tempCountB === 0 ) document.getElementById('result').innerHTML = result.substring(1, result.length);
+                else {
+                    document.getElementById('result').innerHTML += "-";
+                    canClickHyphen = false;
+                }
+            }
+            else if ( canClickHyphen && lastCode !== 45 && code!==45 && result.length>0) {
+                var tempCountA = 0;
+                for( var j=0; j<result.length; j++) {
+                    var tempCodeA = result.charCodeAt(j);
+                    if ((tempCodeA > 57 || tempCodeA < 48) && tempCodeA!==46) {
+                        tempCountA++;
+                    }
+                }
+                if ( tempCountA===0 ) document.getElementById('result').innerHTML = "-" + result;
+                else {
+                    document.getElementById('result').innerHTML += "-";
+                    canClickHyphen = false;
+                }
+            }
+        }
+        function doEqual(){
+            var result = document.getElementById('result').innerHTML;
+            result = result.replace( /×/g,"*" );
+            result = result.replace( /÷/g,"/");
+            document.getElementById('result').innerHTML = eval(result);
+            canClickNumber = false;
+        }
+        function key(b){
+            if ( (b.shiftKey && b.keyCode === 56) || b.keyCode === 106 ) clickOperator("×");
+            if ( b.keyCode>95 && b.keyCode<108 ) clickNumber(b.keyCode - 96);
+            if ( b.keyCode>47 && b.keyCode<58 ) clickNumber(b.keyCode - 48 );
+            if ( b.shiftKey && b.keyCode === 187 ) clickOperator("+");
+            if ( b.shiftKey && b.keyCode === 53 ) clickOperator("%");
+            if ( b.keyCode=== 111 || b.keyCode === 191) clickOperator("÷");
+            if ( b.keyCode=== 109 || b.keyCode=== 189) clickOperator("-");
+            if ( b.shiftKey && b.keyCode=== 189 ) switchSymbol();
+            if ( b.keyCode === 13 || keyCode===108 ) doEqual();
+            if ( b.keyCode === 8 ) delLast();
+            if ( b.keyCode ===110 || b.keyCode ===190) clickDot(".");
+        }
+    </script>
+</head>
+<body onkeyup="key(event)">
+<div class="wrapper">
+    <div class="word">
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+    </div>
+    <div id="result">0</div>
+    <div class="buttonWrapper">
+        <div class="button">
+            <div class="buttonInner" onclick="reload()">AC</div>
+            <div class="buttonInner" onclick="switchSymbol()">+/-</div>
+            <div class="buttonInner" onclick="clickOperator('%')">%</div>
+            <div class="buttonInner" onclick="clickOperator('&divide;')">&divide;</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('7')">7</div>
+            <div class="buttonInner" onclick="clickNumber('8')">8</div>
+            <div class="buttonInner" onclick="clickNumber('9')">9</div>
+            <div class="buttonInner" onclick="clickOperator('&times;')">&times;</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('4')">4</div>
+            <div class="buttonInner" onclick="clickNumber('5')">5</div>
+            <div class="buttonInner" onclick="clickNumber('6')">6</div>
+            <div class="buttonInner" onclick="clickOperator('-')">-</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('1')">1</div>
+            <div class="buttonInner" onclick="clickNumber('2')">2</div>
+            <div class="buttonInner" onclick="clickNumber('3')">3</div>
+            <div class="buttonInner" onclick="clickOperator('+')">+</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('0')">0</div>
+            <div class="buttonInner" onclick="delLast()"> -&lt; </div>
+            <div class="buttonInner" onclick="clickDot('.')">.</div>
+            <div class="buttonInner" onclick="doEqual()">=</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

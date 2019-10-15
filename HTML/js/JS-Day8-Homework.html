@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework of 3.27</title>
+    <script>
+        // 10.输入一个正整数，然后将其倒叙输出。
+        // var number = prompt("请输入一个正整数：");
+        // var result,equal=0;
+        // var replaceNumber = number;
+        // for ( var i=0; i<number.length; i++){
+        //     result = replaceNumber%10;
+        //     replaceNumber = parseInt(replaceNumber/10);
+        //     document.write( result + "&nbsp;&nbsp;" );
+        //     equal +=result;
+        // }
+        // document.write( "<br>" + "各位数相加和为：" + equal );
+
+
+        // 11.猜数字游戏；
+        // var randomNumber = Math.random()*1000;
+        // var number = parseInt(randomNumber);
+        // var count = 0;
+        //
+        // while( true ) {
+        //     var inputtedNumber = prompt("请输入您猜测的数字：");
+        //     var rightNumber = parseInt(inputtedNumber);
+        //     if( rightNumber === number ) {
+        //         count++;
+        //         alert("恭喜您猜测正确。");
+        //         break;
+        //     }
+        //     else if ( rightNumber > number ) {
+        //         count++;
+        //         alert("您输入的的数字大了，请重新输入。")
+        //     }
+        //     else {
+        //         count++;
+        //         alert("您输入的的数字小了，请重新输入。")
+        //     }
+        // }
+        // document.write("您通过" + count + "次猜测正确。");
+
+
+        // 字符串判断
+        // Method-1
+
+        // var inputString = prompt("请输入一串字符串：");
+        // var count = 0;
+        // var firstCode = inputString.charCodeAt(0);
+        // if ( (firstCode===43 || firstCode === 45 ) || ( firstCode>=48 && firstCode<=57 ) ) {
+        //     for (var i = 1; i < inputString.length; i++) {
+        //         var code = inputString.charCodeAt(i);
+        //         // alert(code);
+        //         if (code < 48 || code > 57) {
+        //             count++;
+        //             alert("这不是一个数字。");
+        //             break;
+        //         }
+        //     }
+        //     if( count===0){
+        //         alert("这是一个数字")
+        //     }
+        // }
+
+        // Method-2
+        // var inputString = prompt("请输入一串字符串：");
+        // var flag = inputString*1;
+        // if ( isNaN(flag) ) {
+        //     alert("这不是一个数字。")
+        // }
+        // else {
+        //     alert("这是一个数字。")
+        // }
+
+        // 1.定义数组，验证密码
+        // var users = ["李白","杜甫","白居易","李煜","元稹"];
+        // var passes = ["1111","2222","3333","4444","5555"];
+        // var inputPass = false;
+        // while ( true ) {
+        //     var username = prompt("请输入您的用户名：");
+        //     for( var i=0; i<users.length; i++) {
+        //         if ( username === users[i] ) {
+        //             inputPass = true;
+        //             break;
+        //         }
+        //     }
+        //     if ( inputPass ){
+        //         break;
+        //     }
+        //     alert("用户名输入错误,请重新输入")
+        // }
+        
+        // while ( inputPass ){
+        //     var secretCode = prompt("请输入您的密码：");
+        //     if ( secretCode === passes[i] ) {
+        //         alert("输入正确，登陆成功。");
+        //         break;
+        //     }
+        //     else {
+        //         alert("密码输入错误，请重新输入。")
+        //     }
+        // }
+
+
+
+        // 2.输入加入次数限制。
+        // var users = ["李白","杜甫","白居易","李煜","元稹"];
+        // var passes = ["1111","2222","3333","4444","5555"];
+        //
+        // var canInputPass = false;
+        // var rightPass = false;
+        // var wrongPass = false;
+        // for ( var j=0; j<3; j++ ) {
+        //     var username = prompt("请输入您的用户名：");
+        //     for( var i=0; i<users.length; i++) {
+        //         if ( username === users[i] ) {
+        //             canInputPass = true;
+        //             break;
+        //         }
+        //     }
+        //     if ( canInputPass ){
+        //         break;
+        //     }
+        //     alert("用户名输入错误，请重新输入。")
+        // }
+        // if ( canInputPass === false){
+        //     alert("用户名输入错误3次，请来日再战")
+        // }
+        //
+        // for ( var k=0; k<3 && canInputPass; k++ ){
+        //     var secretCode = prompt("请输入您的密码：");
+        //     // for (var m=0; m<passes.length; m++) {
+        //         if ( secretCode === passes[i] ) {
+        //             alert("输入正确，登陆成功。");
+        //             rightPass = true;
+        //             break;
+        //         }
+        //     // }
+        //     if ( rightPass ) {
+        //         break;
+        //     }
+        //     alert("密码输入错误，请重新输入。")
+        //     wrongPass = true;
+        // }
+        // if ( wrongPass ){
+        //     alert("密码输入错误3次，请来日再战。")
+        // }
+
+        // 3.注册加登录。
+        // var users = ["李白","杜甫","白居易","李煜","元稹"];
+        // var passes = ["1111","2222","3333","4444","5555"];
+        // newName = prompt("请输入您要注册的用户名：");
+        // users[users.length] = newName;
+        // newPass = prompt("请输入您要使用的的密码：");
+        // passes[passes.length] = newPass;
+        // //
+        // var canInputPass = false;
+        // var rightPass = false;
+        // var wrongPass = false;
+        // for ( var j=0; j<3; j++ ) {
+        //     var username = prompt("请输入您的用户名：");
+        //     for( var i=0; i<users.length; i++) {
+        //         if ( username === users[i] ) {
+        //             canInputPass = true;
+        //             break;
+        //         }
+        //     }
+        //     if ( canInputPass ){
+        //         break;
+        //     }
+        //     alert("用户名输入错误，请重新输入。")
+        // }
+        // if ( canInputPass === false){
+        //     alert("用户名输入错误3次，请来日再战")
+        // }
+        //
+        // for ( var k=0; k<3 && canInputPass; k++ ){
+        //     var secretCode = prompt("请输入您的密码：");
+        //     if ( secretCode === passes[i] ) {
+        //             alert("输入正确，登陆成功。");
+        //             rightPass = true;
+        //             break;
+        //         }
+        //     if ( rightPass ) {
+        //         break;
+        //         }
+        //     alert("密码输入错误，请重新输入。")
+        //     wrongPass = true;
+        // }
+        // if ( wrongPass ){
+        //     alert("密码输入错误3次，请来日再战。")
+        // }
+
+        // 4.随机点名。
+
+        // var nameArray = ["李白","杜甫","白居易","李煜","元稹"];
+        // for ( var j=0;j<nameArray.length; j++) {
+        //     var length = nameArray.length;
+        //         var randomNumber = Math.random()*(length);
+        //         var number = parseInt( randomNumber );
+        //         alert(nameArray[number]);
+        //     // var a = prompt("请输入你要删出第几个元素：");
+        //     for (var i=1; i<=nameArray.length; i++) {
+        //         if ( i>=number+1 ){
+        //             nameArray[i-1]=nameArray[i];
+        //         }
+        //     }
+        //     nameArray.pop();
+        //     // alert(nameArray);
+        // }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

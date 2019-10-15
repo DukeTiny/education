@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booklist>
+	<book>
+		<id>101</id>
+		<name>三国志</name>
+		<author>张三</author>
+		<price>55</price>
+	</book>
+	<book>
+		<id>102</id>
+		<name>红楼梦</name>
+		<author>曹雪芹</author>
+		<price>45</price>
+	</book>
+</booklist>

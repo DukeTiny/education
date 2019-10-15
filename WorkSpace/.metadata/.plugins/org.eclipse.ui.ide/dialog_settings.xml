@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/Users/duke_tiny/Desktop/CodeFiles/cxz/WorkSpace/spring"/>
+		<item value="/Users/duke_tiny/git/test"/>
+	</list>
+	<list key="installedFeatures">
+		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
+		<item value="org.aspectj:1.9.2.201902212122"/>
+		<item value="org.eclipse.ajdt:2.2.4.201902212122"/>
+		<item value="org.eclipse.buildship:3.0.1.v20181217-1554"/>
+		<item value="org.eclipse.egit.gitflow.feature:5.3.0.201903130848-r"/>
+		<item value="org.eclipse.egit:5.3.0.201903130848-r"/>
+		<item value="org.eclipse.emf.common:2.15.0.v20181220-0846"/>
+		<item value="org.eclipse.emf.ecore:2.17.0.v20190116-0940"/>
+		<item value="org.eclipse.epp.mpc:1.7.5.v20190313-2005"/>
+		<item value="org.eclipse.help:2.2.500.v20190307-0500"/>
+		<item value="org.eclipse.jdt:3.17.0.v20190307-0500"/>
+		<item value="org.eclipse.jgit.lfs:5.3.0.201903130848-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:5.3.0.201903130848-r"/>
+		<item value="org.eclipse.jgit:5.3.0.201903130848-r"/>
+		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.11.0.v201808161734"/>
+		<item value="org.eclipse.jst.enterprise_ui.feature:3.9.300.v201903042334"/>
+		<item value="org.eclipse.m2e.feature:1.11.0.20190220-2119"/>
+		<item value="org.eclipse.m2e.logback.feature:1.11.0.20190220-2119"/>
+		<item value="org.eclipse.m2e.wtp.feature:1.4.1.20181128-2152"/>
+		<item value="org.eclipse.m2e.wtp.jaxrs.feature:1.4.1.20181128-2152"/>
+		<item value="org.eclipse.m2e.wtp.jsf.feature:1.4.1.20181128-2152"/>
+		<item value="org.eclipse.mylyn.commons.identity:1.16.0.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.commons.notifications:1.16.0.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.commons.repositories:1.16.0.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.commons:3.24.2.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.context_feature:3.24.2.v20180905-0014"/>
+		<item value="org.eclipse.mylyn.discovery:3.24.2.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.ide_feature:3.24.2.v20180905-0014"/>
+		<item value="org.eclipse.mylyn.java_feature:3.24.2.v20180905-0014"/>
+		<item value="org.eclipse.mylyn.monitor:3.24.2.v20180904-2231"/>
+		<item value="org.eclipse.mylyn.tasks.ide:3.24.2.v20180905-0003"/>
+		<item value="org.eclipse.mylyn.team_feature:3.24.2.v20180905-0014"/>
+		<item value="org.eclipse.mylyn_feature:3.24.2.v20180905-0003"/>
+		<item value="org.eclipse.pde:3.13.400.v20190307-0943"/>
+		<item value="org.eclipse.platform:4.11.0.v20190307-0500"/>
+		<item value="org.eclipse.rcp:4.11.0.v20190307-0500"/>
+		<item value="org.eclipse.tm.terminal.control.feature:4.5.100.201903081602"/>
+		<item value="org.eclipse.tm.terminal.feature:4.5.100.201903081602"/>
+		<item value="org.eclipse.tm.terminal.view.feature:4.5.100.201903081602"/>
+		<item value="org.eclipse.userstorage:1.2.0.v20190426-1254"/>
+		<item value="org.eclipse.wst.common.fproj:3.7.2.v201808020026"/>
+		<item value="org.eclipse.wst.jsdt.chromium.debug.feature:0.6.100.v201902140014"/>
+		<item value="org.eclipse.wst.jsdt.feature:2.1.1.v201902140014"/>
+		<item value="org.eclipse.wst.json_ui.feature:1.1.4.v201901152013"/>
+		<item value="org.eclipse.wst.web_ui.feature:3.13.0.v201903050402"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.13.0.v201903050402"/>
+		<item value="org.hibernate.eclipse.feature:5.4.4.v20190328-1505"/>
+		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
+		<item value="org.jboss.tools.maven.apt.feature:1.5.2.201812241535"/>
+		<item value="org.jboss.tools.usage.feature:2.2.202.v20181101-1129"/>
+		<item value="org.sonatype.m2e.buildhelper.feature:0.15.0.201405280027"/>
+		<item value="org.sonatype.m2e.egit.feature:0.15.1.201806191431"/>
+		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.3.201905220530"/>
+		<item value="org.springframework.ide.eclipse.ajdt.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.aop.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.autowire.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.batch.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.boot.dash.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.boot.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.data.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.integration.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.maven.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.mylyn.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.security.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.webflow.feature:3.9.8.201903260659-RELEASE"/>
+		<item value="org.springframework.ide.eclipse.xml.namespaces.feature:3.9.9.201905211834-CI-B2250"/>
+	</list>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.springsource.ide.eclipse.commons.gettingstarted.wizard.boot.NewSpringBootWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
+			<item value="org.springsource.ide.eclipse.boot.wizards.category"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode/&gt;&#x0A;&lt;/History&gt;"/>
+		<item key="ShowDerived" value="false"/>
+		<item key="FilterByLocation" value="false"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="420"/>
+			<item key="DIALOG_Y_ORIGIN" value="87"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="org.eclipse.ui.internal.views.markers.FiltersConfigurationDialog">
+	</section>
+	<section name="org.springsource.ide.eclipse.commons.quicksearch.ui.QuickSearchDialog.DIALOG_SETTINGS">
+		<item key="LAST_QUERY" value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;&#x0A;    pageEncoding=&quot;UTF-8&quot;%&gt;&#x0A;&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;    &#x0A;&lt;!DOCTYPE html&gt;&#x0A;&lt;html&gt;&#x0A;&lt;head&gt;&#x0A;&#x09;&lt;meta charset=&quot;UTF-8&quot;&gt;&#x0A;&#x09;&lt;title&gt;Users&lt;/title&gt;&#x0A;&#x09;&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.js&quot;&gt;&lt;/script&gt;&#x0A;&#x09;&lt;!-- 最新版本的 Bootstrap 核心 CSS 文件 --&gt;&#x0A;&#x09;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;&gt;&#x0A;&#x09;&lt;!-- 可选的 Bootstrap 主题文件（一般不用引入） --&gt;&#x0A;&#x09;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css&quot; integrity=&quot;sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp&quot; crossorigin=&quot;anonymous&quot;&gt;&#x0A;&#x09;&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件 --&gt;&#x0A;&#x09;&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js&quot; integrity=&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&#x0A;&lt;/head&gt;&#x0A;&lt;body&gt;&#x0A;&#x0A;&#x09;&lt;div class=&quot;container&quot;&gt;&#x0A;&#x09;&#x0A;&#x09;&#x09;&lt;div class=&quot;row&quot;&gt;&#x0A;&#x09;&#x09; &lt;table class=&quot;table table-hover&quot;&gt;&#x0A;&#x09;&#x09; &#x09;&lt;tr&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户ID&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户账户&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户密码&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户角色&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/tr&gt;&#x0A;&#x09;&#x09;&#x09;&lt;c:forEach items=&quot;${users}&quot; var=&quot;user&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&#x09;&lt;th class=&quot;success&quot;&gt;用户ID&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户账户&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户密码&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;  &lt;th class=&quot;success&quot;&gt;用户角色&lt;/th&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/c:forEach&gt;&#x0A;&#x09;&#x09; &lt;/table&gt;&#x0A;&#x09;&#x09;&lt;/div&gt;&#x0A;&#x09;&#x09;&#x0A;&#x09;&lt;/div&gt;&#x0A;&#x0A;&lt;/body&gt;&#x0A;&lt;/html&gt;"/>
+		<item key="PATH_FILTER" value=""/>
+		<item key="CASE_SENSITIVE" value="true"/>
+		<item key="KEEP_OPEN" value="false"/>
+		<list key="COLUMN_WIDTHS">
+			<item value="40"/>
+			<item value="400"/>
+			<item value="136"/>
+		</list>
+		<list key="SASH_WEIGHTS">
+			<item value="833"/>
+			<item value="166"/>
+		</list>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="420"/>
+			<item key="DIALOG_Y_ORIGIN" value="86"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+	</section>
+</section>

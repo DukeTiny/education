@@ -1,0 +1,85 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2019/7/8 10:04:21                            */
+/*==============================================================*/
+
+
+drop table if exists role;
+
+drop table if exists roletree;
+
+drop table if exists tree;
+
+drop table if exists userinfo;
+
+drop table if exists userinforole;
+
+/*==============================================================*/
+/* Table: role                                                  */
+/*==============================================================*/
+create table role
+(
+   rid                  int not null auto_increment,
+   rname                varchar(20),
+   primary key (rid)
+);
+
+/*==============================================================*/
+/* Table: roletree                                              */
+/*==============================================================*/
+create table roletree
+(
+   rid                  int not null,
+   id                   int not null,
+   primary key (rid, id)
+);
+
+/*==============================================================*/
+/* Table: tree                                                  */
+/*==============================================================*/
+create table tree
+(
+   id                   int not null auto_increment,
+   pId                  int,
+   name                 varchar(50),
+   file                 varchar(50),
+   icon                 varchar(50),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: userinfo                                              */
+/*==============================================================*/
+create table userinfo
+(
+   uid                  int not null auto_increment,
+   uname                varchar(20),
+   upass                varchar(32),
+   primary key (uid)
+);
+
+/*==============================================================*/
+/* Table: userinforole                                          */
+/*==============================================================*/
+create table userinforole
+(
+   uid                  int not null,
+   rid                  int not null,
+   primary key (uid, rid)
+);
+
+alter table roletree add constraint FK_Reference_4 foreign key (rid)
+      references role (rid) on delete restrict on update restrict;
+
+alter table roletree add constraint FK_Reference_5 foreign key (id)
+      references tree (id) on delete restrict on update restrict;
+
+alter table tree add constraint FK_Reference_3 foreign key (pId)
+      references tree (id) on delete restrict on update restrict;
+
+alter table userinforole add constraint FK_Reference_1 foreign key (uid)
+      references userinfo (uid) on delete restrict on update restrict;
+
+alter table userinforole add constraint FK_Reference_2 foreign key (rid)
+      references role (rid) on delete restrict on update restrict;
+

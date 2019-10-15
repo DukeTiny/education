@@ -1,0 +1,17 @@
+server:
+  port: 6500
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:25802580@localhost:9000/eureka
+spring:
+  application:
+    name: feign
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size:

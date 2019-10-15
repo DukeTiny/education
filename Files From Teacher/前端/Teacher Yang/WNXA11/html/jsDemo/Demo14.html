@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function getResult(){
+				document.write("<br />");
+				for(var i=1;i<=9;i++){
+					for(var j=1;j<=i;j++){
+						//1.创建div
+						var mydiv = document.createElement("div");
+						document.body.appendChild(mydiv);
+						mydiv.style.width = "60px";
+						mydiv.style.height = "20px";
+						mydiv.style.backgroundColor = "darkgray";
+						mydiv.style.float = "left";
+						mydiv.style.color = "red";
+						var str = j+"*"+i+"="+i*j+"&nbsp;&nbsp;";
+						mydiv.innerHTML = str;
+					}
+					document.write("<br />");
+				}
+			}
+		</script>
+	</head>
+	<body onload="getResult();">
+	</body>
+</html>

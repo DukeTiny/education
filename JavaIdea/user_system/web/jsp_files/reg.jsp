@@ -1,0 +1,24 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: duke_tiny
+  Date: 2019/5/7
+  Time: 11:14
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+  <head>
+    <title>Reg</title>
+  </head>
+  <body>
+  <div style="margin: auto; padding: 30px; border: 1px solid black; width: 210px;">
+      <form action="../userReg.do">
+          用户名：<input type="text" name="uname" />
+          <br />
+          密&nbsp;&nbsp;&nbsp;码：<input type="text" name="upwd" />
+          <br />
+          <button>提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </form>
+  </div>
+  </body>
+</html>

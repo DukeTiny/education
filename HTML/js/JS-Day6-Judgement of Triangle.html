@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Judgement of Triangle</title>
+    <script>
+
+        let firstSide = parseFloat(prompt("Pls enter a side length:"));
+        let secondSide = parseFloat(prompt("Pls enter the second side"));
+        let thirdSide = parseFloat(prompt("Pls enter the third side"));
+
+        if ( firstSide+secondSide>thirdSide && firstSide+thirdSide>thirdSide && secondSide+thirdSide>firstSide) {
+            document.write(" A triangle can be made.")
+
+            if ( firstSide===secondSide && secondSide===thirdSide && firstSide===secondSide ){
+                document.write("<br>" + "And also the triangle is a equilateral triangle.");
+            }
+            else if ( firstSide===secondSide || secondSide===thirdSide || firstSide===secondSide ){
+                document.write("<br>" + "And also the triangle is a isosceles triangle.");
+            }
+            else if (firstSide*firstSide + secondSide*secondSide === thirdSide*thirdSide || firstSide*firstSide + thirdSide*thirdSide === secondSide*secondSide || secondSide*secondSide === firstSide*firstSide) {
+                document.write("<br>" + "And also the triangle is a right triangle.");
+            }
+            else {
+                document.write("<br>" + "And also the triangle is a ordinary triangle.");
+            }
+        }
+        else {
+            document.write(" A triangle can't be made.")
+        }
+
+
+    </script>
+</head>
+<body onload="enterAge()">
+
+</body>
+</html>

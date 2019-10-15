@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			window.onload=function(){
+				var ulObj = document.getElementsByTagName("ul")[0];
+				ulObj.addEventListener("click",function(){
+					alert(this.innerHTML);
+				},true);
+				var liObjs = document.getElementsByTagName("li");
+				// liObj.onclick=function(){
+				// 	alert(123);
+				// }
+				for(var i=0;i<liObjs.length;i++){
+					var liObj = liObjs[i];
+					liObj.addEventListener("mouseover",function(){
+						alert(this.innerHTML);
+					},true);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" onselect="alert(1)" onkeypress="alert(2)" />
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>

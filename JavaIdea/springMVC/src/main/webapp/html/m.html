@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M.html</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+
+    <script>
+        $(function(){
+            $("button:contains(Post)").click(function () {
+                alert(123);
+                $.ajax({
+                    type:"post",
+                    url:"http://localhost:8080/users",
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            });
+            $("button:contains(get)").click(function () {
+                alert(123);
+                $.ajax({
+                    type:"get",
+                    url:"http://localhost:8080/users",
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            });
+            $("button:contains(getOne)").click(function () {
+                alert(123);
+                $.ajax({
+                    type:"get",
+                    url:"http://localhost:8080/users/1",
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            });
+            $("button:contains(Put)").click(function () {
+                alert(123);
+                $.ajax({
+                    type:"post",
+                    url:"http://localhost:8080/users",
+                    data:{"_method":"PUT","abc":"123"},
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            });
+            $("button:contains(Delete)").click(function () {
+                alert(123);
+                $.ajax({
+                    type:"post",
+                    data:{"_method":"DELETE","abc":"456"},
+                    url:"http://localhost:8080/users",
+                    success:function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h3>M.html</h3>
+
+    <button type="button">Post</button>
+    <button type="button">get</button>
+    <button type="button">getOne</button>
+    <button type="button">Put</button>
+    <button type="button">Delete</button>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.woniuxy</groupId>
+  <artifactId>sb</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- 
+  	但凡是springboot项目，就必须导入一个依赖: 
+  	spring-boot-starter-parent
+  	且该依赖，必须被写在parent元素中
+  	
+  	只要导入该依赖，那么spring-boot环境就搭建完毕了！
+  -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+  </parent>
+
+  <dependencies>
+	<!-- 
+		搭建springmvc环境,只要需要导入相关的依赖即可！
+		导入以下依赖之后，springmvc环境就搭建完毕：
+		前段控制器、注解映射器、注解适配器、视图解析器，都已经配置好了
+	 -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+	  <!-- 
+	  	springboot，默认不支持jsp，springboot推荐使用thymleaf模板！
+	  	导入以下依赖的目的是为了让springboot去支持jsp 
+	  -->
+	<dependency>
+	    <groupId>org.apache.tomcat.embed</groupId>
+	    <artifactId>tomcat-embed-jasper</artifactId>
+	</dependency>
+	<!-- 
+		导入一个依赖，就能让springboot支持热部署：
+	 -->
+	 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-devtools</artifactId>
+	</dependency>
+  </dependencies>
+  
+</project>

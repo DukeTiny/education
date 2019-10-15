@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+
+        </style>
+        <script>
+
+
+
+            function createDate() {
+                var yearStr = "<select id='year' name='year'  onchange='datesOption()'  ></select>年";
+                var monthStr = "<select id='month' name='month' onchange='datesOption()' ></select>月";
+                var dateStr = "<select id='date' name='date'></select>日";
+                document.getElementById("iForm").innerHTML = yearStr + monthStr + dateStr;
+            }
+
+            function yearOption() {
+                var years = "";
+                for ( var i=0; i<=35; i++ ){
+                    years += "<option>" + (2019-i) + "</option>";
+                }
+                document.getElementById("year").innerHTML = years;
+            }
+
+            function monthOption() {
+                var monthes = "";
+                for ( var i=1; i<=12; i++ ){
+                    monthes += "<option>" + i + "</option>";
+                }
+                document.getElementById("month").innerHTML = monthes;
+            }
+
+            function datesOption() {
+                var dates = "";
+                var year = parseInt( document.getElementById("year").value );
+                var month = document.getElementById("month").value;
+                var maxDate = 31;
+                switch( parseInt( month ) ){
+                    case 2:
+                        if ( ( year%4===0 && year%100!==0 ) || year&400===0 ) maxDate = 29;
+                        else maxDate = 28;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        maxDate = 30;
+                        break;
+                }
+                for ( var i=1; i<=maxDate; i++ ){
+                    dates += "<option>" + i + "</option>";
+                }
+                document.getElementById("date").innerHTML = dates;
+            }
+
+            function createLi() {
+                var teams = ["Houston Rockets","Los Angeles Lakers","New York Nicks"];
+                var ulObj = document.getElementsByTagName("ul")[0];
+                for ( var i=0; i<teams.length; i++ ){
+                    var liTag = document.createElement("li");
+                    var liContent = document.createTextNode(teams[i]);
+                    liTag.appendChild( liContent );
+                    ulObj.appendChild( liTag );
+                }
+            }
+
+            function addEve() {
+                var lis = document.getElementsByTagName("li");
+                for ( var x in lis ){
+                    lis[x].addEventListener("click",function (){ f2() });
+                }
+            }
+
+            function f1() {
+                alert("I AM Ul");
+            }
+
+            function f2() {
+                alert("I AM Li");
+            }
+            window.onload=function(){
+                createDate();
+                yearOption();
+                monthOption();
+                datesOption();
+                createLi();
+                addEve();
+            }
+        </script>
+    </head>
+    <body>
+        <form id="iForm" action="" method="post">
+        </form>
+        <ul>
+
+        </ul>
+    </body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cxz.domain.Dept" table="DEPT">
+        <id name="did" type="java.lang.Integer">
+            <column name="DID" />
+            <generator class="native" />
+        </id>
+        <property name="dname" type="java.lang.String" access="field">
+            <column name="DNAME" />
+        </property>
+        <set name="emps" table="EMP" inverse="false" lazy="true">
+            <key>
+                <column name="DID" />
+            </key>
+            <one-to-many class="com.cxz.domain.Emp" />
+        </set>
+    </class>
+</hibernate-mapping>

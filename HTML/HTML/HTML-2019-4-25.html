@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var input = prompt("请输入您的信息：");
+        // if ( input>90 ) document.write("U Are Great");
+        // else document.write("U Are Doomed");
+        function nineNine() {
+            for ( var i=1; i<=9;i++ ){
+                for ( var j=1; j<=i; j++ ){
+                    document.write( j + "*" + i + "=" + (i*j) + "&emsp;" );
+                }
+                document.write("<br />")
+            }
+        }
+        function getNum() {
+            var x = window.prompt("请输入第一个数");
+            var y = window.prompt("请输入第一个数");
+            while ( y>0 ) {
+                var temp = x%y;
+                x = y;
+                y = temp;
+            }
+
+            document.write(x);
+        }
+        function getThing(){
+            // var x = document.getElementsByTagName("textarea")[0].innerHTML;
+            alert(y);
+        }
+    </script>
+
+</head>
+<body>
+    <br />
+    <p>abc</p>
+    <span align="center">
+
+        <form action="" method="post">
+            姓名:&nbsp;&nbsp;<input type="text" name="姓名" />
+            班级:&nbsp;&nbsp;<input type="text" name="班级" />
+            性别:&nbsp;&nbsp;<input type="text" name="性别" />
+            <input type="button" value="提交" name="bb" onclick="getThing()"/>
+            <textarea name="abc">asdasd</textarea>
+        </form>
+    </span>
+    <br />
+    <table width="730" height="100" cellpadding="0" cellspacing="0" align="center" border="1">
+        <tr height="50" align="center">
+            <td width="200px">姓名</td>
+            <td width="200px">班级</td>
+            <td width="200px">性别</td>
+        </tr>
+        <tr height="50" align="center">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+
+        // js最底层传送普通表单数据
+        /*
+           用户名:<input type="text" name="username" />
+           密码:<input type="password" name="password" />
+           <button onclick="doAjax()">提交</button>
+           <div id="result"></div>
+         */
+        function doAjax() {
+            var xmlObj = new XMLHttpRequest();
+            xmlObj.open("post", "user.do");
+            var userName = $("[name=username]").val();
+            var pwd = $("[name=password]").val();
+            var postString = "userName=" + userName + "&password=" + pwd;
+            xmlObj.onreadystatechange = function () {
+                // 4 和 200 都是http协议响应编码
+                if (xmlObj.readyState === 4 && xmlObj.status === 200) {
+                    /*此处得到的xmlObj.responseText的如果是json数据，则用来老师交的showAll（data）来处理即可。
+                        var data = xmlObj.responseText;
+                        showAll(data);
+                    */
+                    var ajaxResult = xmlObj.responseText;
+                    document.getElementById("result").innerHTML = ajaxResult;
+                }
+            };
+            xmlObj.send(postString);
+        }
+
+        // js最底层传送文件表单数据
+        /*
+           用户名:<input type="text" name="username" />
+           密码:<input type="password" name="password" />
+           照片:<input type="file" name="photo" />
+           <button onclick="doAjax()">提交</button>
+           <div id="result"></div>
+         */
+        function doAjax2() {
+            var xmlObj = new XMLHttpRequest();
+            xmlObj.open("post", "user.do");
+            var userName = $("[name=username]").val();
+            var pwd = $("[name=password]").val();
+            // 通过jquery选择器得到的结果都是集合，所以用"[name=photo]")[0]来取得第一个，也就是我们发文件的，然后通过files这个属性获得文件集合，
+            // 通过$("[name=photo]")[0].files[0]来获得我们要发送的文件,也就是要发送的那张照片
+            var photoFile = $("[name=photo]")[0].files[0];
+            var formData = new FormData();
+            formData.append("userName", userName);
+            formData.append("password", pwd);
+            formData.append("photo", photoFile);
+            xmlObj.onreadystatechange = function () {
+                // 4 和 200 都是http协议响应编码
+                if (xmlObj.readyState === 4 && xmlObj.status === 200) {
+                    var data = xmlObj.responseText;
+                    //showAll(data);此处调用自己写的showAll（）方法
+                }
+            };
+            xmlObj.send(formData);//这里传送formData对象，然后后台可以获得数据
+        }
+
+        // $.ajax传送普通表单数据。
+        /*
+           用户名:<input type="text" name="username" />
+           密码:<input type="password" name="password" />
+           <button onclick="doAjax()">提交</button>
+           <div id="result"></div>
+         */
+        $.ajax({
+            url: "user.do",
+            type: "POST",         //方法必须为post
+            cache: false,         //建议不缓存，占用内存和外存
+            //传送普通数据的时候，直接写数据，或者用一个变量去接受后面这个比较长的json数据
+            data: {"userName": $("[name=username]").val(), "password": $("[name=password]").val()},
+            async: true,         //此处可以不写， 默认为true；
+            processData: false,  //此处必须为false
+            contentType: false,  //此处也必须为false
+            dataType: "JSON",//这里可以是text或者json，如果是json直接进行json数据处理，如果是text则需要进行eval()或者JSON.parse()处理
+            success: function (data, textStatus) {
+                // showAll(data);  这里就是调用处理数据的方法
+            },
+            error: function () {
+                alert("Error"); // 如果没有成功，则让弹出"error",则知道没有写对。
+            }
+        });
+
+        ////////////////////////////////////////////////////
+
+        //$.ajax可能存在跨域请求的安全性问题，有的浏览器会使得数据不刷新，但是后台数据都更新，解决方法未知....
+
+        ////////////////////////////////////////////////////
+
+        // $.ajax 传送文件表单数据
+        /*
+           用户名:<input type="text" name="username" />
+           密码:<input type="password" name="password" />
+           照片:<input type="file" name="photo" />
+           <button onclick="doAjax()">提交</button>
+           <div id="result"></div>
+         */
+        var userName = $("[name=username]").val();
+        var pwd = $("[name=password]").val();
+        // 通过jquery选择器得到的结果都是集合，所以用"[name=photo]")[0]来取得第一个，也就是我们发文件的，然后通过files这个属性获得文件集合，
+        // 通过$("[name=photo]")[0].files[0]来获得我们要发送的文件,也就是要发送的那张照片
+        var photoFile = $("[name=photo]")[0].files[0];
+        var formData = new FormData();
+        formData.append("userName", userName);
+        formData.append("password", pwd);
+        formData.append("photo", photoFile);
+        $.ajax({
+            url: "user.do",
+            type: "POST",           //必须为post
+            cache: false,           //因为传送文件，最好不要缓存。
+            //传送普通数据的时候，直接写数据，或者用一个变量去接受后面这个比较长的json数据
+            data: formData,
+            async: true,            //此处可以不写， 默认为true；
+            processData: false,     //此处必须为false
+            contentType: false,     //此处也必须为false
+            dataType: "JSON",//这里可以是text或者json，如果是json直接进行json数据处理，如果是text则需要进行eval()或者JSON.parse()处理
+            success: function (data, textStatus) {
+                // showAll(data);  这里就是调用处理数据的方法
+            },
+            error: function () {
+                alert("Error"); // 如果没有成功，则让弹出"error",则知道没有写对。
+            }
+        });
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

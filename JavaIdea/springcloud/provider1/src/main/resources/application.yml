@@ -1,0 +1,20 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test
+    username: root
+    password: wh809919
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:25802580@localhost:9000/eureka,http://admin:25802580@localhost:9100/eureka
+    instance:
+          prefer-ip-address: true

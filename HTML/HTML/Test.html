@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Div practise</title>
+
+    <script src="./jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            var it = $("#a");
+           it.bind('input propertychange',function () {
+               it.parent().append("<p>a</p>");
+           });
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="a"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function showYear(){
+				var yearStr = "";
+				for(var i=0;i<100;i++){
+					if(i==80){
+						yearStr+="<option selected='selected'>"+(1919+i)+"</option>";
+					}else{
+						yearStr+="<option>"+(1919+i)+"</option>";
+					}
+				}
+				var yearShow = document.getElementById("year");
+				yearShow.innerHTML = yearStr;
+			}
+			function showMonth(){
+				var monthStr = "";
+				for(var i=1;i<=12;i++){
+					monthStr+="<option>"+(i)+"</option>";
+				}
+				var monthShow = document.getElementById("month");
+				monthShow.innerHTML = monthStr;
+			}
+			function showDate(){
+				var yearVal = document.getElementById("year").value;
+				var monthVal = document.getElementById("month").value;
+				var dateNum = 31;
+				switch(parseInt(monthVal)){
+					case 2:
+						if(yearVal%4==0&&yearVal%100!=0||yearVal%400==0){
+							dateNum = 29;
+						}else{
+							dateNum = 28;
+						}
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						dateNum = 30;
+						break;
+				}
+				var dateStr = "";
+				for(var i=1;i<=dateNum;i++){
+					dateStr+="<option>"+(i)+"</option>";
+				}
+				var dateShow = document.getElementById("date");
+				dateShow.innerHTML = dateStr;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="form1">
+			<select name="year" id="year" onchange="showDate()">
+			
+			</select>年
+			<select name="month" id="month" onchange="showDate()">
+				
+			</select>月
+			<select name="date" id="date">
+				
+			</select>日
+		</form>
+	</body>
+</html>
+<script>
+	showYear();
+	showMonth();
+	showDate();
+</script>

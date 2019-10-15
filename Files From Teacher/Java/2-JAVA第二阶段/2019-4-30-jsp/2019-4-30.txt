@@ -1,0 +1,65 @@
+jsp
+java server page
+
+静态页面 html+css+js
+动态页面
+
+没有数据交互
+
+.jsp java
+.asp .net
+.php php
+
+jsp构成：网页模板和java元素
+网页模板html+css+js
+java元素
+1、程序片
+声明
+ 
+程序片
+声明
+<%! %>
+表达式
+<%= %>
+程序片
+<%  %>
+2、编译器指令
+page  页面指令 声明页面的信息
+taglib  增加标签库
+include  静态引入
+3、动作指令
+
+动态web项目
+1、在eclipse中新建动态网页工程。
+2、配置tomcat。
+3、配置jre。
+4、在webcontent中新建jsp页面
+
+手动发布一个动态网站
+1、整个网站的代码拷贝到tomcat下的webapps目录下。
+2、使用bin目录下的startup.bat启动tomcat服务器。
+3、通过浏览器访问jsp页面。localhost:port/文件夹名/文件名。
+4、当访问时，会将jsp页面变成java文件，再编译成class文件。然后执行。
+
+网站服务器软件
+Tomcat Apache
+Websphere  IBM
+weblogic BEE
+
+目录结构
+bin   所有的命令
+conf  配置文件
+logs  日志
+lib   公用jar文件
+webapps 发布的项目
+work  运行时，编译内容
+temp  临时文件夹
+
+编写tomcat用户
+conf/tomcat-users.xml
+<role rolename="manager-gui|admin-gui"/> 
+
+配置服务器端口
+conf/server.xml
+
+<user username="" password="" roles="">

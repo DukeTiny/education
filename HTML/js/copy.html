@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Table Practise1</title>
+    <style>
+        .wrapper{
+            width: 410px;
+            height: 540px;
+            background: darkgray;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+        #result{
+            width: 388px;
+            height: 60px;
+            border: 1px lightgray solid;
+            background-color: #89a3a7;
+            box-shadow: 0 0 3px 0 rgba(0,0,0,0.8) inset;
+            margin: 0 auto;
+            border-radius: 5px;
+            color: #10236a;
+            text-align: right;
+            font-size: 31px;
+            line-height: 60px;
+        }
+        .word{
+            width: 380px;
+            height: 35px;
+            padding: 0 10px;
+            font-size: 21px;
+            line-height: 35px;
+        }
+        .word span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .word span:first-child{
+            color: red;
+        }
+        .word span:nth-child(2){
+            color: blue;
+        }
+        .word span:last-child{
+            color: green;
+        }
+        /*.buttonWrapper{*/
+        /*width: 392px;*/
+        /*margin: 5px auto;*/
+        /*}*/
+
+        .button{
+            margin: 1px auto;
+            display: table;
+        }
+        .button:first-child{
+            margin: 10px auto 1px;
+        }
+        .buttonInner{
+            width: 94px;
+            height: 80px;
+            border: 2px darkgray solid;
+            background-color: lightgray;
+            border-radius: 6px;
+            color: #661a83;
+            font-size: 25px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .buttonInner:hover{
+            width: 94px;
+            height: 80px;
+            border: 2px orange solid;
+            background-color: rgba(100,100,100,1);
+            border-radius: 6px;
+            color: lightgray;
+            box-shadow: 0 0 3px 1px rgba(80,0,0,0.4) inset;
+            font-size: 25px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .button:last-child{
+            border-bottom-right-radius: 8px;
+        }
+        .button:nth-last-child(4){
+            border-bottom-left-radius: 8px;
+        }
+    </style>
+    <script>
+        var canClickOperator = false;
+        var canClickNumber = true;
+        var canClickDot = true;
+        function clickNumber ( number ) {
+            var result = document.getElementById('result').innerHTML;
+            if ( canClickNumber ){
+                if ( result.length<20 ){
+                    document.getElementById('result').innerHTML += number;
+                }
+                else if ( result.length === 20 ) {
+                    document.getElementById('result').innerHTML = "字符不能超过20个";
+                    canClickNumber = false;
+                    canClickOperator = false;
+                }
+            }
+            else {
+                doClear();
+                document.getElementById('result').innerHTML += number;
+                canClickNumber = true;
+            }
+            canClickOperator = true;
+        }
+
+        function clickDot(dot) {
+            if ( canClickDot ){
+                document.getElementById('result').innerHTML += dot;
+                canClickDot =false;
+            }
+        }
+        function clickOperator( operator ){
+            var result = document.getElementById('result').innerHTML;
+            if( canClickOperator && result.length<20 && result.length>1){
+                document.getElementById('result').innerHTML += operator;
+                canClickNumber = true;
+                canClickOperator = false;
+                canClickDot = true;
+            }
+        }
+        function doClear(){
+            document.getElementById('result').innerHTML = "";
+        }
+        function delLast(){
+            var result = document.getElementById('result').innerHTML;
+            document.getElementById('result').innerHTML = result.substring(0,result.length-1);
+        }
+        function switchSymbol(){
+            var result = document.getElementById('result').innerHTML;
+            var code = result.charCodeAt(result.length-1);
+            if (  code<47 || code>58 ){
+                result = result.substr(0,result.length-1);
+                document.getElementById('result').innerHTML = 0 - result;
+            }
+            else {
+                document.getElementById('result').innerHTML = "0" -  result;
+            }
+        }
+        function doEqual(){
+            var result = document.getElementById('result').innerHTML;
+            result = result.replace( /×/g,"*" );
+            result = result.replace( /÷/g,"/");
+            document.getElementById('result').innerHTML = eval(result);
+            canClickNumber = false;
+        }
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="word">
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+    </div>
+    <div id="result"></div>
+    <div class="buttonWrapper">
+        <div class="button">
+            <div class="buttonInner" onclick="doClear()">AC</div>
+            <div class="buttonInner" onclick="switchSymbol()">+/-</div>
+            <div class="buttonInner" onclick="clickOperator('%')">%</div>
+            <div class="buttonInner" onclick="clickOperator('&divide;')">&divide;</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('7')">7</div>
+            <div class="buttonInner" onclick="clickNumber('8')">8</div>
+            <div class="buttonInner" onclick="clickNumber('9')">9</div>
+            <div class="buttonInner" onclick="clickOperator('&times;')">&times;</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('4')">4</div>
+            <div class="buttonInner" onclick="clickNumber('5')">5</div>
+            <div class="buttonInner" onclick="clickNumber('6')">6</div>
+            <div class="buttonInner" onclick="clickOperator('-')">-</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('1')">1</div>
+            <div class="buttonInner" onclick="clickNumber('2')">2</div>
+            <div class="buttonInner" onclick="clickNumber('3')">3</div>
+            <div class="buttonInner" onclick="clickOperator('+')">+</div>
+        </div>
+        <div class="button">
+            <div class="buttonInner" onclick="clickNumber('0')">0</div>
+            <div class="buttonInner" onclick="delLast()"> -&lt; </div>
+            <div class="buttonInner" onclick="clickDot('.')">.</div>
+            <div class="buttonInner" onclick="doEqual()">=</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

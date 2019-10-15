@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+
+            // var time = setInterval("goTime()",1000);
+            // var time;
+            // function goTime() {
+            //     var date = new Date();
+            //     document.getElementsByTagName("body")[0].innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            //     time = setTimeout(goTime,1000);
+            //     if( date.getSeconds()===45 ) {
+            //         clearTimeout(time);
+            //     }
+            // }
+            var date2 = new Date(2019,7,31);
+            // var date1 = new Date();
+            // document.write(date1.toDateString()+"<br/>");
+            // document.write(date2.toDateString()+"<br/>");
+            // var seconds = parseInt( (date2.getTime()-date1.getTime())/1000 );
+            // document.write(date2.getTime()-date1.getTime() +"<br/>");
+            // document.write(seconds +"<br/>");
+            // var num = 3600*24*3600;
+            // document.write(seconds%num);
+            function countDown() {
+                var date1 = new Date();
+                var seconds = parseInt( (date2.getTime()-date1.getTime())/1000 );
+                var day = parseInt( seconds/3600/24 );
+                var hour = parseInt( seconds%(3600*24)/3600);
+                var minute = parseInt( (seconds%(3600*24)%3600)/60) ;
+                var second = seconds%(3600*24)%3600%60;
+
+                document.getElementsByTagName("body")[0].innerHTML =  day + " 天 " + hour + " 时 " + minute + " 分 " + second ;
+                setTimeout(countDown,1000);
+            }
+
+        </script>
+    <body>
+
+        <p id="pp"><a></a></p>
+    </body>
+    <script>
+        // goTime();
+        // countDown();
+        var s = document.getElementById("pp");
+        var ss = s.firstChild;
+        // for ( var i in ss ){
+            alert(ss);
+        // }
+    </script>
+</html>

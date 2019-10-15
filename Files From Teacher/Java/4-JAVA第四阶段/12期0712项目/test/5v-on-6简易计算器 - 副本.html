@@ -1,0 +1,59 @@
+<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			button{
+				font-size: 132px;
+				//background-color: red;
+				width:170px;
+				height: 170px;
+			}
+		</style>
+	</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <input type="text" id="result" style="width: 800px; height: 100px;">
+<table width="800px" border="0">
+  <tr>
+    <td><button onclick="doc(9)">9</button></td>
+    <td><button onclick="doc(8)">8</button></td>
+    <td><button onclick="doc(7)">7</button></td>
+    <td><button onclick="calc('+')">+</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="doc(6)">6</button></td>
+    <td><button onclick="doc(5)">5</button></td>
+    <td><button onclick="doc(4)">4</button></td>
+    <td><button onclick="calc('-')">-</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="doc(3)">3</button></td>
+    <td><button onclick="doc(2)">2</button></td>
+    <td><button onclick="doc(1)">1</button></td>
+    <td><button onclick="calc('*')">*</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="doc(0)">0</button></td>
+    <td><button>C</button></td>
+    <td><button onclick="calc('=')">=</button></td>
+    <td><button onclick="calc('/')">/</button></td>
+  </tr>
+</table>
+</div>
+
+<script>
+	var app = new Vue({
+	  el: '#app',
+	  data: {
+			n1:0,
+			n2:0,
+			flag:'+',
+			result : 0
+	  },
+		methods:{
+			
+		}
+	})
+</script>

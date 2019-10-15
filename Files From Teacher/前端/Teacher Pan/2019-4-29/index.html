@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("div").addClass("abc");
+				$("div").addClass("bbb");
+				
+				$("div").removeClass("bbb");
+				
+				$("div").css({"background-color":"red","width":"100px"});
+			});
+		</script>
+		<style>
+			.abc{
+				width: 50px;
+				height: 50px;
+				border: 1px solid red;
+				
+			}
+			.bbb{
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+	</body>
+</html>

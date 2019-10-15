@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxz.h_one2many.DeptMapper">
+
+    <select id="findOne" parameterType="int" resultMap="rm">
+        SELECT * FROM dept NATURAL JOIN emp
+        WHERE did = #{did}
+    </select>
+
+    <resultMap id="rm" type="Dept">
+        <id property="did" column="did" />
+        <result property="dName" column="dname" />
+        <collection property="emps" ofType="Emp" >
+            <id property="eid" column="eid" />
+            <result property="eName" column="ename"/>
+        </collection>
+    </resultMap>
+
+</mapper>

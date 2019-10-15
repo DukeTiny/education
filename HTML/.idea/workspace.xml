@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/HTML/HTML-2019-4-27-1.html" line="74" />
+    <bookmark url="file://$PROJECT_DIR$/HTML/HTML-2019-4-29-2.html" line="171" />
+    <bookmark url="file://$PROJECT_DIR$/js/AddFile.html" line="31" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="783cb74a-a71c-4f23-8c97-2c8911b395b4" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="HTML" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>”</find>
+      <find>'</find>
+      <find>&quot;20&quot;</find>
+      <find>removeTable</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;</replace>
+      <replace>&quot;15&quot;</replace>
+      <replace>&quot;18&quot;</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/JS-Practise-Snow.html" />
+        <option value="$PROJECT_DIR$/js/JS-Practise.html" />
+        <option value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-25.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-25-Homework.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-26.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-26-2.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-26-3.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-27-1.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-27-2.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-27-3.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-29-4.html" />
+        <option value="$PROJECT_DIR$/HTML/11111.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-29-Homework.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-2019-4-30-1.html" />
+        <option value="$PROJECT_DIR$/HTML/index.2.html" />
+        <option value="$PROJECT_DIR$/js/JS-DAY10-CalculatorFunction.html" />
+        <option value="$PROJECT_DIR$/js/JS-Day10-Countdown.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-Practise of div.html" />
+        <option value="$PROJECT_DIR$/HTML/Test.html" />
+        <option value="$USER_HOME$/Downloads/006_java+jsp+servlet+mysql文件管理系统/代码/File_Manage/WebContent/jsp/file/AddFile.jsp" />
+        <option value="$PROJECT_DIR$/js/AddFile.html" />
+        <option value="$PROJECT_DIR$/Test.js" />
+        <option value="$PROJECT_DIR$/woniu_shop/Login.jsp.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/Login.html" />
+        <option value="$PROJECT_DIR$/HTML/HTML-Day1-Navigation Bar.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/Customer UI.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/manageUI2.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/customer.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/slideshow.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/manageUI.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/login.html" />
+        <option value="$PROJECT_DIR$/woniu_shop/Ajax.html" />
+        <option value="$PROJECT_DIR$/test.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1" />
+    <option name="y" value="24" />
+    <option name="width" value="1440" />
+    <option name="height" value="839" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HTML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HTML" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/woniu_shop/img" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/woniu_shop/img" />
+      <recent name="D:\Sia\HTML\HTML" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/woniu_shop/img" />
+      <recent name="$PROJECT_DIR$/woniu_shop" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/HTML" />
+      <recent name="D:\Sia\HTML\HTML" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="783cb74a-a71c-4f23-8c97-2c8911b395b4" name="Default Changelist" comment="" />
+      <created>1554038765413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554038765413</updated>
+      <workItem from="1554038769322" duration="378000" />
+      <workItem from="1554209644400" duration="1886000" />
+      <workItem from="1554541262566" duration="94000" />
+      <workItem from="1555285985610" duration="277000" />
+      <workItem from="1556174327737" duration="8550000" />
+      <workItem from="1556202616112" duration="2587000" />
+      <workItem from="1556243201094" duration="16789000" />
+      <workItem from="1556273214423" duration="3065000" />
+      <workItem from="1556415888229" duration="9698000" />
+      <workItem from="1556438508944" duration="3211000" />
+      <workItem from="1556494670930" duration="4033000" />
+      <workItem from="1556502410684" duration="16215000" />
+      <workItem from="1556531028445" duration="973000" />
+      <workItem from="1556544041060" duration="3980000" />
+      <workItem from="1556585965816" duration="12100000" />
+      <workItem from="1556602388291" duration="38000" />
+      <workItem from="1556763173261" duration="165000" />
+      <workItem from="1556786448176" duration="262000" />
+      <workItem from="1556848470655" duration="266000" />
+      <workItem from="1556848742568" duration="4000" />
+      <workItem from="1556928349755" duration="267000" />
+      <workItem from="1556953615719" duration="476000" />
+      <workItem from="1557447021275" duration="585000" />
+      <workItem from="1557478033643" duration="1106000" />
+      <workItem from="1557483201227" duration="806000" />
+      <workItem from="1557816018042" duration="672000" />
+      <workItem from="1557897480389" duration="790000" />
+      <workItem from="1557906611676" duration="3000" />
+      <workItem from="1557939828369" duration="830000" />
+      <workItem from="1558075567352" duration="591000" />
+      <workItem from="1558138585351" duration="13472000" />
+      <workItem from="1558174181336" duration="2416000" />
+      <workItem from="1558257766866" duration="7187000" />
+      <workItem from="1558272391116" duration="9000" />
+      <workItem from="1558313372646" duration="5475000" />
+      <workItem from="1558427123709" duration="1982000" />
+      <workItem from="1558479234071" duration="394000" />
+      <workItem from="1558918310855" duration="650000" />
+      <workItem from="1559212451407" duration="4000" />
+      <workItem from="1559218451612" duration="600000" />
+      <workItem from="1559640250145" duration="3859000" />
+      <workItem from="1559996248513" duration="560000" />
+      <workItem from="1561806341514" duration="18000" />
+      <workItem from="1561895415060" duration="9000" />
+      <workItem from="1562725126007" duration="735000" />
+      <workItem from="1562910871824" duration="478000" />
+      <workItem from="1562999078498" duration="150000" />
+      <workItem from="1563068277817" duration="598000" />
+      <workItem from="1563100006104" duration="323000" />
+      <workItem from="1563106034248" duration="209000" />
+      <workItem from="1563152642960" duration="143000" />
+      <workItem from="1563588091069" duration="551000" />
+      <workItem from="1563688301233" duration="525000" />
+      <workItem from="1563806059240" duration="598000" />
+      <workItem from="1563850962168" duration="597000" />
+      <workItem from="1563926572924" duration="281000" />
+      <workItem from="1565594800052" duration="727000" />
+      <workItem from="1565772173275" duration="1282000" />
+      <workItem from="1566290757936" duration="534000" />
+      <workItem from="1566462044207" duration="808000" />
+      <workItem from="1567063630356" duration="506000" />
+      <workItem from="1567095069618" duration="205000" />
+      <workItem from="1567174984267" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="136599000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="839" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49666223" visible="true" weight="0.13601127" />
+      <window_info id="Structure" order="1" sideWeight="0.50200266" side_tool="true" weight="0.22410148" />
+      <window_info id="Favorites" order="2" sideWeight="0.5033378" side_tool="true" weight="0.22410148" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="调试" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/JS-Practise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-Practise-Snow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-25-Homework.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-25.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-26-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-26-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding>
+            <element signature="e#146#178#0" />
+            <element signature="e#523#766#0" />
+            <element signature="e#802#1040#0" />
+            <element signature="e#1093#1156#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-26-3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-27-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-29-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-29-3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/jquery-3.4.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2174">
+          <caret line="10558" column="15" lean-forward="true" selection-start-line="10558" selection-start-column="11" selection-end-line="10558" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/11111.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-29-4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-29-Homework.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/index.2.html" />
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-2019-4-30-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-DAY10-CalculatorFunction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="177" column="35" lean-forward="true" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-DAY10-CalculatorFunction - Optimized.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="229" column="14" lean-forward="true" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/copy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-Day6-Exchange Number's Value.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-Practise-Function.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3690">
+          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/JS-Day10-Countdown.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="283" column="23" lean-forward="true" selection-start-line="283" selection-start-column="23" selection-end-line="283" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-Practise of div.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/006_java+jsp+servlet+mysql文件管理系统/代码/File_Manage/WebContent/jsp/file/AddFile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/AddFile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
+          <folding>
+            <element signature="e#1017#1023#0" expanded="true" />
+            <element signature="e#1023#1029#0" expanded="true" />
+            <element signature="e#1029#1035#0" expanded="true" />
+            <element signature="e#1283#1289#0" expanded="true" />
+            <element signature="e#1358#1364#0" expanded="true" />
+            <element signature="e#1364#1370#0" expanded="true" />
+            <element signature="e#1370#1376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.js" />
+    <entry file="file://$PROJECT_DIR$/woniu_shop/img/loginBG.jpeg" />
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-Day2-Offical Website.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-Day1-Navigation Bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="14" column="96" selection-start-line="14" selection-start-column="96" selection-end-line="14" selection-end-column="96" />
+          <folding>
+            <element signature="e#702#708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/HTML-Day3-Offcial Website.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3765">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/manageUI2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/slideshow" />
+    <entry file="file://$PROJECT_DIR$/woniu_shop/manageUI.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/slideshow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="94" column="7" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/woniu_shop/Ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="5" column="74" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

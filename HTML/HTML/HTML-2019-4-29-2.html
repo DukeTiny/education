@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="./jquery.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     // var myBody = $("body");
+        //     // myBody.append("<div></div>");
+        //     // myBody.prepend("<p>abc</p>");
+        //     // $("body").append("<p>345</p>");
+        //     // $("p").eq(1).html("123456");
+        //     // var divDemo = $("div");
+        //     // divDemo.css({"width": "50px", "height": "50px", "background-color": "red"});
+        //     // divDemo.hide(1000);
+        //     // divDemo.show(1000);
+        //     // divDemo.fadeOut(1000);
+        //     // divDemo.fadeIn(1000);
+        //     // divDemo.slideUp(1000);
+        //     // divDemo.slideDown(1000);
+        //
+        //     // divDemo.animate({"width": "250px", "height": "50px", "marginLeft": "0px", "marginTop": "0px"});
+        //     // divDemo.animate({"width": "50px", "height": "50px", "marginLeft": "200px", "marginTop": "0px"});
+        //     // divDemo.animate({"width": "50px", "height": "250px", "marginLeft": "200px", "marginTop": "0px"});
+        //     // divDemo.animate({"width": "50px", "height": "50px", "marginLeft": "200px", "marginTop": "200px"});
+        //     // divDemo.animate({"width": "250px", "height": "50px", "marginLeft": "0px", "marginTop": "200px"});
+        //     // divDemo.animate({"width": "50px", "height": "50px", "marginLeft": "0px", "marginTop": "200px"});
+        //     // divDemo.animate({"width": "50px", "height": "250px", "marginLeft": "0px", "marginTop": "0px"});
+        //     // divDemo.animate({"width": "50px", "height": "50px", "marginLeft": "0px", "marginTop": "0px"});
+        //     //
+        //     // $("p").attr("align","center");
+        //     // alert($("p").attr("align"));
+        //
+        //     // var fontStr = "";
+        //     // for ( var i=1; i<=10; i++ ){
+        //     //     if ( i===7 ) {
+        //     //         fontStr += "<font color='red' id='big'>" + i + "</font>  <br />";
+        //     //         continue;
+        //     //     }
+        //     //     fontStr += "<font color='red'>" + i + "</font>  <br /> ";
+        //     // }
+        //     // myBody.append(fontStr);
+        //     // $("#big").attr("size","7");
+        //     // var fontArr = $("font:odd");
+        //     // fontArr.attr("class","small");
+        //     // $(".small").attr("size","4");
+        //     // $(".small").attr("color","green");
+        //     // myBody.append("<button>Press</button>");
+        //     // $("button").click(
+        //     //     function () {
+        //     //         fontArr.attr("size","7");
+        //     //     }
+        //     // );
+        //     // }
+        //     // )
+        //
+        //
+        //     // myBody.append("<button id='up'>上</button><button id='down'>下</button><button id='left'>左</button><button id='right'>右</button><div>aa</div>");
+        //     // var divDemo = $("div");
+        //     // divDemo.css({"width": "50px", "height": "50px", backgroundColor: "red","position":"relative"});
+        //     // $("#up").click(function () {
+        //     //     $("div").animate({ top:'-=50px' });
+        //     // });
+        //     // $("#down").click(function () {
+        //     //     divDemo.animate({top:'+=50px'});
+        //     // });
+        //     // $("#left").click(function () {
+        //     //     divDemo.animate({left:'-=50px'});
+        //     // });
+        //     // $("#right").click(function () {
+        //     //     divDemo.animate({left:'+=50px'});
+        //     // });
+        //
+        //     // var divDemo = $("div");
+        //     // divDemo.css({width:"250px",border:"1px solid black",padding:"40px"});
+        //     // divDemo.addClass("imDiv");
+        //     // divDemo.append("<span>I'm Fucking Middle Of You</span>");
+        //     // divDemo.append("<span>I'm Fucking Behind Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.prepend("<span>I'm Fucking front Of You</span>");
+        //     // divDemo.after("<p>I'm After You</p>");
+        //     // divDemo.before("<p>I'm Before You</p>");
+        //     // divDemo.css({width:"250px",height:"100px",border:"1px solid black",padding:"40px"});
+        //     // var arr = $("[name='test']");
+        //     // $("#all").click(function () {
+        //     //     for( var i=0; i<arr.length; i++ ){
+        //     //         arr.eq(i).attr("checked",true);
+        //     //     }
+        //     // });
+        //     // $("#notAll").click(function () {
+        //     //     for( var i=0; i<arr.length; i++ ){
+        //     //         arr.eq(i).attr("checked",false);
+        //     //     }
+        //     // })
+        //     // $("#oppAll").click(function () {
+        //     //     for( var i=0; i<arr.length; i++){
+        //     //         arr.eq(i).attr("checked",!( arr.eq(i).attr("checked") ));
+        //     //     }
+        //     // })
+        //     // 1.使用jquery修改div元素的背景色(随意颜色)
+        //     // var num1Div = $("#num1");
+        //     // var r = parseInt( Math.random()*256 );
+        //     // var g = parseInt( Math.random()*256 );
+        //     // var b = parseInt( Math.random()*256 );
+        //     // num1Div.css({width:"200px",height:"150px",backgroundColor:"rgba("+r+","+g+","+b+",1)"});
+        //     // 2.使用jquery修改div的子元素p的内容为"我是子元素"
+        //     // num1Div.append("<p></p>");
+        //     // num1Div.append("<p></p>");
+        //     // num1Div.append("<p></p>");
+        //     // num1Div.children().html("我是子元素");
+        //     // 3.使用jquery修改第二个p元素的背景色为"orange"
+        //     // num1Div.children().eq(1).css({backgroundColor:"orange"});
+        //     // 4. 使用jquery克隆方法.请克隆p元素并且修改"克隆的p元素"内容为"我是克隆体"，并添加到"被克隆p元素"的后面
+        //     // num1Div.append(num1Div.children().eq(1).clone(true));
+        //     // num1Div.children().eq(3).html("我是克隆体");
+        //     // 5.请使用jquery来自动选中页面中的多选框
+        //     // $("body").append("<input type='checkbox' name='cmyCheckBox'>1<input type='checkbox' name='myCheckBox'>2<input type='checkbox' name='myCheckBox'>3" +
+        //     //     "<input type='checkbox' name='myCheckBox'>4<input type='checkbox' name='myCheckBox'>5");
+        //     // $("[name=myCheckBox]").eq(1).prop("checked","checked");
+        //
+        //     // 6.删除列表元素中最后一个li元素
+        //     // var allLis = $("li");
+        //     // allLis.eq(allLis.length-1).remove();
+        //
+        //     // 7.点击当前的p标签,弹出相对应的元素下标
+        //     // var pELe = $("p");
+        //     // pELe.click( function () {
+        //     //     var elements = pELe.siblings();
+        //     //     var arr = [];
+        //     //     for ( var j=0; j<elements.length; j++ ){
+        //     //         arr[j] = elements.eq(j).html();
+        //     //     }
+        //     //     for ( var m=0; m<elements.length; m++) {
+        //     //         if ( elements[m] === this ){
+        //     //             alert(m);
+        //     //             break;
+        //     //         }
+        //     //     }
+        //     // });
+        //
+        //     /** 8.要求:  点击id为btn的按钮,
+        //         1.判断id为username的输入是否为空,如果为空,则弹出你输入的不能为空.
+        //         2.判断id为password的输入的个数是否小于6位,如果小于6位,则弹出你输入的长度不可以少于6位
+        //     */
+        //     // $("body").append("<div class=")
+        //     // 9.要求:利用jquery中的animate()方法.点击id为btn的按钮,实现类名为box的元素,向左移动500px
+        //
+        //
+        //     // 10.要求:利用jquery中的选择器,至少写三种方法,让p元素的字体颜色变成红色 。
+        //
+        // });
+    </script>
+<body>
+    // <!--<div>-->
+        <!--<input type="checkbox" name="test" />1-->
+        <!--<input type="checkbox" name="test" />2-->
+        <!--<input type="checkbox" name="test" />3-->
+        <!--<input type="checkbox" name="test" />4-->
+        <!--<input type="checkbox" name="test" />5-->
+        <!--<button id="all">全选</button>-->
+        <!--<button id="notAll">全不选</button>-->
+        <!--<button id="oppAll">反选</button>-->
+    <!--</div>-->
+    <div id="num1"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+</body>
+
+</html>

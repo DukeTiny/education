@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格的使用</title>
+		<style>
+			/*
+			 * 标签选择器
+			 * 类选择器
+			 * id选择器
+			 */
+			font{
+				font-family:"微软雅黑" ;
+				font-size: 30px;
+			}
+			span{
+				font-family: "微软雅黑";
+				font-size: 25px;				
+			}
+			.point{
+				font-size: 45px;
+			}
+			#redpoint{
+				color: red;
+			}
+			#bluepoint{
+				color: blue;
+			}
+			#greenpoint{
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<table width="400px" height="120px" bgcolor="darkgray"
+			align="center" cellpadding="3px" border="1" bordercolor="red">
+			<tr height="60px">
+				<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<font class="point" id="redpoint">●</font>
+					
+					<font class="point" id="bluepoint">●</font>
+					
+					<font class="point" id="greenpoint">●</font>
+				</td>
+			</tr>
+			<tr >
+				<td bgcolor="red" >
+					<table bgcolor="white" width="100%" height="100%"
+			>
+						<tr>
+							<td></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="400px" height="500px"
+			cellspacing="5px" align="center" bgcolor="darkgrey">
+			<tr align="center" height="100px" bgcolor="aqua">				
+				<td width="25%">
+					<font>AC</font>
+				</td>
+				<td width="25%">
+					<font>+/-</font>
+				</td>
+				<td width="25%">
+					<font>%</font>
+				</td>
+				<td>
+					<font>÷</font>
+				</td>
+			</tr>
+			<tr align="center" height="100px" bgcolor="aqua">				
+				<td width="25%">
+					<font>7</font>
+				</td>
+				<td width="25%"> 
+					<font>8</font>
+				</td>
+				<td width="25%">
+					<font>9</font>
+				</td>
+				<td>
+					<font>*</font>
+				</td>
+			</tr>
+			<tr align="center" height="100px" bgcolor="aqua">				
+				<td width="25%">
+					<font>4</font>
+				</td>
+				<td width="25%">
+					<font>5</font>
+				</td>
+				<td width="25%">
+					<font>6</font>
+				</td>
+				<td>
+					<font>-</font>
+				</td>
+			</tr>
+			<tr align="center" height="100px" bgcolor="aqua">				
+				<td width="25%">
+					<font>1</font>
+				</td>
+				<td width="25%">
+					<font>2</font>
+				</td>
+				<td width="25%">
+					<font>3</font>
+				</td>
+				<td>
+					<font>+</font>
+				</td>
+			</tr>
+			<tr align="center" height="100px" bgcolor="aqua">				
+				<td width="25%">
+					<font>0</font>
+				</td>
+				<td width="25%">
+					<font>退格</font>
+				</td>
+				<td width="25%">
+					<font>.</font>
+				</td>
+				<td>
+					<font>=</font>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

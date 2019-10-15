@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script>
+        $(document).ready( function () {
+            var deptArr = [["10","销售部","上海"],["20","市场部","北京"],["30","售后部","西安"]];
+            var empArr = [
+                            ["1001","张三","1999-9-9","10"],
+                            ["1002","李四","1999-8-8","10"],
+                            ["1003","王五","1999-6-6","20"],
+                            ["1004","Jack","1995-9-9","30"]];
+            var liWrapper = $("<ul id='homework'></ul>");
+
+            for ( var i=0; i<deptArr.length; i++ ){
+                var licontent = $("<li>"+deptArr[i][1]+"</li>" );
+                for ( var j=0; j<empArr.length; j++ ){
+                    if ( deptArr[i][0]===empArr[j][3] ){
+                        var nextContent = $( "<ul></ul>" );
+                        var ss = $( "<li></li>"  );
+                        ss.append(empArr[j][1]);
+                        nextContent.append( ss );
+                        licontent.append( nextContent );
+                    }
+                }
+                liWrapper.append( licontent );
+            }
+            $("div").eq(0).append( liWrapper );
+
+            $("div>ul>li").click( function () {
+                $(this).children("ul").slideToggle();
+            });
+            $("div>ul>li>ul>li").click( function () {
+
+                event.stopPropagation();
+            })
+
+        })
+    </script>
+
+    <style>
+        .content{
+            border: 1px gray solid;
+            float: left;
+        }
+        .content:first-child{
+            padding: 20px;
+        }
+
+    </style>
+
+<body>
+    <div class="content">
+
+    </div>
+    <div class="content">
+        <table width="1000"></table>
+    </div>
+</body>
+
+</html>

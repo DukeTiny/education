@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.cxz" />
+
+    <bean id="sessionListener" class="com.cxz.listener.MySessionListener" />
+
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionListeners">
+            <list>
+                <ref bean="sessionListener" />
+            </list>
+        </property>
+        <property name="globalSessionTimeout" value="100000" />
+        <property name="deleteInvalidSessions" value="true" />
+        <property name="sessionValidationSchedulerEnabled" value="true" />
+    </bean>
+
+    <bean id="customRealm" class="com.cxz.realm.CustomRealm">
+        <!--<property name="credentialsMatcher">-->
+        <!--<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">-->
+        <!--<property name="hashAlgorithmName" value="MD5" />-->
+        <!--<property name="hashIterations" value="1027" />-->
+        <!--<property name="storedCredentialsHexEncoded" value="true" />-->
+        <!--</bean>-->
+        <!--</property>-->
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="customRealm"/>
+        <property name="sessionManager" ref="sessionManager" />
+    </bean>
+
+    <bean id="roleFilter" class="com.cxz.Filter.CustomRolesAuthorizationFilter" />
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--认真失败-->
+        <property name="loginUrl" value="/html/login.html" />
+        <!--授权失败-->
+        <property name="unauthorizedUrl" value="/html/fail.html" />
+        <property name="filters">
+            <map>
+                <entry key="myRole" value-ref="roleFilter" />
+            </map>
+        </property>
+
+        <property name="filterChainDefinitions">
+            <value>
+                <!--匿名访问，无需认真，可以直接访问。-->
+                /login = anon
+                /html/login.html = anon
+                /html/reg.html = anon
+                /logout = logout
+
+                /html/normal.html = roles[admin]
+                /html/super.html = myRole[superAdmin,admin]
+
+                /html/add.html = perms["user:add"]
+                /html/find.html = perms["user:find"]
+                /html/delete.html = perms["user:delete"]
+
+                <!--authc代表认证后才能够访问-->
+                /**=authc
+            </value>
+        </property>
+    </bean>
+
+</beans>

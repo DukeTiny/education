@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				var imgs = $("[src$='.jpg']");
+				//eq(index); 获得数组或集合中指定位置的元素
+				//attr(attributeName); 获得该标签attributeName属性的值
+				alert(imgs.length);
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<img class="abc" src="1.jpg" />
+		<img class="bbb" src="1.png" id="ddd" />
+		<img class="abc" src="1.jpg" />
+		<p class="abc">
+			<iframe src="3.jpg"></iframe>
+	</body>
+</html>

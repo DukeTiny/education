@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script>
+        $(document).ready( function () {
+            // $("body").children().children("li").css("list-style-image","url(01.png)");
+            $("body").children().css("list-style","none");
+            $("body").children().children().children().css("list-style","none");
+            var ulEle = $("#ulFirst");
+            ulEle.css("list-style-image","");
+            var numArr = [90,90,90];
+            ulEle.children("li").click(function () {
+                $(this).find("ul").slideToggle("slow");
+                if( numArr[$(this).index()]===90 ){
+                    $(".ro").eq($(this).index()).css({"transform":"rotateZ(-90deg)","animation-duration":"1s"});
+                    numArr[$(this).index()]=-90;
+                }
+                else {
+                    $(".ro").eq($(this).index()).css("transform","rotateZ(0deg)");
+                    numArr[$(this).index()]=90;
+                }
+            });
+
+
+            // rotateZ(angle)
+        })
+    </script>
+
+    <style>
+
+    </style>
+
+<body>
+    <ul id="ulFirst">
+
+        <li><img src="02.png" class="ro"> 1
+            <ul>
+                <li>1.1</li>
+                <li>1.2</li>
+            </ul>
+        </li>
+
+        <li><img src="02.png" class="ro"> 2
+            <ul>
+                <li>2.1</li>
+                <li>2.2</li>
+            </ul>
+        </li>
+
+        <li><img src="02.png" class="ro"> 3
+            <ul>
+                <li>3.1</li>
+                <li>3.2</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

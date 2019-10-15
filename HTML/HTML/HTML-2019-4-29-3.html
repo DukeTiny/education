@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script>
+            $("body").ready(function () {
+                var arr = $("[name='test']");
+                $("#all").click(function () {
+                    for( var i=0; i<arr.length; i++ ){
+                        arr.eq(i).prop("checked",true);
+                    }
+                });
+                $("#notAll").click(function () {
+                    for( var i=0; i<arr.length; i++ ){
+                        arr.eq(i).prop("checked",false);
+                    }
+                })
+                $("#oppAll").click(function () {
+                    for( var i=0; i<arr.length; i++){
+                        arr.eq(i).prop("checked",!( arr.eq(i).prop("checked") ));
+                    }
+                })
+            });
+    </script>
+<body>
+        <div>
+        <input type="checkbox" name="test" />1
+        <input type="checkbox" name="test" />2
+        <input type="checkbox" name="test" />3
+        <input type="checkbox" name="test" />4
+        <input type="checkbox" name="test" />5
+        <button id="all">全选</button>
+        <button id="notAll">全不选</button>
+        <button id="oppAll">反选</button>
+    </div>
+
+</body>
+
+</html>

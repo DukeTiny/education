@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function getTime() {
+				var ttime = new Date();
+				var stime = ttime.toLocaleTimeString();
+				
+				document.getElementById("time").innerHTML = stime;
+				
+			}
+		</script>
+	</head>
+
+	<body onload="setInterval(getTime,1000);">
+		<div id="time"></div>
+	</body>
+
+</html>

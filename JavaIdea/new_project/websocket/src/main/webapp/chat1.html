@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/sockjs-client/1.2.0/sockjs.js"></script>
+    <script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.js"></script>
+</head>
+
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        textarea{
+            resize: none;
+            width: 500px;
+            height: 300px;
+        }
+        #chat{
+            margin: 0 auto;
+            width: 500px;
+        }
+        button{
+            float: right;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+
+    <script>
+
+        $(function () {
+            let socketJS = new SockJS("http://localhost:8080/socket");
+            let stomp = Stomp.over(socketJS);
+            stomp.connect({},function (data) {
+                let url = "/user/1/message/fromUser";
+                stomp.subscribe(url,function (response) {
+                    let msg = JSON.parse(response.body);
+                    let show = "发送人" + msg.fromUser + "说：<br />" + msg.content +"<br />";
+                    $("#chatContent").html($("#chatContent").html()+show);
+                });
+            });
+            $("#send").click(function(){
+                let content = $("#content").val();
+                stomp.send('/message',{},JSON.stringify({
+                    "content"  : content,
+                    "fromUser" : 1,
+                    "toUser"   : 2
+                }));
+            });
+        });
+
+    </script>
+
+<body>
+    <h2 style="text-align: center;">
+        Let's Talk
+    </h2>
+    <hr />
+
+    <div id="chat">
+        <label>
+            <textarea id="content"></textarea>
+        </label>
+        <button type="button" id="send">发送</button>
+        <span id="chatContent"></span>
+    </div>
+
+
+
+
+</body>
+</html>

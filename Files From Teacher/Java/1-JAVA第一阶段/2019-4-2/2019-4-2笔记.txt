@@ -1,0 +1,43 @@
+缓冲流
+BufferedInputStream  字节缓冲输入流
+	BufferedInputStream(InputStream input);
+	int read();
+	read(byte[] b);
+	close();
+
+BufferedOutputStream
+	BufferedOutputStream(OutputStream output);
+	write(int c);
+	write(byte[] b);
+	flush();
+	close();
+
+BufferedReader
+	BufferedReader(Reader reader);
+	int read();
+	read(char[] c);
+	String readLine(); //读取一行
+	ready();
+	close();
+BufferedWriter
+	BufferedWriter(Writer writer);
+	write(int c);
+	write(char[] c);
+	write(String str);
+	newLine();
+	flush();
+	close();
+
+PrintWriter
+	PrintWriter(File file);
+	PrintWriter(OutputStream output);
+	PrintWriter(Writer writer);
+	write(int c);
+	write(char[] c);
+	write(String str);
+	print(String str);
+	println(String str);
+	
+缓冲流和基本流
+缓冲流的速度快于基本流
+缓冲流可以提供一些新的功能

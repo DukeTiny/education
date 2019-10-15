@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛登录界面</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        function changeUserStyle() {
+            $("[name=username]").css({"color":"rgb(80,80,80)","font-size":"14px"});
+            $(".result").eq(0).html("<font color='red'>Wrong</font>")
+        }
+        function changePWDStyle() {
+            $("[name=password]").css({"color":"rgb(80,80,80)","font-size":"14px"});
+            $(".result").eq(1).html("<font color='red'>Wrong</font>")
+        }
+    </script>
+
+    <style>
+        .outerDiv{
+            width: 500px;
+            height: 400px;
+            margin: 150px auto;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px 0 rgba(70,70,70,0.3);
+        }
+        .innerDiv{
+            width: 500px;
+            height: 400px;
+            float: left;
+        }
+        .form{
+            width: 500px;
+            height: 400px;
+            background: linear-gradient(rgba(250,250,250,1),rgba(240,240,240,1));
+            border-radius: 25px;
+            float: left;
+            text-align: center;
+        }
+        .input{
+            color: lightgray;
+            width: 300px;
+            height: 20px;
+            border: none;
+            outline: none;
+            border-bottom: 1px lightgray solid;
+            background-color: rgba(0,0,0,0);
+            font-size: 14px;
+        }
+        .input::placeholder{
+            color: silver;
+        }
+        .button{
+            width: 304px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fc8200;
+            color: azure;
+        }
+
+        body{
+            background-image: url("img/loginBG.jpg");
+            background-size: 1920px;
+        }
+
+        a:link,a:visited{
+            font-size: 10px;
+            text-decoration: none;
+            color: gray;
+        }
+        a:hover,a:active{
+            font-size: 10px;
+            color: orangered;
+        }
+
+        .result{
+            margin-left: 95px;
+            color: red;
+            text-align: left;
+            font-size: 10px;
+            height: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="outerDiv">
+        <div class="innerDiv">
+            <div class="form" >
+                <div style="margin:30px 0px">
+                    <form action="login.do" method="post">
+                        <img src="img/Logo.png" alt="logo" width="300"><br /><br />
+                        <input type="text" class="input" name="username" placeholder="用户名" onfocus="changeUserStyle()">
+                        <br />
+                        <div class="result"></div>
+                        <input type="password" class="input" name="password" placeholder="密码" onfocus="changePWDStyle()">
+                        <br />
+                        <div class="result"></div>
+                        <button class="button">登录</button><br /><br />
+                        <input type="radio" name="role" value="普通用户" checked>普通用户
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="role" value="管理员">管理员
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="reg" href="">没有账号?注册</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+     </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Js Practise</title>
+    <script>
+        function moveSnow() {
+            var snows = document.getElementsByTagName('div');
+            snows[0].style.left = snows[0].offsetLeft + Math.random()*100 +"px";
+        //     snows[0].style.@keyfreams =
+        //         'disappear'+'{'+
+        //         '100%'+'{'+
+        //         'opacity: 0'+
+        //         '}'+']';
+        }
+        var re = new RegExp("\\d+$");
+
+        function showSnow() {
+            var snowDiv = document.createElement("div");
+            var snowImg = document.createElement("img");
+            snowDiv.class = "flyingSnow";
+            snowImg.src="../images/mysnow.png";
+            snowImg.width = "40";
+            snowDiv.style.position = "relative";
+            snowDiv.style.animation = "disappear 3s";
+
+            snowDiv.appendChild(snowImg);
+            document.body.appendChild(snowDiv);
+        }
+    </script>
+
+</head>
+
+<body onload="showSnow()" bgcolor="black">
+    <input type="button" value="增加" onclick="moveSnow()"/>
+</body>
+
+</html>
+<!-- onload="checkLetter( mail,'@','.');" -->

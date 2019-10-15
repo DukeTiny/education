@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛商店系统</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        function changeUserStyle() {
+            $("[name=username]").css({"color":"rgb(80,80,80)","font-size":"14px"});
+        }
+        function changePWDStyle() {
+            $("[name=password]").css({"color":"rgb(80,80,80)","font-size":"14px"});
+        }
+    </script>
+
+    <style>
+        .outerDiv{
+            width: 800px;
+            height: 350px;
+            margin: 150px auto;
+            border-radius: 20px;
+            box-shadow: 0 2px 2px 0 rgba(70,70,70,0.3);
+        }
+        .innerDiv{
+            width: 400px;
+            height: 350px;
+            float: left;
+        }
+        .form{
+            width: 400px;
+            height: 350px;
+            margin-left: 0;
+            background: linear-gradient(rgba(250,250,250,1),rgba(230,230,230,1));
+            border-radius: 20px 0 0 20px;
+            float: left;
+        }
+        .pic{
+            width: 280px;
+            height: 230px;
+            padding: 60px;
+            float: left;
+            margin-right: 0;
+            border-radius: 0 20px 20px 0;
+            background: linear-gradient(rgba(243, 220,20, 1), rgba(247, 161,7, 1));
+        }
+        .input{
+            color: lightgray;
+            width: 200px;
+            height: 20px;
+            border: none;
+            border-bottom: 1px gray solid;
+            background-color: rgba(0,0,0,0);
+        }
+        .input::placeholder{
+            color: silver;
+        }
+        .button{
+            width: 204px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: #fc8200;
+            color: azure;
+        }
+
+        body{
+            background-image: url("img/loginBG.jpg");
+            background-size: 1920px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outerDiv">
+            <div class="innerDiv">
+                <div class="form" >
+                    <div style="margin:30px 100px">
+                        <form action="login.do" method="post">
+                            <img src="img/Logo.png" alt="logo" width="200"><br /><br />
+                            <input type="text" class="input" name="username" placeholder="用户名" onfocus="changeUserStyle()"><br /><br />
+                            <input type="password" class="input" name="password" placeholder="密码" onfocus="changePWDStyle()"><br /><br />
+                            <button class="button">登录</button><br /><br />
+                            <input type="radio" name="role" value="普通用户" checked>普通用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="role" value="管理员">管理员<br /><br />
+                        </form>
+                    </div>
+                </div></div>
+                <div class="pic">
+                    <br /><br /><br /><br />
+                    <font face="Chalkduster" size="4" color="white">There is always something</font>
+                    <br /><br />
+                    <font face="Chalkduster" size="4" color="white">you wanna buy</font>
+                </div>
+         </div>
+
+    </div>
+</body>
+</html>

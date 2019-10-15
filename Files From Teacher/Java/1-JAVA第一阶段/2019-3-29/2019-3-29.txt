@@ -1,0 +1,102 @@
+异常处理
+Throwable
+	Error
+		JVM虚拟机
+	Exception
+		运行时异常
+		检查性异常
+
+什么是异常
+	程序在运行中，出现错误，程序终止，给程序员返回错误信息。
+	
+	类型：java.lang.异常类名
+	提示信息：
+	具体报错位置：
+
+异常的种类
+java.lang.ArithmeticException  数学异常  除0
+java.lang.ArrayIndexOutOfBoundsException 数组下标越界异常 访问不存在的数组的下标
+java.lang.NullPointerException  空指针异常 声明对象为null，通过该对象调用属性或方法
+java.lang.StringIndexOutOfBoundsException 字符串下标越界异常  访问不存在的下标
+java.lang.NumberFormatException  数字格式异常 将一个非数字的字符串转为数字（Integer.parseInt()）
+java.lang.ClassCastException 类型转换异常  将一个强转成非同类型的对象
+java.util.InputMismatchException 输入异常 输入的类型与获取的类型不匹配
+
+异常处理
+try
+尝试
+将可能出现错误的代码进行包过
+catch	
+捕获
+当异常出现时，按照异常类型进行处理
+finally
+最终
+
+try{
+
+}catch(){
+
+}
+
+try{
+
+}catch(){
+
+}finally{
+
+}
+
+try{
+
+}finally{
+
+}
+
+Exception
+getMessage();获得异常的信息
+printStackTrace();打印错误栈
+
+如果有多个catch，类型必须从小到大
+finally 必须执行，如果有return语句，在return语句之前执行。
+
+
+throws
+向上抛出
+当前方法对异常不具备处理条件，抛给调用的位置。
+
+throw
+主动抛出
+在方法中，如果确定异常出现的情况，可以主动将其抛出，并给出准确的信息。
+
+Exception
+检查性异常
+	RuntimeException
+	运行时异常
+
+自定义异常类
+
+Throwable
+   Error
+
+1、异常的种类
+Exception
+RuntimeException
+2、基本异常处理
+try
+catch
+finally
+3、向上抛出
+throws
+4、主动抛出
+throw
+5、自定义异常
+
+内部类
+成员内部类
+写在外部类中，作为成员
+局部内部类
+写在外部类的成员方法中，只能方法中使用
+匿名内部类
+事件处理
+静态内部类
+写在外部类中，作为成员，内部只能使用的外部类中的static属性

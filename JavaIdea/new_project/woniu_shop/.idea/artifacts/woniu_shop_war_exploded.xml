@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="woniu_shop:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/woniu_shop_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="woniu_shop" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="woniu_shop/web/Web2" />
+      <element id="javaee-facet-resources" facet="woniu_shop/web/Web" />
+    </root>
+  </artifact>
+</component>

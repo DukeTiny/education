@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Table Practise1</title>      
+        <style>
+            .wrapper{
+                width: 410px;
+                height: 540px;
+                background: darkgray;
+                margin: 50px auto;
+                border-radius: 10px;
+            }
+            #result{
+                width: 388px;
+                height: 60px;
+                border: 1px lightgray solid;
+                background-color: #89a3a7;
+                box-shadow: 0 0 3px 0 rgba(0,0,0,0.8) inset;
+                margin: 0 auto;
+                border-radius: 5px;
+            }
+            .word{
+                width: 380px;
+                height: 35px;
+                padding: 0 10px;
+                font-size: 21px;
+                line-height: 35px;
+            }
+            .word span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .word span:first-child{
+                color: red;
+            }
+            .word span:nth-child(2){
+                color: blue;
+            }
+            .word span:last-child{
+                color: green;
+            }
+            /*.buttonWrapper{*/
+                /*width: 392px;*/
+                /*margin: 5px auto;*/
+            /*}*/
+
+            .button{
+                margin: 1px auto;
+                display: table;
+            }
+            .button:first-child{
+                margin: 10px auto 1px;
+            }
+            .buttonInner{
+                width: 94px;
+                height: 80px;
+                border: 2px darkgray solid;
+                background-color: #00b4ed;
+                border-radius: 6px;
+                color: #661a83;
+                font-size: 25px;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .buttonInner:hover{
+                width: 94px;
+                height: 80px;
+                border: 2px lightgray solid;
+                background-color: red;
+                border-radius: 6px;
+                color: lightgray;
+                box-shadow: 0 0 3px 1px rgba(80,0,0,0.4) inset;
+                font-size: 25px;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .button:last-child{
+                border-bottom-right-radius: 8px;
+            }
+            .button:nth-last-child(4){
+                border-bottom-left-radius: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="word">
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+            </div>
+            <div id="result"></div>
+            <div class="buttonWrapper">
+                <div class="button">
+                    <div class="buttonInner">AC</div>
+                    <div class="buttonInner">+/-</div>
+                    <div class="buttonInner">%</div>
+                    <div class="buttonInner">&divide;</div>
+                </div>
+                <div class="button">
+                    <div class="buttonInner">7</div>
+                    <div class="buttonInner">8</div>
+                    <div class="buttonInner">9</div>
+                    <div class="buttonInner">&times;</div>
+                </div>
+                <div class="button">
+                    <div class="buttonInner">4</div>
+                    <div class="buttonInner">5</div>
+                    <div class="buttonInner">6</div>
+                    <div class="buttonInner">-</div>
+                </div>
+                <div class="button">
+                    <div class="buttonInner">1</div>
+                    <div class="buttonInner">2</div>
+                    <div class="buttonInner">3</div>
+                    <div class="buttonInner">+</div>
+                </div>
+                <div class="button">
+                    <div class="buttonInner">0</div>
+                    <div class="buttonInner">-<</div>
+                    <div class="buttonInner">.</div>
+                    <div class="buttonInner">=</div>
+                </div>
+            </div>
+        </div>
+        <a target="usefulCal" href="../js/JS-DAY10-CalculatorFunction.html">可计算的计算器</a>
+        <a target="usefulCal" href="HTML-DAY3-Calculator.html">复制自己</a>
+    </body>
+</html>

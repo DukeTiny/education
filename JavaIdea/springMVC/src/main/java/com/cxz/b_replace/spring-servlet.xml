@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/cache
+       http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!--BeanNameUrlHandlerMapping，拿着请求中的url，与bean的id比较-->
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />-->
+    <!--2.SimpleUrlHandlerMapping，当请求中的url与bean的id不相等的时候，才使用这个映射器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
+        <property name="urlMap">
+            <props>
+                <prop key="/uc.do">uc</prop>
+                <prop key="/uc2.do">uc2</prop>
+            </props>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven />
+
+    <!--1. SimpleControllerHandlerAdapter，要求控制器必须实现Controller接口-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+
+    <!--2. HttpRequestHandlerAdapter，要求控制器必须实现HttpRequestHandler-->
+    <!--<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" />-->
+
+
+
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >-->
+        <!--<property name="prefix" value="/" />-->
+        <!--<property name="suffix" value=".jsp" />-->
+    <!--</bean>-->
+
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+
+    <bean id="uc" class="com.cxz.b_replace.UserController" />
+    <bean id="uc2" class="com.cxz.b_replace.UserController2" />
+    <bean id="myView" class="com.cxz.b_replace.MyView" />
+
+</beans>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Js Practise</title>
+    <script>
+        //获取小时，早安，晚安。
+        // const A = new Date().getHours();
+        // if( A>18 ){
+        //     document.write("Good Night.")
+        // }
+        // else if( A>=12 && A<18 ){
+        //     document.write("Good Afternoon.")
+        // }
+        // else if( A>=6 && A<12){
+        //     document.write("Good Morning.")
+        // }
+        // else {
+        //     document.write("You Should Sleep.")
+        // }
+
+        //登陆认真
+        // let u = window.prompt("请输入用户名：");
+        // let p = window.prompt("请输入你的密码：")
+        // const k = ["Ba", "wh809919"];
+        //
+        // if( u!=k[0] ){
+        //     document.write("用户名错误");
+        // }
+        // else {
+        //     if( p==k[1] ){
+        //         document.write("登陆成功");
+        //     }
+        //     else{
+        //         document.write("密码错误");
+        //     }
+        // }
+
+
+        // for( let i=0; i<100; i+=2){
+        //     document.write(i+"<br>")
+        // }
+
+        // 变量，运算条件，以及变量的变化情况
+        // var i=0;
+        // for(;;){
+        //     if(i<100){
+        //         document.write(i+"<br>");
+        //     }
+        //     else{
+        //         break;
+        //     }
+        //     i++;
+        // }
+
+        // while函数使用
+        // var i=0
+        // while( i<100 ){
+        //     document.write(i+"<br>")
+        //     i+=3;
+        // }
+
+        // do 和 while 函数使用
+        // var i=0;
+        // do{
+        //     document.write(i+"<br>");
+        //     i+=4;
+        // }while(i<100)
+
+        /** 100-500求和
+         * let result=0
+         for( let i=100; i<=500; i++){
+            result+=i;
+        }
+         document.write("100-500的和为："+result)
+         */
+        /**
+         *let letter=window.prompt("请输入一个内容：");
+         let code=letter.charCodeAt(0);
+         if( code>47 && code<58){
+            document.write("这是一个数字。")
+        }
+         else if ( code>64 && code<91){
+            document.write("这是一个大写字母。")
+        }
+         else if (code>96 && code< 123){
+            document.write("这是一个小写字母。")
+        }
+         else {
+            document.write("这是一个符号。")
+        }
+         */
+
+
+        // 密码验证，先验证用户名，后验证密码。
+
+        // const x = window.prompt("请输入用户名：");
+        // const username = ["王虎", "李强", "卑鄙"];
+        // const secretCode = ["12345", "54321", "..123"];
+        // let i = 0;
+        // for (; i < 3; i++) {
+        //     if (x === username[i]) {
+        //         break;
+        //     }
+        // }
+        // const y = window.prompt("请输入您的密码：")
+        // if (x === username[i]) {
+        //     if (y === secretCode[i]) {
+        //         document.write("登陆成功。");
+        //     }
+        //     else {
+        //         document.write("密码错误。");
+        //     }
+        // }
+        // else {
+        //     document.write("您的用户名错误。");
+        // }
+
+
+        //  水仙花
+        // for ( let i=100; i<=999 && i>=100; i++){
+        //     let j=i%10;
+        //     let k=parseInt(i/10)%10;
+        //     let l=parseInt(i/100)%10;
+        //     if ( i===j*j*j+k*k*k+l*l*l){
+        //         document.write(i+"<br>")
+        //     }
+        // }
+        //  水仙花
+        // for ( let i=100; i<=999 && i>=100; i++){
+        //     let j=i.charAt(0); let b=Number(j);
+        //     let k=i.charAt(0); let n=Number(k);
+        //     let l=i.charAt(0); let m=Number(l);
+        //     if ( i===b*b*b+n*n*n+m*m*m){
+        //         document.write(i+"<br>")
+        //     }
+        // }
+
+        // 水仙花
+        // for ( let j=1; j<=9; j++ ){
+        //     for (let k=0; k<=9; k++){
+        //         for (let l=0; l<=9; l++){
+        //             let number=j*100+k*10+l;
+        //             if ( number===j*j*j+k*k*k+l*l*l){
+        //                 document.write(number+"<br>")
+        //             }
+        //         }
+        //     }
+        // }
+
+        //  x的y次方
+        /**
+         let X = window.prompt();
+         let Y = window.prompt();
+         let result = "1";
+         for( let i=1; i<=Y; i++){
+            result*=X;
+        }
+         document.write(result)
+
+
+         let x = prompt();
+         let y = prompt();
+         let result = "1";
+
+
+         if( y<0 ){
+            y*=-1
+            for (let i=1; i<=y; i++){
+                result*=x;
+            }
+            result=1/result;
+        }
+         else {
+            for( let i=1; i<=y; i++){
+                result*=x;
+            }
+        }
+         document.write(result)
+
+
+
+         if ( x !== 0 && y < 0) {
+            for (let i = 1; i <= (-Y); i++) {
+                result *= y;
+            }
+            result = 1 / result;
+        }
+         if ( x  !== 0 && y > 0) {
+            for (let i = 1; i <= y; i++) {
+                result *= x;
+            }
+        }
+         document.write(result);
+         */
+
+        //        let sum=0;
+        //        let loop=1;
+        //        for ( let i=100; i<=500; i+=2) {
+        //            sum+=i;
+        //            loop++;
+        //        }
+        //        document.write( sum );
+        //        document.write( "<br>" + loop + "<br>");
+
+
+
+        // for ( let i=1; i<10;i++ ) {
+        //     for ( let j=1; j<=i; j++){
+        //         if ( j<i ){
+        //             document.write( j + "*" + i + "=" +( i*j ) + "&nbsp;&nbsp;&nbsp;");
+        //         }
+        //         else {
+        //             document.write( j + "*" + i + "=" +(i*j) + "<br>");
+        //         }
+        //     }
+        // }
+
+        //乘法表
+        // for ( let i=1; i<=9; i++) {
+        //     for( let j=1; j<=i; j++){
+        //         if ( i===j ){
+        //             document.write( j + "*" +i +"=" + (i*j)+"<br>");
+        //         }
+        //         else {
+        //             document.write( j + "*" +i +"="+(i*j)+"&nbsp;&nbsp;");
+        //         }
+        //     }
+        // }
+
+
+               for ( let i=1; i<=9; i++) {
+                   for( let j=1; j<=i; j++){
+                       if ( i===j ){
+                           document.write( j + "*" +i +"=" + (i*j)+"<br>");
+                       }
+                       else if ( i!==j && i<=4 && j<4) {
+                           document.write( j + "*" +i +"="+(i*j) + "&nbsp;&nbsp;");
+                       }
+                       else if ( i!==j && i<=4 && j===4 ) {
+                           document.write( j + "*" +i +"="+(i*j) + "&nbsp;");
+                       }
+                       else {
+                           document.write( j + "*" +i +"="+(i*j)+"&nbsp;&nbsp;");
+                       }
+                   }
+               }
+        // let a = [1,2,3,4,5];
+        // let b = [1,2,3];
+        // a[5] = b[0];
+        // alert(a);
+        // let d = a;
+        // alert(d);
+
+
+        // var array = [1,2,3,4,5]
+        // for( i=0; i<5; i++) {
+        //     var newArray = array[i]
+        //     if( i===3 ){
+        //         continue;
+        //     }
+        //     else {
+        //         document.write(newArray);
+        //     }
+        // }
+        //
+
+        //  数组倒叙输出
+        // var array = [22,23.51,324,24];
+        // for ( var i=array.length-1; i>=0; i--){
+        //     document.write( array[i] + "&nbsp;&nbsp;&nbsp;");
+        // }
+
+        //  倒叙输出
+        // var array = [22,23,51,324,24];
+        // var length = array.length;
+        // for ( var i=0; i<length/2; i++){
+        //     var temp = array[i];
+        //     array[i] = array[length-i-1];
+        //     array[length-i-1] = temp;
+        // }
+        // document.write( array );
+
+        // 删除其中某个元素
+        // var array = [22,23,51,324,24];
+        // var j = prompt()
+        // for ( var i=0; i<array.length; i++) {
+        //     if ( i>=j ) {
+        //         array[i] = array[i+1];
+        //     }
+        // }
+        // array.pop();
+        // document.write( array );
+
+
+        // 删除值为多少的数
+        // var array = [22,23,51,324,24];
+        // var value = prompt()
+        // for ( var i=0; i<array.length; i++) {
+        //     if ( array[i]==value ) {
+        //         for ( j=i; j<array.length; j++){
+        //         array[i] = array[i+1];
+        //         }
+        //     }
+        // }
+        // array.pop();
+        // document.write( array );
+
+        // 数字数组从小到大排序
+        // var array = [22,67,51,324,24];
+        // for ( var j=0; j<array.length-1; j++){
+        //     for ( var i=0; i<array.length-j-1; i++) {
+        //         if ( array[i]<array[i+1]){
+        //         }
+        //         else if ( array[i]>=array[i+1] ) {
+        //             var temp = array[i+1];
+        //             array[i+1]=array[i];
+        //             array[i] = temp;
+        //         }
+        //     }
+        // }
+        // document.write( array );
+
+        // 数组内部数据重复
+        // var array = [23,67,51,325,24];
+        // var isRepeat = false;
+
+        // for ( var i=0; i<array.length-1; i++){
+        //     for ( var j=array.length-1; j>i; j--) {
+        //         if ( array[i] == array[j] ) {
+        //             isRepeat = true;
+        //         }
+        //     }
+        // }
+        // if ( isRepeat == true ) {
+        //     document.write("有数据重复。")
+        // }
+        // else {
+        //     document.write("无数据重复。")
+        // }
+
+        // 删除数组最后一个元素
+        // var array = [23,67,51,325,24];
+        // var temp = new Array();
+        // for ( var i=0; i<array.length-1; i++) {
+        //     temp[i] = array[i];
+        // }
+        // array = temp;
+        // document.write( temp );
+
+        // 删除数组中重复数字的第n个；
+        // var array = [33,651,52,3.23,3,64];
+        // var tempData = [];
+        // var tempIndex = [];
+        // var count = -2;
+        // for( var i=0; i<Array.length; i++) {
+        //     for ( var j=i+1; j<array.length;j++) {
+        //         if ( array[i] === array[j]) {
+        //             count += 2 ;
+        //             tempData[count] = array[i];
+        //             tempData[count+1] = array[j];
+        //             tempIndex[count] = i;
+        //             tempIndex[count+1] = j;
+        //             break;
+        //         }
+        //     }
+        // }
+
+
+
+        // var mail = prompt("请输入您的邮箱：")
+
+        // function checkLetter(mail,a,b){
+        //     var countA = 0,countB=0;
+        //     for( var i=0; i<mail.length; i++){
+        //         if( mail[i] === a){
+        //             countA++
+        //         }
+        //     }
+        //     for( var j=0; j<mail.length; j++){
+        //         if( mail[j] === b){
+        //             countB++
+        //         }
+        //     }
+        //     if( countA !==1 || countB!==1 || mail.indexOf("@")>mail.indexOf(".") ){
+        //         document.getElementById('output').innerHTML ="您输入的邮箱格式错误";
+        //     }
+        //     else {
+        //         checkNewLocation();
+        //     }
+        // }
+
+        // function checkNewLocation() {
+        //     var arrayA = mail.split("@");
+        //     var net = arrayA[1];
+        //     var arrayB = net.split(".",1);
+        //     var netName = arrayB[0];
+        //     var mailName;
+        //     switch (netName) {
+        //         case "qq"   : mailName = "您的邮箱是QQ邮箱。"
+        //             break;
+        //         case "163"  : mailName = "您的邮箱是网易邮箱。"
+        //             break;
+        //         case "sina" : mailName = "您的邮箱是新浪邮箱。"
+        //             break;
+        //         case "126"  : mailName = "您的邮箱是126邮箱。"
+        //             break;
+        //     }
+        // document.getElementById('output').innerHTML = mailName;
+        // }
+
+        // a = true;
+        // b = true;
+        // function getOut(){
+        //     alert(a);
+        //     alert(b);
+        // }
+        // function aButton() {
+        //     alert(a);
+        //     alert(b);
+        //
+        // }
+        
+        // var a=100;
+        // alert(a);
+
+
+        // 通过DOM向指定位置来创建:
+        // function addElement() {
+        //     var mydiv = document.createElement("div");
+        //     mydiv.style.width = "50px";
+        //     mydiv.style.height = "50px";
+        //     mydiv.style.backgroundColor = "black";
+        //     mydiv.style.position = "relative";
+        //     mydiv.style.top = Math.random()*20 + "px";
+        //     mydiv.style.left = Math.random()*20 + "px";
+        //     mydiv.style.float = "left";
+        //     mydiv.style.overflow = "hidden";
+        //     document.getElementById('testDiv').appendChild(mydiv);
+        // }
+
+    </script>
+    <!--<script>-->
+        <!--function add(){-->
+            <!--var a=prompt();-->
+            <!--var array=a.split(',');-->
+            <!--var temparray=[];-->
+            <!--for( var i=0; i<array.length; i++){-->
+                <!--if(i === 0)temparray[0]="('"+ array[0] +"',";-->
+                <!--if(i<array.length-1)temparray[i]="'"+ array[i] +"'";-->
+                <!--else temparray[i]="'"+ array[i] +"')";-->
+            <!--}-->
+            <!--document.write("INSERT INTO student VALUES("+temparray+";");-->
+        <!--}-->
+    <!--</script>-->
+    <style>
+        .td{
+            disabled: false;
+        }
+    </style>
+
+</head>
+
+<body onload="add()">
+    <!--<div style="width: 600px; height:400px; background-color: black; overflow: hidden; margin: 0 auto;">-->
+        <!--<div style="width:200px; height: 200px; margin: 100px auto; background-color: white;"></div>-->
+    <!--</div>-->
+    <table>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+</html>
+<!-- onload="checkLetter( mail,'@','.');" -->

@@ -1,0 +1,51 @@
+GUI
+	swing
+	awt
+
+容器
+	JFrame
+	JFileChooser
+	JOptonPane
+	JScrollPane
+
+布局管理器
+	流式
+	网格
+	边界
+	无布局
+
+组件
+	JButton
+	JTextField
+	JTextArea
+
+事件
+监听器
+ActionListener
+KeyListener
+WindowListener
+MouseListener
+
+ 三要素
+ 事件源
+ 事件
+ 事件处理
+
+贪食蛇
+先有一个界面
+食物
+蛇头 可以移动
+蛇头碰到食物的时候，食物被吃掉，重新生成食物，蛇身变长
+
+计时器
+Timer
+
+网络编程
+ServerSocket	服务器套接字
+	ServerSocket(int port);
+	accept();
+Socket	套接字
+	Socket(String host,int port);
+
+端口 port
+

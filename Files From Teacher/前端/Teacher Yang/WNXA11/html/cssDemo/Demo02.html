@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组合选择器</title>
+		<style>
+			.b1{
+				background-color: red;
+			}
+			
+			#b3 td{
+				background-color: coral;
+			}
+			#b3 td #p1{
+				width: 80px;
+			}
+			
+			#b4,#b5{
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<table width="200px" height="500px" 
+			bgcolor="aqua" border="1px" align="center">
+			<tr id="b3">
+				<td width="30%" class="b1">
+					<img src="../../img/about.png" id="p1" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="b4">
+				<td>
+					<img src="../../img/android-icon.png" />
+				</td>
+				<td  class="b1" id="b2"></td>
+				<td></td>
+			</tr>
+			<tr id="b5">
+				<td>
+					<img src="../../img/java-icon.png"  />
+				</td>
+				<td></td>
+				<td  class="b1"></td>
+			</tr>
+		</table>
+	</body>
+</html>

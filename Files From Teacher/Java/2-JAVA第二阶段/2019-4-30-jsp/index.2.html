@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				var w = $("#outDiv").width();  //获得内容宽度  width() height();
+				var innerW = $("#outDiv").innerWidth(); //获得内容和内边距 innerWidth() innerHeight();
+				var outerW = $("#outDiv").outerWidth(); //获得内容,内边距和边框 outerWidth() outerHeight();
+				alert(w);
+				alert(innerW);
+				alert(outerW);
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="outDiv" style="width:1000px; height: 800px; border: 10px solid red; margin: 100px; padding: 75px;">
+			<div id="inDiv" style="width:500px; height: 500px; border: 10px solid red;">
+				
+			</div>
+		</div>
+	</body>
+</html>

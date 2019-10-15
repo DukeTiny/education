@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Practise</title>
+</head>
+
+<body>
+    <br /><br />
+    <table border="0px" width="500px" height="600px" cellspacing="6px" align="center" bgcolor="darkgray" >
+        <tr bgcolor="#f2f2f2">
+            <td>
+                <form>
+                    <h2 align="center">用户注册</h2>
+                    <br />
+                    <p align="center">
+                        用户名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" placeholder="王虎" maxlength="5"/>
+                    </p>
+
+                    <p align="center">
+                        密&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="password" placeholder="123456" maxlength="16"/>
+                    </p>
+
+                    <p align="center">
+                        确认密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="password" placeholder="123456" maxlength="16"/>
+                    </p>
+
+                    <p align="center">
+                        性&nbsp;&nbsp;&nbsp;&nbsp;别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="sex" checked="checked" />Male
+                        <input type="radio" name="sex" />Female
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+
+                    <p align="center">
+                        兴趣爱好：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="hoby" checked="checked"/>读书
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="hoby" />书法
+                        &nbsp;
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="hoby" />旅行
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="hoby" />骑车
+                    </p>
+
+                    <p align="center">
+                        户&nbsp;&nbsp;&nbsp;&nbsp;籍：
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select>
+                            <option value="延安">延安</option>
+                            <option value="西安">西安</option>
+                            <option value="汉中">汉中</option>
+                            <option value="渭南">渭南</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </p>
+
+                    <p align="center">
+                        <br />
+                        自我介绍：
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br />
+                        <textarea cols="40" rows="5" placeholder="90年出生于陕西延安的一个叫做王家河的地方，从此开始了..."></textarea>
+                    </p>
+
+                    <p align="center">
+                        <input type="submit" value="确认" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="重置" />
+                    </p>
+                </form>
+             </td>
+        </tr>
+    </table>
+</body>
+
+</html>

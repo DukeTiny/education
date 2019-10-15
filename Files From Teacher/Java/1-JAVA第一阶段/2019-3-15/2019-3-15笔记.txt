@@ -1,0 +1,127 @@
+jdk安装及配置
+path=jdk安装路径\bin
+
+javac
+把java源文件编译成字节码文件class
+
+java
+运行class文件。
+
+使用了IDE
+
+idea
+
+Eclipse
+
+1、新建工程project
+2、在src新建类
+3、类中声明main方法
+4、执行代码
+
+java基本语法
+
+变量
+类型 变量名 = 值;
+
+数据类型
+基本数据类型
+    整
+	byte
+	short
+	int
+	long
+    浮
+    字符
+    布尔
+
+数据类型的转换
+
+复合数据类型
+
+运算符
+算术运算符
+关系运算符
+逻辑运算符
+位运算符
+赋值
+其他
+
+进制转换
+
+
+语句
+1、条件判断语句
+if(条件表达式){
+}
+
+if(条件表达式){
+}
+if(条件表达式){
+}
+if(条件表达式){
+}
+
+if(条件表达式一){
+
+}else if(条件表达式二){
+
+}else{
+
+}
+
+if(){
+   if(){
+
+   }
+}
+
+switch
+case
+default
+break
+
+switch(值){
+  case 值:
+	语句;
+	[break;]
+  ...
+  [default:
+	语句;]
+}
+
+2、循环语句
+初始值
+变化量
+结束条件
+
+for循环
+for(初始值;条件;变化量){
+	语句;
+}
+
+
+
+
+初始值
+while(循环条件){
+	变化量
+}
+
+do
+while
+do{
+	变化量
+}while(循环条件);
+
+for in
+foreach
+
+3、其他语句
+continue 技术本次循环，继续下次循环。
+break 终止循环    
+
+
+
+
+
+

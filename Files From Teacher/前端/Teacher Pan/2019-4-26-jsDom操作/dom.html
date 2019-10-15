@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//网页文档加载完毕
+			window.onload=function(){
+				//获得按钮元素,给它加事件监听
+				document.getElementsByTagName("button")[0].addEventListener("click",function(){
+					var fontElement = document.getElementsByTagName("font")[0];
+					alert(fontElement.getAttribute("size"));
+					fontElement.setAttribute("color","red");
+					fontElement.setAttribute("size",7);
+					fontElement.setAttribute("face","微软雅黑");
+				});
+				document.getElementsByTagName("button")[1].addEventListener("click",function(){
+					show1();
+				});
+				var persons = new Array("孙悟空","猪八戒","沙和尚");
+				//获得无序列表对象
+				var ulObj = document.getElementsByTagName("ul")[0];
+				//循环数组
+				for(var i=0;i<persons.length;i++){
+					var liTag = document.createElement("li"); //<li></li>
+					var text = document.createTextNode(persons[i]); //孙悟空
+					liTag.appendChild(text);  //<li>孙悟空</li>
+					ulObj.appendChild(liTag); //<ul><li>孙悟空</li></ul>
+				}
+				// var liTag = document.createElement("li"); 
+				// var text = document.createTextNode("孙悟空");
+				// liTag.appendChild(text);
+				// 
+				// var liTag2 = document.createElement("li"); 
+				// var text2 = document.createTextNode("猪八戒");
+				// liTag2.appendChild(text2);
+				// 
+				// ulObj.appendChild(liTag);
+				// ulObj.insertBefore(liTag2,liTag);
+				// ulObj.removeChild(liTag);
+				
+				// var pNode = ulObj.parentNode;
+				// alert(pNode.innerHTML);
+				function show1(){
+					alert(document.getElementsByTagName("body")[0].innerText);
+					// var objs = document.getElementsByTagName("body")[0].childNodes;
+					// for(var i=0;i<objs.length;i++){
+					// 	alert(objs[i]);
+					// }
+					// var brother1 = ulObj.previousSibling;
+					// alert(brother1);
+					// var brother2 = ulObj.nextSibling;
+					// alert(brother2.innerHTML);
+				}
+			}
+		</script>
+	</head>
+	<body><font size="5">abc</font><ul></ul><button type="button">设置文字效果</button><button type="button"><font color="red">设置文字效果</font></button>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+java.io包
+io流 input output stream
+概念
+流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称或抽象。
+即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，
+方便更直观的进行数据操作。
+
+分类
+1、根据处理数据类型  
+字节流 
+	InputStream
+	OutputStream
+字符流
+	Reader
+	Writer
+2、根据数据流向不同
+输入流
+   程序是终点
+   文件是起点
+输出流
+   程序是起点
+   文件是终点
+
+使用
+File类
+  文件对象类（文件夹和文件）
+
+File.separator "/"
+
+创建
+  createNewFile(); //创建新文件
+  mkdir(); //创建文件夹  d:/abc/
+  mkdirs();  //创建一组文件夹  d:/abc/bbb/ddd/
+删除
+  delete(); //删除文件
+判断
+  exists();  //是否存在
+  isFile();  //是否为文件
+  isDirectory(); //是否为文件夹
+  isHidden();  //是否隐藏
+获取
+  getName();  //获取文件或文件夹的名字
+  getAbsolutePath();  //获取绝对路径
+  length();  //获取文件长度
+  getParentFile();  //获取父级目录
+  lastModified();  //获得最后修改时间
+文件夹相关
+  listRoots();  //获得所有的分区
+  list();  //获取当前文件夹的子文件和子文件夹的名字
+  listFiles();  //获取当前文件夹的子文件和子文件夹的对象
+  list(FileNameFilter fiter);
+  listFiles(FileNameFilter fiter);
+
+程序-文件
+输出流
+文件-程序
+输入流
+
+字节流
+    InputStream
+    	FileInputStream
+		int read();//每次读一个字节
+		read(byte[] b);//每次将读出内容放置数组中
+		read(byte[] b,int off,int len);
+		close(); //关闭流
+    OutputStream
+    	FileOutputStream
+		write();	//写一个字节
+		write(byte[] b);	//写一个字节数组
+		write(byte[] b,int off,int len);
+		close();	//关闭流
+		
+
+字符流
+    Reader
+	FileReader
+		int read();
+		read(char[] c);
+		ready();
+		close();
+    Writer
+    	FileWriter
+		write(String str);
+		write(char[] c);
+		write(int i);
+		close();
+
+字符流操作文本文件
+字节流操作任何文件
+
+异常
+FileNotFoundException 文件找不到异常
+IOException 输入输出异常
+
+字符串
+二维数组
+对象数组
+集合
+
+文件 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper的namespace其实可以随便起名字，但是建议使用UserMapper.xml文件本身所在的包为名字 -->
+<mapper namespace="com.woniuxy.a_hello.UserMapper">
+	<insert id="save" parameterType="com.woniuxy.a_hello.User">
+		insert into user values(null, #{name}, #{birthday}, #{money})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from user where id = #{id}
+	</delete>
+	
+	<update id="update" parameterType="com.woniuxy.a_hello.User">
+		update user set name=#{name},birthday=#{birthday}, money=#{money} where id = #{id}
+	</update>
+	
+	<!-- 
+		resultType="com.woniuxy.a_hello.User"并不是表示执行该sql语句后，一定会返回一个User对象。
+		执行该sql语句之后，到底返回一个User对象，还是一个List<User>的集合对象，取决于：我们调用的是s.selectOne还是s.selectList
+	 -->
+	<select id="findAll" resultType="com.woniuxy.a_hello.User">
+		select * from user
+	</select>
+	
+	<select id="findOne" parameterType="int" resultType="com.woniuxy.a_hello.User">
+		select * from user where id = #{id}
+	</select>
+	
+</mapper>

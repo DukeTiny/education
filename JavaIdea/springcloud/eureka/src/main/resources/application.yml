@@ -1,0 +1,19 @@
+
+server:
+  port: 9000
+spring:
+  security:
+    user:
+      password: 25802580
+      name: admin
+  application:
+    name: eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://admin:25802580@localhost:9000/eureka
+  instance:
+    prefer-ip-address: false
+#    hostname: eureka

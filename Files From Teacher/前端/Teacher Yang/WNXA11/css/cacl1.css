@@ -1,0 +1,61 @@
+/*
+			 * 标签选择器
+			 * 类选择器
+			 * id选择器
+			 */
+			table{
+				width: 400px;
+				background-color: darkgray;
+				margin: 0 auto;
+			}
+			#top{
+				width: 408px;
+				/*padding:5px;*/
+			}
+			#bottom{
+				width: 408px;
+				height:500px;
+			}
+			#td1 table{
+				background-color: white;
+				width: 99%;
+			}
+			
+			#bottom tr{
+				text-align: center;
+				height:100px;
+				background-color: aqua;
+			}
+			
+			#bottom td{
+				width: 25%;
+			}
+			#td1{
+				background-color: red;
+			}
+			#top tr{
+				height: 60px;
+			}
+			font{
+				font-family:"微软雅黑" ;
+				font-size: 30px;
+				
+			}
+			span{
+				font-family: "微软雅黑";
+				font-size: 25px;				
+			}
+			.point{
+				font-size: 45px;
+				
+			}
+			#redpoint{
+				color: red;
+			}
+			#bluepoint{
+				color: blue;
+			}
+			#greenpoint{
+				color: green;
+			}
+			

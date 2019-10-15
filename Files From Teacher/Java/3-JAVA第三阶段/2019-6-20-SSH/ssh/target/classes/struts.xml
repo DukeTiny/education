@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default" extends="struts-default" strict-method-invocation="false">
+		<!-- 
+			Dept_save分发，能找到DeptAction.save()方法！！
+				如果没有在web.xml中配置ContextLoaderListener监听器，则由struts2实例化DeptAction。则无法享受ioc！
+				如果有在web.xml中配置了ContextLoaderListener监听器，则由struts2从application中取出ioc容器，再根据类型获取action
+				此时的action就是从ioc容器中取出来的，那么它通过@Autowired可以给属性注入值！
+				<action name="*_*" class="com.woniuxy.web.action.{1}Action" method="{2}">
+				</action>
+		 -->
+		 
+		<!-- 
+			要写成下面的样子，必须现在web.xml中，配置好ContextLoaderListener监听器
+			dept_save分发，能找到deptAction这个名字，然后struts会把这个名字当做ioc容器中bean的名字，来获取action
+			此时的action就是从ioc容器中取出来的，那么它通过@Autowired可以给属性注入值！
+		 -->
+		<action name="*_*" class="{1}Action" method="{2}">
+		</action>
+	</package>
+</struts>

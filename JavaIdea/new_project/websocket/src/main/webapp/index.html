@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/sockjs-client/1.2.0/sockjs.js"></script>
+    <script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.js"></script>
+</head>
+<body>
+<h3>Index.HTML</h3>
+<span id="msg"></span>
+</body>
+<script>
+    let socJs = new SockJS("http://localhost:8080/socket");
+    let stompClient = Stomp.over(socJs);
+    // console.log(stompClient);
+    stompClient.connect({}, function (data) {
+        console.log(data);
+        stompClient.subscribe("/server/MessagesFromServer", function (response) {
+            $("#msg").append(response.body + "</br>");
+        });
+    });
+</script>
+</html>

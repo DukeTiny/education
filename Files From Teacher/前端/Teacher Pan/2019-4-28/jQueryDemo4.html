@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				// //放值
+				// $("[name='uname']").val("abc");
+				// $("#btn").click(function(){
+				// 	//取值
+				// 	alert($("[name='uname']").val());
+				// });
+				var arr = new Array(1,2,3); 
+				var h = "";
+				for(var i=0;i<arr.length;i++){
+					h+="<li>"+arr[i]+"</li>";
+				}
+				//放入内置html
+				// $("ul").html(h);
+				//取出内置html
+				// alert($("ul").html());
+				//放入内置文本
+				// $("ul").text(h);
+				//取出内置文本
+				// alert($("ul").text());
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<!-- <input type="text" name="uname" />
+		<input type="button" id="btn" value="click" /> -->
+		<ul>
+			
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <context id="context1" >
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/user" userId="root" password="wh809919" />
+        <javaModelGenerator targetPackage="com.cxz.domain" targetProject="./src/main/java" />
+        <sqlMapGenerator targetPackage="com.cxz.mapper" targetProject="./src/main/java" />
+        <javaClientGenerator targetPackage="com.cxz.mapper"
+                             targetProject="./src/main/java" type="XMLMAPPER" />
+
+        <table schema="" tableName="userinfo" />
+        <table schema="" tableName="userinforole" />
+        <table schema="" tableName="tree" />
+        <table schema="" tableName="role" />
+        <table schema="" tableName="roletree" />
+    </context>
+</generatorConfiguration>

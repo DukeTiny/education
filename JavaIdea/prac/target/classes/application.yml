@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///user
+      username: root
+      password: wh809919
+  mvc:
+    view:
+      prefix: /
+      suffix: .html

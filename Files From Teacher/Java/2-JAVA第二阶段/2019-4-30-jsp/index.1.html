@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				//创建节点
+				var element = $("<font color='red'>aaa</font>");
+				//追加到指定标签内的最后面
+				// $("div").append(element);
+				//追加到指定标签内的最前面
+				// $("div").prepend(element);
+				//追加到指定标签前面
+				// $("div").before(element);
+				//追加到指定标签后面
+				// $("div").after(element);
+				// element.appendTo($("div"));
+				// element.prependTo($("div"));
+				//移除自己及子元素
+				// $("div").remove();
+				//移除子元素
+				// $("div").empty();
+				alert($("div").html());
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div style="width: 200px; height: 80px; border: 1px solid red;">
+			<p>bbbb</p>
+		</div>
+	</body>
+</html>

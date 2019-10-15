@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxz.mapper.OrderDao">
+  <resultMap id="BaseResultMap" type="com.cxz.model.Order">
+    <id column="orderId" jdbcType="VARCHAR" property="orderid" />
+    <result column="storeId" jdbcType="VARCHAR" property="storeid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="payTime" jdbcType="TIMESTAMP" property="paytime" />
+    <result column="deliveryTime" jdbcType="TIMESTAMP" property="deliverytime" />
+    <result column="RecieveTime" jdbcType="TIMESTAMP" property="recievetime" />
+    <result column="userId" jdbcType="VARCHAR" property="userid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="deliveryAddr" jdbcType="VARCHAR" property="deliveryaddr" />
+    <result column="restRecieveTime" jdbcType="TIMESTAMP" property="restrecievetime" />
+    <result column="delieveryCompany" jdbcType="VARCHAR" property="delieverycompany" />
+    <result column="deliveryId" jdbcType="VARCHAR" property="deliveryid" />
+    <result column="decreaseMoney" jdbcType="DOUBLE" property="decreasemoney" />
+    <result column="orderPrice" jdbcType="DOUBLE" property="orderprice" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    orderId, storeId, createTime, payTime, deliveryTime, RecieveTime, userId, `status`, 
+    deliveryAddr, restRecieveTime, delieveryCompany, deliveryId, decreaseMoney, orderPrice
+  </sql>
+  <select id="selectByExample" parameterType="com.cxz.model.OrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order
+    where orderId = #{orderid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from order
+    where orderId = #{orderid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.cxz.model.OrderExample">
+    delete from order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="orderId" keyProperty="orderid" parameterType="com.cxz.model.Order" useGeneratedKeys="true">
+    insert into order (storeId, createTime, payTime, 
+      deliveryTime, RecieveTime, userId, 
+      `status`, deliveryAddr, restRecieveTime, 
+      delieveryCompany, deliveryId, decreaseMoney, 
+      orderPrice)
+    values (#{storeid,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{paytime,jdbcType=TIMESTAMP}, 
+      #{deliverytime,jdbcType=TIMESTAMP}, #{recievetime,jdbcType=TIMESTAMP}, #{userid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{deliveryaddr,jdbcType=VARCHAR}, #{restrecievetime,jdbcType=TIMESTAMP}, 
+      #{delieverycompany,jdbcType=VARCHAR}, #{deliveryid,jdbcType=VARCHAR}, #{decreasemoney,jdbcType=DOUBLE}, 
+      #{orderprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" keyColumn="orderId" keyProperty="orderid" parameterType="com.cxz.model.Order" useGeneratedKeys="true">
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeid != null">
+        storeId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="paytime != null">
+        payTime,
+      </if>
+      <if test="deliverytime != null">
+        deliveryTime,
+      </if>
+      <if test="recievetime != null">
+        RecieveTime,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="deliveryaddr != null">
+        deliveryAddr,
+      </if>
+      <if test="restrecievetime != null">
+        restRecieveTime,
+      </if>
+      <if test="delieverycompany != null">
+        delieveryCompany,
+      </if>
+      <if test="deliveryid != null">
+        deliveryId,
+      </if>
+      <if test="decreasemoney != null">
+        decreaseMoney,
+      </if>
+      <if test="orderprice != null">
+        orderPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeid != null">
+        #{storeid,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paytime != null">
+        #{paytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverytime != null">
+        #{deliverytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recievetime != null">
+        #{recievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryaddr != null">
+        #{deliveryaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="restrecievetime != null">
+        #{restrecievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delieverycompany != null">
+        #{delieverycompany,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryid != null">
+        #{deliveryid,jdbcType=VARCHAR},
+      </if>
+      <if test="decreasemoney != null">
+        #{decreasemoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderprice != null">
+        #{orderprice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.cxz.model.OrderExample" resultType="java.lang.Long">
+    select count(*) from order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order
+    <set>
+      <if test="record.orderid != null">
+        orderId = #{record.orderid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeid != null">
+        storeId = #{record.storeid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null">
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.paytime != null">
+        payTime = #{record.paytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.deliverytime != null">
+        deliveryTime = #{record.deliverytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.recievetime != null">
+        RecieveTime = #{record.recievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.userid != null">
+        userId = #{record.userid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        `status` = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.deliveryaddr != null">
+        deliveryAddr = #{record.deliveryaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.restrecievetime != null">
+        restRecieveTime = #{record.restrecievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.delieverycompany != null">
+        delieveryCompany = #{record.delieverycompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliveryid != null">
+        deliveryId = #{record.deliveryid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.decreasemoney != null">
+        decreaseMoney = #{record.decreasemoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.orderprice != null">
+        orderPrice = #{record.orderprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order
+    set orderId = #{record.orderid,jdbcType=VARCHAR},
+      storeId = #{record.storeid,jdbcType=VARCHAR},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      payTime = #{record.paytime,jdbcType=TIMESTAMP},
+      deliveryTime = #{record.deliverytime,jdbcType=TIMESTAMP},
+      RecieveTime = #{record.recievetime,jdbcType=TIMESTAMP},
+      userId = #{record.userid,jdbcType=VARCHAR},
+      `status` = #{record.status,jdbcType=INTEGER},
+      deliveryAddr = #{record.deliveryaddr,jdbcType=VARCHAR},
+      restRecieveTime = #{record.restrecievetime,jdbcType=TIMESTAMP},
+      delieveryCompany = #{record.delieverycompany,jdbcType=VARCHAR},
+      deliveryId = #{record.deliveryid,jdbcType=VARCHAR},
+      decreaseMoney = #{record.decreasemoney,jdbcType=DOUBLE},
+      orderPrice = #{record.orderprice,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cxz.model.Order">
+    update order
+    <set>
+      <if test="storeid != null">
+        storeId = #{storeid,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paytime != null">
+        payTime = #{paytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deliverytime != null">
+        deliveryTime = #{deliverytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recievetime != null">
+        RecieveTime = #{recievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryaddr != null">
+        deliveryAddr = #{deliveryaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="restrecievetime != null">
+        restRecieveTime = #{restrecievetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delieverycompany != null">
+        delieveryCompany = #{delieverycompany,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryid != null">
+        deliveryId = #{deliveryid,jdbcType=VARCHAR},
+      </if>
+      <if test="decreasemoney != null">
+        decreaseMoney = #{decreasemoney,jdbcType=DOUBLE},
+      </if>
+      <if test="orderprice != null">
+        orderPrice = #{orderprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where orderId = #{orderid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cxz.model.Order">
+    update order
+    set storeId = #{storeid,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      payTime = #{paytime,jdbcType=TIMESTAMP},
+      deliveryTime = #{deliverytime,jdbcType=TIMESTAMP},
+      RecieveTime = #{recievetime,jdbcType=TIMESTAMP},
+      userId = #{userid,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      deliveryAddr = #{deliveryaddr,jdbcType=VARCHAR},
+      restRecieveTime = #{restrecievetime,jdbcType=TIMESTAMP},
+      delieveryCompany = #{delieverycompany,jdbcType=VARCHAR},
+      deliveryId = #{deliveryid,jdbcType=VARCHAR},
+      decreaseMoney = #{decreasemoney,jdbcType=DOUBLE},
+      orderPrice = #{orderprice,jdbcType=DOUBLE}
+    where orderId = #{orderid,jdbcType=VARCHAR}
+  </update>
+</mapper>

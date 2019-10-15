@@ -1,0 +1,50 @@
+String
+所有操作都是对拷贝串的操作。
+StringBuffer
+可变字符串
+线程安全的
+StringBuilder
+可变字符串
+线程不安全的
+
+final
+属性 变常量 不能不修改
+方法 变最终方法 不能被重写
+类	最终类  不能被继承
+
+BigDecimal
+避免精度错误。
+构造方法
+BigDecimal(int n);
+BigDecimal(double d);//避免使用
+BigDecimal(String str);
+BigDecimal(long l);
+运算方法
+BigDecimal add(BigDecimal bd);
+BigDecimal subtract(BigDecimal bd);
+BigDecimal multiply(BigDecimal bd);
+BigDecimal divide(BigDecimal bd);
+
+格式化输出
+NumberFormat
+static NumberFormat getCurrencyInstance()//获得货币格式化对象	￥具体金额
+static NumberFormat getPercentInstance()//获得百分比格式化对象  具体百分比%
+String format(BigDecimal bd);
+
+BigInteger
+
+Math.random(); // >=0 && < 1
+
+Random类
+Random();	
+Random(int seed); //seed种子，相同种子Random对象，随机出来的数是一致的。
+
+boolean nextBoolean();
+int nextInt(); //随机int取值范围的整数
+int nextInt(int n);//随机出[0,n)的整数
+long nextLong();
+double nextDouble(); //随机出[0,1.0)的浮点数
+
+
+
+

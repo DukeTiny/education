@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.l_lazyload.DeptMapper">
+		
+	<insert id="save" parameterType="Dept">
+		<!-- 
+			selectKey元素，表示生成主键，如何生成主键，就有selectKey元素中的sql语句决定了！ 
+			selectKey元素中的sql语句，查出什么值，就以什么值作为主键！
+			
+			keyProperty属性，用于告诉mybatis框架，主键是哪个列。
+			resultType属性，用于指定生成主键的类型
+			order="BEFORE"，表示在insert执行之前，先执行selectKey中的语句来获取主键
+		-->
+		<selectKey keyProperty="did" resultType="int" order="BEFORE">
+				select max(did) + 1 from dept
+		</selectKey>
+		insert into dept(did,dname) values(#{did}, #{dname})
+	</insert>	
+		
+	<select id="findOne" parameterType="int" resultMap="rm">
+		select * from dept
+		where dept.did = #{did}
+	</select>
+	
+	<resultMap type="Dept" id="rm">
+		<id property="did" column="did" />
+		<result property="dname" column="dname"/>
+		<!-- 
+			collection元素中，写出了select属性，表示延迟加载
+			也就是，如果不获取员工，则就不执行查询某个部门的员工的这个sql语句。
+		 -->
+		<collection property="emps" ofType="Emp" select="com.woniuxy.l_lazyload.EmpMapper.findSomeByDid" column="did" />
+	</resultMap>
+
+</mapper>

@@ -1,0 +1,2 @@
+1、常用类补充：Random、StringBuffer、StringBuilder、Arrays、Collections、BigDecimal。
+2、使用集合完成ATM机系统。

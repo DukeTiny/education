@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default" extends="struts-default" strict-method-invocation="false">
+		<action name="*_*" class="com.woniuxy.web.action.{1}Action" method="{2}">
+			<result name="foo">/index.jsp</result>
+			<!-- 
+				result元素的type属性：
+				1. dispatcher   	转发到jsp页面   默认值
+				2. redirect			重定向到jsp页面
+				3. chain			转发到action
+				4. redirectAction	重定向到action
+				5. plainText		设置响应头为 content-type:text/plain	
+			 -->
+			<result name="aa" type="plainText">/aa.jsp</result>
+		</action>
+	</package>
+</struts>

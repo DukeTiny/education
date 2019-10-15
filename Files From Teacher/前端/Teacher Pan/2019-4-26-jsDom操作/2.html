@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>省市区的级联</title>
+		<script>
+			// var arr = new Array();
+			// arr[0] = "abc";
+			// document.write(arr[0]+"<br>");
+			// 
+			// var arr2 = new Array(1,2,3);
+			// document.write(arr2[0]+"<br>");
+			// 
+			// var arr3 = [1,2,3];
+			// document.write(arr3+"<br>");
+			// 
+			// var arr4 = [[1,2,3],[4,5,6],[7,8,9]];
+			// document.write(arr4[1][1]+"<br>");
+			
+			//省市的数组
+			var stateArr = new Array();
+			stateArr[0] = ["陕西省","西安市|宝鸡市|咸阳市"];
+			stateArr[1] = ["山西省","运城市|太原市|临汾市"];
+			stateArr[2] = ["河南省","洛阳市|郑州市|南阳市"];
+			
+			function showState(){
+				var stateStr = "";
+				for(var i=0;i<stateArr.length;i++){
+					//"陕西省"
+					stateStr += "<option>"+stateArr[i][0]+"</option>";
+				}
+				var stateShow = document.getElementById("state");
+				stateShow.innerHTML = stateStr;
+			}
+			function showCity(){
+				var selectStateVal = document.getElementById("state").value;
+				for(var i=0;i<stateArr.length;i++){
+					var stateVal = stateArr[i][0];
+					
+					if(selectStateVal==stateVal){
+						var cityStr = "";
+						//"西安市|宝鸡市|咸阳市"
+						var cityVal = stateArr[i][1];
+						//["西安市","宝鸡市","咸阳市"]
+						var cityValArr = cityVal.split("|");
+						for(var j=0;j<cityValArr.length;j++){
+							cityStr += "<option>"+cityValArr[j]+"</option>";
+						}
+					}
+				}
+				var cityShow = document.getElementById("city");
+				cityShow.innerHTML = cityStr;
+			}
+			window.onload=function(){
+				showState();
+				showCity();
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<select name="state" id="state" onchange="showCity()">
+				
+			</select>
+			<select name="city" id="city" >
+			</select>
+		</form>
+	</body>
+</html>
+<script>
+	
+</script>

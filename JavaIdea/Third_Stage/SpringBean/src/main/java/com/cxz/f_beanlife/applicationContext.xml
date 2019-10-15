@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.cxz.f_beanlife.User" init-method="methodInit">
+        <property name="id" value="1" />
+        <property name="name" value="李飞" />
+    </bean>
+    <bean id="stu" class="com.cxz.f_beanlife.Stu" />
+    <bean id="foo" class="com.cxz.f_beanlife.Foo" />
+
+</beans>

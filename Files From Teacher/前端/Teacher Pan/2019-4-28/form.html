@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function checkUname(){
+				var unameVal = document.getElementById("uname").value;
+				var showUname = document.getElementById("unameShow");
+				if(unameVal.length>=6&&unameVal.length<=12){
+					showUname.innerHTML = "<font color='green'>ok</font>";
+					return true;
+				}
+				showUname.innerHTML = "<font color='red'>no</font>";
+				return false;
+			}
+			function checkEmail2(){
+				//获得输入email的文本框
+				var inputObj = document.getElementById("email");
+				
+				//获得email文本框中的值
+				var emailVal = inputObj.value;
+				//显示校验信息的span
+				var spanObj = document.getElementById("emailShow");
+				//获得第一个@出现的位置
+				var htstart = emailVal.indexOf("@");
+				//获得最后一个@出现的位置
+				var htend =emailVal.lastIndexOf("@");
+				//获得第一个.出现的位置
+				var pointStart = emailVal.indexOf(".");
+				//获得最后一个.出现的位置
+				var pointEnd =emailVal.lastIndexOf(".");
+				//获得@前一个字符和后一个字符
+				var prevChar = emailVal.substring(htstart-1,htstart);
+				var nextChar = emailVal.substring(htstart+1,htstart+2);
+				
+				// 1）必须有@,且只有一个
+				// 2）必须有.,可以有多个 
+				// 3）@和.不能相邻
+				// 4）@和.不能在第一位和最后一位
+				if(htstart!=-1&&htstart==htend&&pointStart!=-1&&htstart!=0&&htstart!=emailVal.length-1&&pointStart!=0&&pointEnd!=emailVal.length-1&&prevChar!="."&&nextChar!="."){
+					spanObj.innerHTML = "<font color='green'>ok</font>";
+					return true;
+				}
+				spanObj.innerHTML = "<font color='red'>no</font>";
+				return false;
+			}
+			function checkEmail(){
+				var zz = /^[a-zA-Z][a-zA-Z0-9]{5,19}$/;
+				//获得输入email的文本框
+				var inputObj = document.getElementById("email");
+				//获得email文本框中的值
+				var emailVal = inputObj.value;
+				var spanObj = document.getElementById("emailShow");
+				if(zz.test(emailVal)){
+					spanObj.innerHTML = "<font color='green'>ok</font>";
+					
+				}else{
+					spanObj.innerHTML = "<font color='red'>no</font>";
+				}
+				return false;
+			}
+			function checkValue(){
+				return checkEmail();
+			}
+		</script>
+	</head>
+	<body>
+		<form action="1.jsp" method="get" name="form1" id="form1" onsubmit="return checkValue();">
+			用户名:<input type="text" name="uname" id="uname" onblur="checkUname();" /><span id="unameShow"></span><br>
+			密码:<input type="password" name="upwd" id="upwd" /><br>
+			确认密码:<input type="password" name="upwd1" id="upwd1" /><br>
+			电话号码:<input type="text" name="phoneNum" id="phoneNum" /><br>
+			邮箱:<input type="text" name="email" id="email" /><span id="emailShow"></span><br>
+			身份证:<input type="text" name="ID" id="ID" /><br>
+			<input type="submit" value="注册"/>
+			<input type="reset" value="重置"/>
+		</form>
+	</body>
+</html>

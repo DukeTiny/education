@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Judgement of Age</title>
+    <script>
+
+        function enterAge() {
+            let age = prompt("Pls enter your age:")
+            if ( age>60 ){
+                alert("You are a old man.");
+            }
+            else if ( age>=20 && age<=40 ) {
+                alert("You are a young man.")
+            }
+            else if ( age>=0 && age<=10) {
+                alert("You are a child.")
+            }
+            else {
+                alert("Pls enter a meaningful  age.");
+                enterAge();
+            }
+        }
+
+
+
+    </script>
+</head>
+<body onload="enterAge()">
+
+</body>
+</html>

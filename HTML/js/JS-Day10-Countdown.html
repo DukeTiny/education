@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+    <style>
+        body {
+            background-image: url("../images/background.jpg");
+            background-size: cover;
+            background-color: black;
+            color: white;
+            font-family: "微软雅黑",serif;
+        }
+
+        a:link,a:visited{
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover,a:active{
+            color: red;
+        }
+
+        .top {
+            width: 60%;
+            min-width: 800px;
+            height: 150px;
+            margin: 20px auto;
+            border: 1px white solid;
+            border-radius: 15px;
+            line-height: 150px;
+        }
+
+        .top div:first-child {
+            width: 25%;
+            text-align: center;
+            line-height: 142px;
+            float: left;
+        }
+
+        .top div:first-child img {
+            width: 120px;
+            vertical-align: middle;
+        }
+
+        .top div:last-child {
+            width: 75%;
+            height: 100%;
+            float: right;
+            line-height: 130px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .top div:last-child span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 50px;
+        }
+
+
+
+        .middle{
+            width: 60%;
+            min-width: 800px;
+            height: 50%;
+            min-height: 420px;
+            border: 1px white solid;
+            margin: 25px auto;
+            border-radius: 15px;
+        }
+        .middle .middleTop div:first-child {
+            width: 35%;
+            height: 25%;
+            min-height: 100px;
+            float: left;
+            text-align: right;
+            line-height: 100px;
+        }
+        .middle .middleTop div:nth-child(2) {
+            width: 30%;
+            height: 100px;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            font-size: 25px;
+            font-family: "微软雅黑",serif;
+        }
+        .middle .middleTop div:last-child {
+            width: 35%;
+            height: 100px;
+            float: left;
+            line-height: 100px;
+        }
+        .middle .middleTop div img{
+            vertical-align: middle;
+        }
+        .middle .middleTop div:nth-child(2) span{
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 10px;
+        }
+        .typeIn{
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 30px;
+            font-family: "monospace";
+            text-align: center;
+        }
+        #textA{
+            width: 22%;
+            height: 50%;
+            margin: 0 0 0 90px;
+            line-height: 200px;
+            font-size: 180px;
+            font-family: "impact",serif;
+            float: left;
+        }
+        #textB{
+            width: 9%;
+            height: 50%;
+            margin: 0 auto;
+            line-height: 200px;
+            font-size: 180px;
+            font-family: "impact",serif;
+            float: left;
+        }
+        #textC{
+            width: 22%;
+            height: 50%;
+            margin: 0 auto;
+            line-height: 200px;
+            font-size: 180px;
+            font-family: "impact",serif;
+            float: left;
+        }
+        #textD{
+            width: 9%;
+            height: 50%;
+            margin: 0 auto;
+            line-height: 200px;
+            font-size: 180px;
+            font-family: "impact",serif;
+            float: left;
+        }
+        #textE{
+            width: 22%;
+            height: 50%;
+            margin: 0 auto;
+            line-height: 200px;
+            font-size: 180px;
+            font-family: "impact",serif;
+            float: left;
+        }
+
+
+        .bottom {
+            width: 60%;
+            min-width: 800px;
+            height: 80px;
+            margin: 25px auto;
+            text-align: center;
+            border: 1px white solid;
+            border-radius: 15px;
+            line-height: 80px;
+            font-size: 20px;
+        }
+        .bottom span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var tSeconds;
+        var isPaused = false;
+        var isStared = false;
+
+        function pause() {
+            isPaused = true;
+            isStared = true;
+        }
+
+        function getTime() {
+            if ( isPaused ) {
+                isPaused =false;
+                setInterval;
+            }
+            if ( !isStared ) {
+                tSeconds = document.getElementById('inputBox').value*60;
+                isStared = true;
+                setInterval;
+            }
+        }
+        setInterval(timeDown,1000);
+
+        function timeDown () {
+            if ( !isPaused && tSeconds>=0 ) {
+            var hs = parseInt( tSeconds/3600 );
+            var ms = parseInt( (tSeconds%3600)/60);
+            var ss = tSeconds%3600%60;
+                if ( hs<10 ) document.getElementById('textA').innerHTML = "0" + hs;
+                else         document.getElementById('textA').innerHTML = hs;
+                if ( ms<10 ) document.getElementById('textC').innerHTML = "0"+ms;
+                else         document.getElementById('textC').innerHTML = ms;
+                if ( ss<10 ) document.getElementById('textE').innerHTML = "0"+ss;
+                else         document.getElementById('textE').innerHTML = ss;
+            }
+            if ( tSeconds<0 ) clearInterval(setInterval(timeDown,1000));
+            tSeconds = tSeconds-1;
+        }
+
+        function plus() {
+            var time = document.getElementById('inputBox').value;
+            if ( time<1440 ) document.getElementById('inputBox').value++;
+        }
+
+        function minus() {
+            var time = document.getElementById('inputBox').value;
+            if ( time>0 ) document.getElementById('inputBox').value--;
+        }
+
+        function refresh() {
+            window.location.reload()
+        }
+
+        function typeIn() {
+            var newTime = document.getElementById('inputBox').value;
+            // newTime = newTime.toString();
+            for ( var i=0; i<4; i++) {
+                if ( newTime.charCodeAt(i)<48 || newTime.charCodeAt(i)>57){
+                    var tempA = newTime.substring(0,i);
+                    var tempB = newTime.substring(i+1,5);
+                    newTime = tempA + tempB;
+                }
+            }
+            newTime*=1;
+            if ( newTime >1440 ) document.getElementById('inputBox').value = 1440;
+            else                 document.getElementById('inputBox').value = newTime;
+            setTimeout(typeIn,1);
+            isStared = false;
+            isPaused = false;
+            clearInterval(setInterval(timeDown,1000));
+        }
+    </script>
+</head>
+<body>
+<div class="top">
+    <div>
+        <img src="../images/logo.jpg" />
+    </div>
+    <div>
+            <span>蜗牛学院-学员活动专用倒计时<br />工具祝各位参赛选手取得优秀成绩！</span>
+    </div>
+</div>
+
+
+
+<div class="middle">
+    <div class="middleTop">
+        <div>
+            <img src="../images/minus.png" width="60px" onclick="minus()"/>
+        </div>
+        <div class="value">
+            <label for="inputBox">
+                <span><input type="text" class="typeIn" id="inputBox" value = "5" oninput="typeIn()" maxlength="4"/></span>&nbsp;分钟
+            </label>
+        </div>
+        <div>
+            <img src="../images/plus.png" width="60px" onclick="plus()"/>
+        </div>
+    </div>
+
+
+    <div id="textA">00</div>
+    <div id="textB">-</div>
+    <div id="textC">00</div>
+    <div id="textD">-</div>
+    <div id="textE">00</div>
+
+
+    <div class="middleTop">
+        <div>
+            <img src="../images/pause.png" width="60px" onclick="pause()"/>
+        </div>
+        <div>
+            <img src="../images/start.png" width="80px" onclick="getTime()"/>
+        </div>
+        <div>
+            <img src="../images/refresh.png" width="60px" onclick="refresh()"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="bottom">
+        <span>技术支持：<a href="http://www.woniucx.com">成都蜗牛创想科技有限公司</a>（蜗牛学院），http://www.woniuxy.com
+        </span>
+</div>
+</body>
+</html>

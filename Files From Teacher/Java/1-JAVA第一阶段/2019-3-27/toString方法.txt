@@ -1,0 +1,10 @@
+//设置输出对象的内容
+	public String toString() {
+		String str = "[";
+		for(int i=0;i<index;i++){
+			str += objs[i];
+			str += (i==index-1?"":",");
+		}
+		str+="]";
+		return str;
+	}

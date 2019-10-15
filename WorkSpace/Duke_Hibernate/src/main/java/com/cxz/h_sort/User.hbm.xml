@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cxz.h_sort">
+	<class name="User">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" />
+		<property name="birthday" />
+		<property name="money" />
+		
+		<set name="addresses" table="address" order-by="address desc">
+			<key column="user_id" />
+			<element column="address" type="string"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

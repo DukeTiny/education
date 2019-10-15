@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script>
+        $().ready( function () {
+            // var jsonValue = { first:[{"aa":"bb","cc":"dd" }] };
+            // $.each( jsonValue.first[0],function () {
+            //     alert( this );
+            // });
+            var info = { "name": "中国", "province": [{"name": "黑龙江", "cities": {"city": ["哈尔滨", "大庆"]} },
+                                                     {"name": "广东", "cities": {"city": ["广州", "深圳", "珠海"]}},
+                                                     {"name": "台湾", "cities": {"city": ["台北", "高雄"]}},
+                                                     {"name": "新疆", "cities": {"city": ["乌鲁木齐"]}}             ] };
+
+            var content = info.province;
+            var selObj1 = $("<select></select>");
+            var selObj2 = $("<select></select>");
+
+            $.each( content,function ( index,obj1 ) {
+                var opObj1 = $("<option>" + obj1.name + "</option>");
+                selObj1.append( opObj1 );
+                if ( index===0 ){
+                    $.each(content[0].cities.city,function (index,obj2) {
+                        var opObj2 = $("<option></option>");
+                        opObj2.append(this);
+                        selObj2.append(opObj2);
+                    });
+                }
+            });
+            $("body").append(selObj1).append(selObj2);
+
+            // var ops = $("select").eq(0);
+            // $.each(ops,function ( index2,obj ) {
+            //     $(obj).change(function () {
+            //         $("select").eq(1).empty();
+            //         $.each(content,function (index,obj2) {
+            //             if ( $(obj).val()===obj2.name ){
+            //                 $.each( obj2.cities.city,function () {
+            //                     var opObj2 = $("<option></option>");
+            //                     opObj2.append(this);
+            //                     $("select").eq(1).append(opObj2);
+            //                 });
+            //             }
+            //         });
+            //     });
+
+            selObj1.change(function () {
+                selObj2.empty();
+                $.each(content,function (index,obj2) {
+                if ( selObj1.val()===obj2.name ){
+                    $.each( obj2.cities.city,function () {
+                        var opObj2 = $("<option></option>");
+                        opObj2.append(this);
+                        $("select").eq(1).append(opObj2);
+                    });
+                }
+            });
+
+
+
+
+
+
+
+
+                // $.each(content,function (index, obj2) {
+                //     var pname = $(this).html();
+                //     alert( pname );
+                // });
+
+                // ops.change()
+                // $(this).change(function () {
+                //     var pname = $(this).find("option").html();
+                //     alert(pname);
+                //     $.each( content,function (i, obj3) {
+                //         if( pname===obj3.name ){
+                //             alert(obj3.name);
+                        // }
+                    // });
+                    // var opContent = $("select").eq(1).html();
+                    // alert(content.name)
+                // });
+            });
+
+
+
+            // var selObj2 = $("<select></select>");
+            // $.each( content,function (i,obj3) {
+            //     $.each(obj3.cities.city,function ( index,obj2 ) {
+            //         var opObj2 = $("<option>" + obj2 + "</option>");
+            //         selObj2.append( opObj2 );
+            //         $("body").append(selObj2);
+            //     });
+            // });
+
+
+        })
+    </script>
+
+    <style>
+
+    </style>
+
+<body>
+</body>
+
+</html>

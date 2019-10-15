@@ -1,0 +1,90 @@
+潘峰
+17791620203
+
+17年
+
+软件开发人员
+
+技术能力
+
+综合素质
+团队配合能力
+沟通能力
+文档编写能力
+逻辑思维能力
+
+硬件
+	运算器
+	控制器
+	存储器
+	输入设备
+	输出设备
+软件
+	系统软件
+	应用软件
+
+应用软件
+
+计算机语言
+
+Java语言
+
+sun
+	oak橡树
+	java
+
+JavaSE
+JavaEE
+JavaME
+
+做网页的语言
+
+internet 
+www 
+
+ip地址
+
+域名
+
+域名解析服务器DNS
+
+浏览器
+
+html超文本标记语言
+
+<>
+
+html的基本结构
+
+网页开发工具
+hbuilder
+
+符号
+&nbsp;空格
+
+绝对路径
+相对路径
+
+标记			属性
+font字体		color颜色 size字号（1-7）face字体
+title标题栏标题
+h1-h6正文标题
+pre预格式
+p段落
+dl dt dd定义性列表
+ol li有序列表		type类型start开始位置
+ul li无序列表		type类型
+b加粗
+i斜体
+u下划线
+sup上标
+sub下标
+img图片			src资源路径width宽度height高
+center居中
+hr水平线		width宽度align水平对齐方式color颜色size
+
+
+
+
+
+

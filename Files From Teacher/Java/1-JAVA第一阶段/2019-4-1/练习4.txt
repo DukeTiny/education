@@ -1,0 +1,3 @@
+1、将一首古诗写入"d:/gs.txt"。
+2、将d:/gs.txt拷贝到c:/gs2.txt。
+3、将d:/gs.txt移动到c:/abc/gs.txt。

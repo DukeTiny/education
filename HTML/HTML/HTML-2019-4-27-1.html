@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+                // function checkUserInfo() {
+                //     let nameVal = document.getElementById("uName").value;
+                //     if( nameVal.length>=6 && nameVal.length<=10 ) {
+                //         document.getElementById("nameSpan").innerHTML = "&nbsp;&nbsp;&nbsp;用户名格式正确。";
+                //     }
+                //     else document.getElementById("nameSpan").innerHTML = "&nbsp;&nbsp;&nbsp;用户名格式错误。";
+                //     return false;
+                // }
+
+                // function checkEmail() {
+                //     let emailVal = document.getElementById("uEmail").value;
+                //     let indexOfAt = emailVal.indexOf("@");
+                //     let lastIndexOfAt = emailVal.lastIndexOf("@");
+                //     var pointArr = [];
+                //     let index = 0;
+                //     while ( true ) {
+                //         if ( emailVal.contains(".") ){
+                //             var nextIndex = emailVal.indexOf(".",index);
+                //             if ( nextIndex===-1 ) break;
+                //             pointArr[pointArr.length] = nextIndex;
+                //             index = nextIndex+1;
+                //         }
+                //     }
+                //     var atRight = (lastIndexOfAt === indexOfAt && indexOfAt!==1 && lastIndexOfAt!==emailVal.length-1);
+                //     var pointRight = true;
+                //     for ( var i=0; i<pointArr.length; i++ ){
+                //         if ( pointArr[i]===1 ) {
+                //             pointRight = false;
+                //             break;
+                //         }
+                //         if ( pointArr[i]===emailVal.length-1 ) {
+                //             pointRight = false;
+                //             break;
+                //         }
+                //         if( atRight && ( Math.abs( pointArr[i]-indexOfAt )===1 || pointArr[pointArr.length-1]<indexOfAt )){
+                //             pointRight = false;
+                //             break;
+                //         }
+                //     }
+                //     return atRight && pointRight;
+                // }
+
+                function verifyValue() {
+                    return verifyUname() && verifyUpwd() && verifyPhone() && verifyIdentity() && repeatPwd();
+                }
+
+                function verifyUname() {
+                    var regEx = /^[a-zA-z]\w{7,15}$/;
+                    var nameVal = document.getElementById("uName").value;
+                    document.getElementById("nameSpan").innerHTML = regEx.test( nameVal )?"用户名格式正确":"用户名格式错误";
+                    return regEx.test( nameVal );
+                }
+
+                function verifyUpwd() {
+                    var regex = /^\w{6,16}$/;
+                    var pwdVal = document.getElementById("uPwd").value;
+                    document.getElementById("pwdSpan").innerHTML = regex.test( pwdVal )?"密码格式正确":"密码格式错误";
+                    return regex.test( pwdVal );
+                }
+                
+                function verifyPhone() {
+                    var regex = /^1[35789]\d{9}$/;
+                    var phoneVal = document.getElementById("uPhone").value;
+                    document.getElementById("phoneSpan").innerHTML = regex.test( phoneVal )?"手机格式正确":"手机格式错误";
+                    return regex.test( phoneVal );
+                }
+
+                function verifyIdentity() {
+                    var regex = /^[1-9]\d{16}(\d|x|X)$/;
+                    var identityVal = document.getElementById("identity").value;
+                    document.getElementById("identitySpan").innerHTML = regex.test( identityVal )?"身份证格式正确":"身份证格式错误";
+                    return regex.test( identityVal );
+                }
+
+                function verifySecondPwd() {
+                    var firstPwd = document.getElementById("uPwd").value;
+                    var secondPwd = document.getElementById("repeatPwd").value;
+                    document.getElementById("repeatPwdSpan").innerHTML = firstPwd===secondPwd?"两次输入密码一致":"两次输入密码不一致";
+                    return firstPwd===secondPwd;
+                }
+        </script>
+    <body>
+    <form action="" method="post" onsubmit="return verifyValue()">
+        <label for="uName">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label><input type="text" name="uName" id="uName" oninput="verifyUname()"/><span id="nameSpan"></span><br />
+        <label for="uPwd">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" name="uPwd" id="uPwd"  oninput="verifyUpwd()"/><span id="pwdSpan"></span><br />
+        <label for="repeatPwd">重复密码：</label><input type="password" name="repeatPwd" id="repeatPwd" oninput="verifySecondPwd()" /><span id="repeatPwdSpan"></span><br />
+        <label for="uEmail">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label><input type="email" name="uEmail" id="uEmail"><span id="emailSpan"></span><br />
+        <label for="uPhone">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</label><input type="text" name="uPhone" id="uPhone" oninput="verifyPhone()"><span id="phoneSpan"></span><br />
+        <label for="identity">身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</label><input type="text" name="identity" id="identity" oninput="verifyIdentity()"><span id="identitySpan"></span><br />
+        <input type="submit" value="Register" />
+    </form>
+
+    </body>
+
+</html>

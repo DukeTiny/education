@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxz.g_one2one.WifeMapper">
+    <select id="findOne" parameterType="int" resultMap="rm" >
+        SELECT * FROM wife JOIN husband
+        ON wife.hid = husband.hid
+        WHERE wife.wid = #{wid}
+    </select>
+    
+    <resultMap id="rm" type="Wife">
+        <id property="wid" column="wid" />
+        <result property="wName" column="wname"  />
+        <association property="husband" javaType="Husband">
+            <id property="hid" column="hid"/>
+            <result property="hName" column="hname" />
+        </association>
+    </resultMap>
+    
+    
+</mapper>

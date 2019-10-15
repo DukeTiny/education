@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.0.js"></script>
+    <script>
+
+        // >直接子代选择器
+        $(document).ready(function () {
+            var ele = $("#test>p>span");
+
+            // alert(ele.length);
+            // for( var i=0; i<ele.length; i++ ) {
+            //     alert( ele[i] );
+            // }
+
+        })
+    </script>
+    <style>
+        .abc{
+            border-spacing: 0;
+            border: 1px black solid;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<div id="test">-->
+        <!--<p>-->
+            <!--<span><font>aa</font></span>-->
+        <!--</p>-->
+        <!--<p></p>-->
+
+    <!--</div>-->
+    <!--<div></div>-->
+    <table width="200px" height="200px" >
+        <tr id="aa"><td class="abc">1</td><td class="abc">2</td></tr>
+    </table>
+</body>
+</html>

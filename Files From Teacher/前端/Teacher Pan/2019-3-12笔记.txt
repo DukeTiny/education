@@ -1,0 +1,25 @@
+表格
+table表格	border边框width宽度cellspacing单元格间距cellpadding单元格内容间距bgcolor背景颜色align表格相对网页对齐方式			
+tr表行		height
+th带有格式的单元格 表头 黑体居中 rowspan行合并colspan列合并width
+td单元格
+caption表格标题
+thead
+tbody
+tfoot
+
+表单
+form表单	action提交表单给那个程序 method提交方式
+input输入	type="text|password|radio|checkbox|submit|reset|button|file|color|email|image|hidden" name checked
+		size文本框长度 maxlength最大输入个数 value值 placeholder提示信息
+select下拉框
+option选项	selected
+textarea文本域  rows行数cols列数
+button		submit提交按钮reset重置按钮button普通按钮
+
+超链接
+a		href链接文件或位置  name设定锚点名称
+
+外链接
+内链接 锚点链接
+

@@ -1,0 +1,45 @@
+一。建表和插入数据练习
+
+1.创建数据库productManager;
+
+2.创建以下数据表：
+
+（1）商品表：proNo（商品编号）,proName(商品名称),proPrice（商品价格），proStore(商品数量)，proDesc(商品描述)，自定义其数据类型及长度；
+
+（2）超市表：smNo(超市编号),smName(超市名称),smAddress(超市地址);
+
+（3）会员表：cusNo(会员编号),cusName(会员姓名),cusTel(会员联系电话)，cusTime（加入会员的时间）；
+
+（4）购物表：cusNo,smNo,proNo,totalPrice(总价)
+
+3.添加10条以上不同商品数据；添加3个以上不同超市；添加20名以上会员信息；添加30条购物信息；
+
+编写为sql文件。
+
+二.DML练习
+
+create  table student (
+sid int primary key auto_increment,
+sname varchar(50) not null,
+sage int,
+ssex int not null
+);
+-- 先插入10条数据
+insert into student (sname,sage,ssex)values('王二',78,1);
+insert into student (sname,sage,ssex)values('张三',66,1);
+insert into student (sname,sage,ssex)values('李四',23,1);
+insert into student (sname,sage,ssex)values('孙五',26,1);
+insert into student (sname,sage,ssex)values('赵六',20,0);
+insert into student (sname,ssex)values('周七',0);
+insert into student (sname,sage,ssex)values('陈八',30,1);
+insert into student (sname,sage,ssex)values('刘九',40,1);
+insert into student (sname,sage, ssex)values('姚十',12,0);
+insert into student (sname,sage,ssex)values('十一',12,1);
+
+1.将男生（0）的年龄修改为20；
+
+2.将张三和赵六的性别修改为男；
+
+3.删除周七这条记录；
+
+4.删除年龄在60以上(包括60)的记录。

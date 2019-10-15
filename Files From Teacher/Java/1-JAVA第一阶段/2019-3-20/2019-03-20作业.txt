@@ -1,0 +1,122 @@
+整理笔记：将以下条目内容补全。
+ 1、java的版本。
+ 
+	Java EE: Java Enterprise Edition
+	Java SE: Java Standard Edition
+	
+ 2、jdk安装和配置。
+ 
+	JAVA_HOME:JAVA对应版本的安装路径
+	CLASS_PATH:.
+	path:JAVA_HOME\bin;
+	
+ 3、jvm。
+ 
+	JVM:Java虚拟机，介于不同系统平台和目标代码之间，
+		它是实现JAVA一次编码，跨平台运行的关键，通过javac编码，然后通过java翻译。
+		
+ 4、变量（标识符），命名规则。
+ 
+	1> 由字母，数字，下划线以及dollar的符号组成
+	2> 不能够以数字开头
+	3> 不介意使用中文
+	4> 不介意使用中文全拼
+	5> 遵循小驼峰规则
+	6> 不能够使用关键字或者保留字的命名
+	
+ 5、数据类型。
+	
+	基本数据类型：
+	整数型：byte short int long
+	非整数型: float double char boolean
+	引用数据类型：class API array
+ 
+ 6、数据类型转换。
+ 
+	自动转换：范围小的可以自动转换为范围大的
+	强制转换：在数据前面加上（数据类型）可以进行强制转换（仅限于除boolean的其他其他7中数据类型）。
+	
+ 7、运算符：算术、关系、逻辑、位、其他、赋值。
+	
+	算术：
+		基础运算：+ - * / %
+		复杂运算: ++ -- += -= /= *= %=
+		
+	关系运算: >= <= > < == !=
+	
+	逻辑运算：&& || !=
+	
+	位运算：& | ^ ~ >> <<
+	
+	赋值: =
+	 
+	其他：对象intanceof类名
+	
+ 8、条件判断语句。if else;switch case
+ 
+	满足条件下，运行条件主题内的代码块
+	switch中得注意是否有break中断，无终端向下运行
+ 
+ 9、循环语句for；while；do while；foreach。
+ 
+	for:一般用于知道次数的循环
+	while:一般用于不知道次数的循环
+	do while:满足条件的循环，不满足条件的时候,do也会执行一次
+	for each:遍历数组的一种方式
+ 
+ 10、数组：1维数组和多维数组。
+ 
+	一唯数组：int[] array = int[m];然后依次赋值
+			  int[] array = {1,2,3,4,5}
+			  
+ 11、String类。
+ 
+	str.replace();替换str中的参数字符串为第二个参数的值
+	str.subString();有两种参数
+	str.indexOF()从左面开始求第一个指定字符串的下标
+	str.lastIndexOf();从右面开始求第一个指定字符串的下标
+	str.charAt();获取到相应参数的字符串
+	str.startsWith();是否以参数开始
+	str.endsWith();是否以参数结束
+	
+ 12、Math类。
+	
+	Math.pow();求x的y次方
+	Math.random();随意一个0=< <1的小数
+	Math.floor();小于等于参数的最大整数
+	Math.abs();取绝对值
+	Math.ceil();大于等于参数的最小整数
+	Math.sqrt();开方
+ 
+ 13、Date类。
+ 
+	Date date = new Date() 有参数和三种参数和六种参数的区分填写参数为设置时间
+	date.getYear()  	取得当前年（从1900年开始）
+	date.getMonth() 	取得当月在本年的第几个月（从0开始）
+	date.getDate()  	取得当天在本月的第多少天
+	date.getDay()   	取得当天为本星期的第多少天（星期天为第一天）
+	date.getHours()		取得当天的第多少个小时
+	date.getMinutes()	取得当前小时的第多少分钟
+	date.getSeconds()	取得当前分钟的第多少秒
+	date.getTime()		取得从1970年以来的毫秒数
+	
+ 14、Calander类。
+	
+	Calendar cal = Calendar.getInstance();
+	cal.set(Calendar.YEAR/MONTH/DATE/DAY_OF_WEEK...,相应参数的数值)设置
+	cal.getTimeInMillis() 获得当前年天数的毫秒数
+	cal.add(Calendar.YEAR/MONTH/DATE/DAY_OF_WEEK...,加减的运算）
+	cal.getTime() 获得当前时间的信息
+	
+ 15、SimpleDateFormat类。
+ 
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	Date date = new Date();
+	String str = sdf.format(date);
+	System.out.println(str);
+
+	String str = "2019-10-10";
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	Date date = sdf.parse(str);记得抛出throw
+	System.out.println(date);
+	

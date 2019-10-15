@@ -1,0 +1,2 @@
+2、Statement改成PreparedStatement
+3、CourseDAOImpl中的数据操作部分提出为BaseDAO，改写CourseDAOImpl里面的方法。

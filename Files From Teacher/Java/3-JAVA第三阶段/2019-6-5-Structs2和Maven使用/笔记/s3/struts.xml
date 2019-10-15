@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 开启动态方法调用，方法一 -->
+	<!-- 
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<package name="default" extends="struts-default" strict-method-invocation="true">
+		<action name="user" class="com.woniuxy.web.action.UserAction">
+		</action>
+	</package>
+	 -->
+	 
+	 <!-- 开启动态方法调用，方法二 -->
+	 <package name="default" extends="struts-default" strict-method-invocation="false">
+		<action name="*_*" class="com.woniuxy.web.action.{1}Action" method="{2}">
+		</action>
+	</package>
+</struts>

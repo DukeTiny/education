@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="date" class="java.util.Date" />
+
+    <bean id="foo" class="com.cxz.j_di2.Foo">
+
+        <property name="list" >
+            <list>
+                <value>1</value>
+                <value>3</value>
+                <value>2</value>
+                <ref bean="date"/>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>李白</value>
+                <value>诗仙</value>
+                <value>酒仙</value>
+                <value>诗仙</value>
+                <ref bean="date" />
+            </set>
+        </property>
+
+
+        <property name="map" >
+            <map>
+                <entry key="Wife" value="LiFei" />
+                <entry key="Work" value="Code" />
+                <entry key="Life" value="Long" />
+                <entry key="Life" value="Short" />
+                <entry key="Work" value="Design" />
+                <entry key="日期" value-ref="date"/>
+            </map>
+        </property>
+
+        <property name="prop" >
+            <props>
+                <prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+                <prop key="url">jdbc:mysql///spring</prop>
+                <prop key="user">root</prop>
+                <prop key="password">woniu</prop>
+            </props>
+        </property>
+        
+    </bean>
+
+</beans>

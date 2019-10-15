@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.h_one2many.DeptMapper">
+	<select id="findOne" parameterType="int" resultMap="rm">
+		SELECT * FROM dept NATURAL JOIN emp
+		WHERE did = #{did}
+	</select>
+	
+	<resultMap type="Dept" id="rm">
+		<id property="did" column="did" />
+		<result property="dname" column="dname"/>
+		<!-- 
+			如果关联的对方是单个对象，则使用association,还必须搭配javaType来指明类型
+			如果关联的对方是集合对象，则使用collection,还必须搭配ofType来指明类型
+			当我们写出collection时
+				一的一方，只会封装第一行结果。
+				多的一方，会封装多行结果
+		 -->
+		<collection property="emps" ofType="Emp">
+			<id property="eid" column="eid" />
+			<result property="ename" column="ename"/>
+		</collection>
+	</resultMap>
+</mapper>

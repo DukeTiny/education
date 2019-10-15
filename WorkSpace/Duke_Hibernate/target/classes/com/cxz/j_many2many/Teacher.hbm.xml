@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-6-14 20:44:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.cxz.j_many2many">
+    <class name="Teacher">
+        <id name="id" >
+            <generator class="native" />
+        </id>
+        <property name="name" />
+        <set name="students" table="t_s" cascade="all">
+        	<key column="teacher_id" />
+        	<many-to-many column="student_id" class="Student"/>
+        </set>
+    </class>
+</hibernate-mapping>

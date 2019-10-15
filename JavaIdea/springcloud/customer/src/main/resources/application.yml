@@ -1,0 +1,17 @@
+server:
+  port: 7000
+
+spring:
+  application:
+    name: cus
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:25802580@localhost:9000/eureka,http://admin:25802580@localhost:9100/eureka
+    instance:
+      prefer-ip-address: true
+user:
+  serviceUrl: http://PROVIDER/

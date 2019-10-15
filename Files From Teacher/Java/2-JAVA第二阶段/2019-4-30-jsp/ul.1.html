@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>树形菜单</title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			var deptArr = [["10","销售部","上海"],["20","市场部","北京"],["30","售后部","西安"]];
+			var empArr = [["1001","张三","1999-9-9","10"],["1002","李四","1999-8-8","10"],["1003","王五","1999-6-6","20"],["1004","Jack","1995-9-9","30"]];
+			$(document).ready(function(){
+				//循环deptArr数组,将下标存入index,将数组循环出来的值放入obj
+				// $.each(deptArr,function(index,obj){
+				// 	
+				// });
+				// var ulObj1 = $("<ul></ul>");
+				// ulObj1.attr("id","ul1");
+				// $.each(deptArr,function(index,obj){
+				// 	var liObj1 = $("<li></li>");
+				// 	liObj1.text(obj[1]);
+				// 	ulObj1.append(liObj1);
+				// 	var ulObj2 = $("<ul></ul>");
+				// 	$.each(empArr,function(index2,obj2){
+				// 		if(obj[0]==obj2[3]){
+				// 			var liObj2 = $("<li></li>");
+				// 			liObj2.text(obj2[1]);
+				// 			ulObj2.append(liObj2);
+				// 			liObj1.append(ulObj2);
+				// 		}
+				// 	});
+				// });
+				// $("body").prepend(ulObj1);
+				//生成树形菜单
+				// var ulObj1 = $("<ul></ul>");
+				// ulObj1.attr("id","ul1");
+				// for(var i=0;i<deptArr.length;i++){
+				// 	var liObj1 = $("<li></li>");
+				// 	liObj1.text(deptArr[i][1]);
+				// 	ulObj1.append(liObj1);
+				// 	var ulObj2 = $("<ul></ul>");
+				// 	for(var j=0;j<empArr.length;j++){
+				// 		if(deptArr[i][0]==empArr[j][3]){
+				// 			var liObj2 = $("<li></li>");
+				// 			liObj2.text(empArr[j][1]);
+				// 			ulObj2.append(liObj2);
+				// 			liObj1.append(ulObj2);
+				// 		}
+				// 	}
+				// }
+				// $("body").prepend(ulObj1);
+				//生成节点对象
+				//隐藏所有子菜单
+				// $("#ul1").find("ul").hide();
+				// //给所有li加图片he.png
+				// $("#ul1").children("li").css("list-style-image","url(img/he.png)");
+				// $("#ul1").children("li").find("li").css("list-style","none");
+				// //鼠标指针变为手
+				// $("li").css("cursor","pointer");
+				// //li加点击事件监听
+				// $("#ul1").children("li").click(function(){
+				// 	//获得当前li的图片url
+				// 	var imgUrl = $(this).css("list-style-image");
+				// 	//获得图片的名字
+				// 	var imgName =imgUrl.substring(imgUrl.lastIndexOf("/")+1,imgUrl.length-2);
+				// 	//将图片按照相反的样式设置
+				// 	if(imgName=="he.png"){
+				// 		$(this).css("list-style-image","url(img/zhan.png)");
+				// 	}else{
+				// 		$(this).css("list-style-image","url(img/he.png)");
+				// 	}
+				// 	//让子菜单展开和收起
+				// 	$(this).children("ul").slideToggle();
+				// 	
+				// });
+				
+				
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

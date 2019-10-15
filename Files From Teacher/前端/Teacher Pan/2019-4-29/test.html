@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("[value='全选']").click(function(){
+					$(".hob").prop("checked","checked");
+				});
+				$("[value='全不选']").click(function(){
+					$(".hob").removeProp("checked");
+				});
+				$("[value='反选']").click(function(){
+					var checks = $(".hob");
+					for(var i=0;i<checks.length;i++){
+						if(checks.eq(i).prop("checked")){
+							checks.eq(i).removeProp("checked");
+						}else{
+							checks.eq(i).prop("checked","checked");
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" name="hob" class="hob"/>1
+		<input type="checkbox" name="hob" class="hob" />2
+		<input type="checkbox" name="hob" class="hob" />3
+		<input type="checkbox" name="hob" class="hob" />4
+		<input type="checkbox" name="hob" class="hob" />5
+		<input type="button" value="全选" />
+		<input type="button" value="全不选" />
+		<input type="button" value="反选" />
+	</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;guangdaji&apos;&#x0A;- Original project: &apos;guangdaji&apos;&#x0A;- Original elements:&#x0A;     guangdaji/src/main/java/com.woniu.mapper&#x0A;     guangdaji/src/main/java/com.woniu.model" description="Delete elements" element1="/src\/main\/java&lt;com.woniu.model" element2="/src\/main\/java&lt;com.woniu.mapper" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1563354439712" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,99 @@
+B/S
+browse 浏览器 server
+
+C/S
+client 客户端 server
+
+Java的图形化界面
+GUI
+	swing
+	awt
+
+界面
+
+布局管理器
+setLayout(Layout layout);
+	流式
+	FlowLayout
+	边界
+	默认布局
+	BorderLayout
+		EAST
+		WEST
+		NORTH
+		SOUTH
+		CENTER
+	add(组件,位置);
+	网格
+	GridLayout(int row,int col);
+	无布局
+	setLayout(null);
+	添加的组件需要设置setSize(int width,int height),setLocation(int x,int y);
+	或者setBounds(int x,int y,int width,int height);
+
+javax
+
+组件
+	容器组件
+		JFrame
+		JPanel
+		JDialog
+		JScrollPane
+	普通组件
+		JLabel
+		JButton
+
+事件
+	鼠标事件
+	键盘事件
+
+ActionListener
+KeyListener
+WindowsListener
+
+三要素
+事件源
+事件
+事件处理
+
+做一个界面
+1、继承JFrame类
+2、设置大小setSize(int width,int heigth);
+3、设置位置setLocation(int x,int y);
+4、设置可显setVisible(boolean isVisible);
+5、设置默认关闭方式setDefaultCloseOperation(int operation);
+   JFrame.EXIT_ON_CLOSE 关闭界面并退出程序
+   DISPOSE_ON_CLOSE 关闭界面并销毁当前界面
+   HIDE_ON_CLOSE 隐藏界面
+   DO_NOTHING_ON_CLOSE 什么都不操作
+
+直接运行的步骤
+1、将工程导出为jar文件。
+2、关联打开方式为JAVA_HOME\bin\javaw.exe
+3、在Windows开始菜单的搜索框中输入“regedit”，在上方搜索出的文件regedit上点击鼠标右键，
+在弹出的菜单中选择“以管理员身份运行”。
+在注册表编辑器中，找到“HKEY_CLASSES_ROOT\Applications\javaw.exe\shell\open\command”，
+在其中文件打开命令中加入参数“-jar”（无引号），
+修改后的数值类似：“"C:\Program Files\Java\jre7\bin\javaw.exe" -jar "%1"”
+（只需要添加-jar参数，无需修改其他信息），保存并退出注册表编辑器。
+
+记事本
+JMenuBar	菜单栏
+JMenu	菜单
+JMenuItem 菜单项
+JTextArea 文本域
+
+JFileChooser 文件选择对话框
+  int showOpenDialog(); 显示打开文件对话框 1代表取消，0代表打开
+  File getSelectFile(); 获得对话框选中的文件对象File
+
+文件打开的步骤：
+当用户点击打开菜单项时，显示打开文件对话框
+判断用户是否打开文件
+获得文件源对象
+生成输入流
+读取文件内容
+将内容放入文本域中 setText();
+
+文件保存的步骤：？同学们自己写写。
+

@@ -1,0 +1,55 @@
+ATM系统
+
+ATMTools	工具
+二维数组
+类
+
+ATM		界面
+
+类  对一类事物的抽象
+
+对象  这一类事物某一个实体（实例）
+
+Card类
+String cardID
+String cardPwd
+String name
+int money
+
+ATMTools类
+Card[] 
+
+ATM类
+
+Stu类
+int sid
+String name
+String class
+String sex
+int age
+
+StuManage类
+Stu[] stus = new Stu[10];
+int index;
+addStu();
+transClass();
+removeStu();
+query();
+
+StuUI类
+
+类的成员的访问范围
+		本类		同包		不同包子类	不同其他类
+public		y		y		y		y
+protected	y		y		y		n
+default		y		y		n		n
+private		y		n		n		n
+
+声明属性私有化，对应每个属性生成set和get方法。
+
+Date date = new Date();
+
+给属性加final，变常量，不能被修改。
+给属性加static，变静态变量，所有对象共享同一个内存空间。
+
+static final

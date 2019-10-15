@@ -1,0 +1,112 @@
+js正则表达式
+
+\转义符
+^以什么开始
+$以什么结束
+*匹配0到无限次
++匹配1次到无限次
+?0次或1次
+{n}匹配n
+{n,}匹配n到无限次
+{n,m}匹配n到m次
+[]里面的内容是或的关系 [a-z][A-Z][0-9][a-zA-Z0-9]
+()
+|或
+.除换行以外的其他字符
+\d数字
+\w字母数字下划线
+
+正则.test(value) 返回真和假
+
+/^正则表达式$/
+
+onsubmit 当提交表单时触发 return boolean; false：不提交;true：提交.
+oninput 当输入时触发
+onblur 当失去焦点时。
+onfocus 当获得焦点时。
+
+jQuery js库
+1、使用方法：在网页中引入jQuery文件(1、本地文件(压缩版和开发版);2、cdn)
+
+2、选择器
+  id选择器
+	$("#id")
+  类选择器
+        $(".class")
+  标签选择器
+	$("tagName")
+  伪类选择器
+  属性选择器
+	$("[attr]")
+        $("[attr=value]")
+        $("[attr!=value]")
+	$("[attr$=value]")
+	$("[attr*=value]")
+
+3、函数
+  $(document).ready();
+  动画方法
+  hide();
+  show();
+  slideDown();
+  slideUp();
+  slideToggle();
+  fadeIn();
+  fadeOut();
+  fadeTo();
+  fadeToggle();
+  animate();
+  属性和值的操作
+  attr(key,value);
+  attr(key);
+  prop();
+  removeProp();
+  val(value); 
+  val();
+  html(innerHTML);
+  html();
+  text(innerText);
+  text();
+  样式的操作
+  css();
+  addClass();
+  removeClass();
+  节点的生成
+  $("<tr></tr>")
+  节点添加和移除
+  appned();
+  appendTo();
+  prepend();
+  prependTo();
+  before();
+  after();
+  remove();
+  empty();
+  获得元素的尺寸
+  //获得内容宽度高度  width() height();
+  $("#outDiv").innerWidth(); //获得内容和内边距 innerWidth() innerHeight();
+  $("#outDiv").outerWidth(); //获得内容,内边距和边框 outerWidth() outerHeight();
+  遍历节点：
+  1、父节点
+  parent();获得直接父节点
+  parents();获得所有祖先节点。
+  obj.parentsUntil(obj2); obj到obj2之间的所有祖先元素
+  2、子节点
+  children();获得直接子节点
+  find();获得所有后代节点(*)。 
+  3、同级节点
+  siblings();获得所有同级节点
+  next(); 获得下一个同级节点
+  nextAll(); 获得所有后面的同级节点
+  nextUntil(); 获得到指定节点之间的同级节点。
+  prev(); 获得上一个同级节点
+  prevAll(); 获得所有前面的同级节点
+  precUntil(); 获得到指定节点之间的同级节点。
+  4、筛选节点
+  first();
+  odd();
+  even();
+  last();
+  eq();
+  not();
+  filter();

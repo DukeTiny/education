@@ -1,0 +1,49 @@
+面向对象的特性
+继承
+类与类
+类与接口
+接口与接口
+
+封装
+安全性
+
+多态
+易于维护
+
+Person p = new Student();
+Person p = new Teacher();
+
+abstract
+interface
+extends 
+implements
+
+万物皆对象
+
+所有的类都是通过Object类派生出来的。
+
+集合框架
+
+Collection
+	List
+		ArrayList
+			每次增长一半
+			线程不安全的
+		Vector
+			每次增长一倍
+			线程安全的
+		LinkedList
+	Set
+		HashSet
+		TreeSet
+
+Map
+	HashMap
+	Hashtable
+
+泛型
+声明的过程
+在类声明时，在类名后面加<T>。在方法中可以使用参数T类型。
+
+使用的过程
+在实例化对象时，在类名后面加<具体类名>，在构造方法和小括号之间加<具体类名>。

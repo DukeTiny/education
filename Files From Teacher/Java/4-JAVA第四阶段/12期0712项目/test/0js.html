@@ -1,0 +1,35 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	function show(){
+		const p = {
+			name:'ddd',
+			age:'000'
+		};
+		
+		p.name = '555';
+		p = {};
+		alert(p.name);
+	}
+	show();
+	//alert(1);
+	//alert(a);
+	//alert(name);
+	//
+//-->
+</SCRIPT>
+1：函数内不加var，则是全局变量。
+2：函数内加var,则是局部变量。只在函数内有效。
+3：但函数内的判断中加var,则var竟然在整个函数中有效。
+4：let是块作用域，其在{}中可见。
+5: const 和 let 的作用域是一致的，不同的是 const 变量一旦被赋值，就不能再改变了：
+6: 但是这并不意味着使用 const 声明的变量本身不可变，只是说它不可被再次赋值了：
+		const p = {
+			name:'ddd',
+			age:'000'
+		};
+		
+		p.name = '555';
+		p = {};
+		alert(p.name);
+
+

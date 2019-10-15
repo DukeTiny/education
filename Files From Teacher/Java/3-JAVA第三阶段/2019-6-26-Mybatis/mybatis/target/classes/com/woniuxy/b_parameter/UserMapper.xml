@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper的namespace其实可以随便起名字，但是建议使用UserMapper.xml文件本身所在的包为名字 -->
+<mapper namespace="com.woniuxy.b_parameter.UserMapper">
+	<!-- 
+		parameterType，不写白不写，写了也白写！！！
+		建议还是写上。
+	 -->
+	<insert id="save" parameterType="com.woniuxy.a_hello.User">
+		insert into user values(null, #{name}, #{birthday}, #{money})
+	</insert>
+</mapper>

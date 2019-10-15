@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var stuArr = [["sno","sname","ssex","sbirthday","class"],
+				["101","李军","男","1996-5-5","95033"],
+				["102","陆君","男","1996-9-9","95031"]];
+			function showTable(){
+				//创建表格
+				var tableTag = document.createElement("table");
+				//设置表格的属性
+				tableTag.setAttribute("border",1);
+				tableTag.setAttribute("width",800);
+				tableTag.setAttribute("align","center");
+				//循环每行
+				for(var i=0;i<stuArr.length;i++){
+					//创建表行
+					var trTag = document.createElement("tr");
+					//循环每列
+					for(var j=0;j<stuArr[i].length;j++){
+						//创建单元格
+						var tdTag = document.createElement("td");
+						tdTag.style.textAlign = "center";
+						tdTag.style.color = "orangered";
+						tdTag.style.fontFamily="微软雅黑";
+						//创建文本节点
+						var text = document.createTextNode(stuArr[i][j]);
+						//将文本节点添加到单元格中
+						tdTag.appendChild(text);
+						//将单元格添加到表行中
+						trTag.appendChild(tdTag);
+					}
+					//将每行添加表格里
+					tableTag.appendChild(trTag);
+				}
+				//将表格添加到body中
+				document.getElementsByTagName("body")[0].appendChild(tableTag);
+			}
+			window.onload=function(){
+				showTable();
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

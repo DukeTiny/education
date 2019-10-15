@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.f_$.UserMapper">
+	<insert id="save" parameterType="User">
+		insert into user values(null, #{name},#{birthday},#{money})
+	</insert>
+	<!-- 
+		可以排序
+		SELECT * FROM USER
+		ORDER BY money DESC
+		
+		不可以排序，虽然它不报错，但是没有排序效果！
+		SELECT * FROM USER
+		ORDER BY 'money' DESC
+		
+		测试时，以下的#{column}可以替换为${column}，再观察区别：
+		1. #{}会在值的前后加引号，${}不会
+		2. #{}底层会使用PreparedStatement，也就是使用占位符的方法，为sql语句传参，这样能避免sql注入漏洞；
+		   ${}底层会使用Statement，也就是使用直接使用字符串拼接的方式，来生成sql语句！
+		注意，并不会任何时候都适合使用#{},有些时候还必须使用${}，必须上面的排序例子！！！
+		
+		那些表名、列名、关键字如果作为拼接sql的参数，则需要使用${}来拼接
+		表中的值，需要使用#{}
+	 -->
+	<select id="findAllByColumnDesc" resultType="User" parameterType="java.util.Map">
+		select * from user
+		order by #{column} DESC
+	</select>
+	
+</mapper>
